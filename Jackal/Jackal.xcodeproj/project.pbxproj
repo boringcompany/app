@@ -159,9 +159,7 @@
 		FBC433F7200739AC00134AB7 /* Jackal Shared */ = {
 			isa = PBXGroup;
 			children = (
-				FBC433F8200739AC00134AB7 /* Actions.sks */,
-				FBC433F9200739AC00134AB7 /* GameScene.sks */,
-				FBC433FA200739AC00134AB7 /* GameScene.swift */,
+				FBC4346520073FC200134AB7 /* Playing Field */,
 				FBC433FB200739AC00134AB7 /* Assets.xcassets */,
 			);
 			path = "Jackal Shared";
@@ -230,6 +228,48 @@
 				FBC43442200739AC00134AB7 /* Info.plist */,
 			);
 			path = "Jackal macOS";
+			sourceTree = "<group>";
+		};
+		FBC4346520073FC200134AB7 /* Playing Field */ = {
+			isa = PBXGroup;
+			children = (
+				FBC4346720073FDE00134AB7 /* Entity-Component */,
+				FBC4346620073FD200134AB7 /* SpriteKit */,
+			);
+			path = "Playing Field";
+			sourceTree = "<group>";
+		};
+		FBC4346620073FD200134AB7 /* SpriteKit */ = {
+			isa = PBXGroup;
+			children = (
+				FBC433F9200739AC00134AB7 /* GameScene.sks */,
+				FBC433F8200739AC00134AB7 /* Actions.sks */,
+				FBC433FA200739AC00134AB7 /* GameScene.swift */,
+			);
+			path = SpriteKit;
+			sourceTree = "<group>";
+		};
+		FBC4346720073FDE00134AB7 /* Entity-Component */ = {
+			isa = PBXGroup;
+			children = (
+				FBC4346920073FFD00134AB7 /* Components */,
+				FBC4346820073FF600134AB7 /* Entities */,
+			);
+			path = "Entity-Component";
+			sourceTree = "<group>";
+		};
+		FBC4346820073FF600134AB7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FBC4346920073FFD00134AB7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

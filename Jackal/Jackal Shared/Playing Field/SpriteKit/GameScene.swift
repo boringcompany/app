@@ -83,7 +83,7 @@ class GameScene: SKScene {
         // Called before each frame is rendered
     }
 }
-
+//TODO: https://trello.com/c/3y4H0ZO8/9-обсудить-реализацию-input-ов-для-различных-ос-macos-tvos-ios-watchos
 #if os(iOS) || os(tvOS)
 // Touch-based event handling
 extension GameScene {
