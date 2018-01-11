@@ -1,0 +1,871 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FBC43404200739AC00134AB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC43403200739AC00134AB7 /* AppDelegate.swift */; };
+		FBC43406200739AC00134AB7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC43405200739AC00134AB7 /* GameViewController.swift */; };
+		FBC43409200739AC00134AB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC43407200739AC00134AB7 /* Main.storyboard */; };
+		FBC4340C200739AC00134AB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC4340A200739AC00134AB7 /* LaunchScreen.storyboard */; };
+		FBC43411200739AC00134AB7 /* Jackal.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FBC43410200739AC00134AB7 /* Jackal.app */; };
+		FBC43417200739AC00134AB7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC43415200739AC00134AB7 /* Interface.storyboard */; };
+		FBC4341E200739AC00134AB7 /* Jackal Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FBC4341D200739AC00134AB7 /* Jackal Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FBC43423200739AC00134AB7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC43422200739AC00134AB7 /* InterfaceController.swift */; };
+		FBC43425200739AC00134AB7 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC43424200739AC00134AB7 /* ExtensionDelegate.swift */; };
+		FBC4342E200739AC00134AB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4342D200739AC00134AB7 /* AppDelegate.swift */; };
+		FBC43430200739AC00134AB7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4342F200739AC00134AB7 /* GameViewController.swift */; };
+		FBC43433200739AC00134AB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC43431200739AC00134AB7 /* Main.storyboard */; };
+		FBC4343C200739AC00134AB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4343B200739AC00134AB7 /* AppDelegate.swift */; };
+		FBC4343E200739AC00134AB7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4343D200739AC00134AB7 /* GameViewController.swift */; };
+		FBC43441200739AC00134AB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC4343F200739AC00134AB7 /* Main.storyboard */; };
+		FBC43443200739AC00134AB7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBC433F8200739AC00134AB7 /* Actions.sks */; };
+		FBC43444200739AC00134AB7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBC433F8200739AC00134AB7 /* Actions.sks */; };
+		FBC43445200739AC00134AB7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBC433F8200739AC00134AB7 /* Actions.sks */; };
+		FBC43446200739AC00134AB7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBC433F9200739AC00134AB7 /* GameScene.sks */; };
+		FBC43447200739AC00134AB7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBC433F9200739AC00134AB7 /* GameScene.sks */; };
+		FBC43448200739AC00134AB7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBC433F9200739AC00134AB7 /* GameScene.sks */; };
+		FBC43449200739AC00134AB7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBC433F9200739AC00134AB7 /* GameScene.sks */; };
+		FBC4344A200739AC00134AB7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC433FA200739AC00134AB7 /* GameScene.swift */; };
+		FBC4344B200739AC00134AB7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC433FA200739AC00134AB7 /* GameScene.swift */; };
+		FBC4344C200739AC00134AB7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC433FA200739AC00134AB7 /* GameScene.swift */; };
+		FBC4344D200739AC00134AB7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC433FA200739AC00134AB7 /* GameScene.swift */; };
+		FBC4344E200739AC00134AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC433FB200739AC00134AB7 /* Assets.xcassets */; };
+		FBC4344F200739AC00134AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC433FB200739AC00134AB7 /* Assets.xcassets */; };
+		FBC43450200739AC00134AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC433FB200739AC00134AB7 /* Assets.xcassets */; };
+		FBC43451200739AC00134AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC433FB200739AC00134AB7 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FBC43412200739AC00134AB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBC433F3200739AC00134AB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBC4340F200739AC00134AB7;
+			remoteInfo = "Jackal watchOS App";
+		};
+		FBC4341F200739AC00134AB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBC433F3200739AC00134AB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBC4341C200739AC00134AB7;
+			remoteInfo = "Jackal watchOS App Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FBC43457200739AC00134AB7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FBC4341E200739AC00134AB7 /* Jackal Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBC4345B200739AC00134AB7 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FBC43411200739AC00134AB7 /* Jackal.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FBC433F8200739AC00134AB7 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		FBC433F9200739AC00134AB7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		FBC433FA200739AC00134AB7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		FBC433FB200739AC00134AB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FBC43400200739AC00134AB7 /* Jackal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jackal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBC43403200739AC00134AB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FBC43405200739AC00134AB7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		FBC43408200739AC00134AB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FBC4340B200739AC00134AB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FBC4340D200739AC00134AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBC43410200739AC00134AB7 /* Jackal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jackal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBC43416200739AC00134AB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		FBC43418200739AC00134AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBC4341D200739AC00134AB7 /* Jackal Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Jackal Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBC43422200739AC00134AB7 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		FBC43424200739AC00134AB7 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		FBC43426200739AC00134AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBC4342B200739AC00134AB7 /* Jackal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jackal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBC4342D200739AC00134AB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FBC4342F200739AC00134AB7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		FBC43432200739AC00134AB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FBC43434200739AC00134AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBC43439200739AC00134AB7 /* Jackal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jackal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBC4343B200739AC00134AB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FBC4343D200739AC00134AB7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		FBC43440200739AC00134AB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FBC43442200739AC00134AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBC433FD200739AC00134AB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBC4341A200739AC00134AB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBC43428200739AC00134AB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBC43436200739AC00134AB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FBC433F2200739AC00134AB7 = {
+			isa = PBXGroup;
+			children = (
+				FBC433F7200739AC00134AB7 /* Jackal Shared */,
+				FBC43402200739AC00134AB7 /* Jackal iOS */,
+				FBC43414200739AC00134AB7 /* Jackal watchOS App */,
+				FBC43421200739AC00134AB7 /* Jackal watchOS App Extension */,
+				FBC4342C200739AC00134AB7 /* Jackal tvOS */,
+				FBC4343A200739AC00134AB7 /* Jackal macOS */,
+				FBC43401200739AC00134AB7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FBC433F7200739AC00134AB7 /* Jackal Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FBC433F8200739AC00134AB7 /* Actions.sks */,
+				FBC433F9200739AC00134AB7 /* GameScene.sks */,
+				FBC433FA200739AC00134AB7 /* GameScene.swift */,
+				FBC433FB200739AC00134AB7 /* Assets.xcassets */,
+			);
+			path = "Jackal Shared";
+			sourceTree = "<group>";
+		};
+		FBC43401200739AC00134AB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBC43400200739AC00134AB7 /* Jackal.app */,
+				FBC43410200739AC00134AB7 /* Jackal.app */,
+				FBC4341D200739AC00134AB7 /* Jackal Extension.appex */,
+				FBC4342B200739AC00134AB7 /* Jackal.app */,
+				FBC43439200739AC00134AB7 /* Jackal.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBC43402200739AC00134AB7 /* Jackal iOS */ = {
+			isa = PBXGroup;
+			children = (
+				FBC43403200739AC00134AB7 /* AppDelegate.swift */,
+				FBC43405200739AC00134AB7 /* GameViewController.swift */,
+				FBC43407200739AC00134AB7 /* Main.storyboard */,
+				FBC4340A200739AC00134AB7 /* LaunchScreen.storyboard */,
+				FBC4340D200739AC00134AB7 /* Info.plist */,
+			);
+			path = "Jackal iOS";
+			sourceTree = "<group>";
+		};
+		FBC43414200739AC00134AB7 /* Jackal watchOS App */ = {
+			isa = PBXGroup;
+			children = (
+				FBC43415200739AC00134AB7 /* Interface.storyboard */,
+				FBC43418200739AC00134AB7 /* Info.plist */,
+			);
+			path = "Jackal watchOS App";
+			sourceTree = "<group>";
+		};
+		FBC43421200739AC00134AB7 /* Jackal watchOS App Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FBC43422200739AC00134AB7 /* InterfaceController.swift */,
+				FBC43424200739AC00134AB7 /* ExtensionDelegate.swift */,
+				FBC43426200739AC00134AB7 /* Info.plist */,
+			);
+			path = "Jackal watchOS App Extension";
+			sourceTree = "<group>";
+		};
+		FBC4342C200739AC00134AB7 /* Jackal tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				FBC4342D200739AC00134AB7 /* AppDelegate.swift */,
+				FBC4342F200739AC00134AB7 /* GameViewController.swift */,
+				FBC43431200739AC00134AB7 /* Main.storyboard */,
+				FBC43434200739AC00134AB7 /* Info.plist */,
+			);
+			path = "Jackal tvOS";
+			sourceTree = "<group>";
+		};
+		FBC4343A200739AC00134AB7 /* Jackal macOS */ = {
+			isa = PBXGroup;
+			children = (
+				FBC4343B200739AC00134AB7 /* AppDelegate.swift */,
+				FBC4343D200739AC00134AB7 /* GameViewController.swift */,
+				FBC4343F200739AC00134AB7 /* Main.storyboard */,
+				FBC43442200739AC00134AB7 /* Info.plist */,
+			);
+			path = "Jackal macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBC433FF200739AC00134AB7 /* Jackal iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBC4345C200739AC00134AB7 /* Build configuration list for PBXNativeTarget "Jackal iOS" */;
+			buildPhases = (
+				FBC433FC200739AC00134AB7 /* Sources */,
+				FBC433FD200739AC00134AB7 /* Frameworks */,
+				FBC433FE200739AC00134AB7 /* Resources */,
+				FBC4345B200739AC00134AB7 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBC43413200739AC00134AB7 /* PBXTargetDependency */,
+			);
+			name = "Jackal iOS";
+			productName = "Jackal iOS";
+			productReference = FBC43400200739AC00134AB7 /* Jackal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FBC4340F200739AC00134AB7 /* Jackal watchOS App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBC43458200739AC00134AB7 /* Build configuration list for PBXNativeTarget "Jackal watchOS App" */;
+			buildPhases = (
+				FBC4340E200739AC00134AB7 /* Resources */,
+				FBC43457200739AC00134AB7 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBC43420200739AC00134AB7 /* PBXTargetDependency */,
+			);
+			name = "Jackal watchOS App";
+			productName = "Jackal watchOS App";
+			productReference = FBC43410200739AC00134AB7 /* Jackal.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		FBC4341C200739AC00134AB7 /* Jackal watchOS App Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBC43454200739AC00134AB7 /* Build configuration list for PBXNativeTarget "Jackal watchOS App Extension" */;
+			buildPhases = (
+				FBC43419200739AC00134AB7 /* Sources */,
+				FBC4341A200739AC00134AB7 /* Frameworks */,
+				FBC4341B200739AC00134AB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Jackal watchOS App Extension";
+			productName = "Jackal watchOS App Extension";
+			productReference = FBC4341D200739AC00134AB7 /* Jackal Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		FBC4342A200739AC00134AB7 /* Jackal tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBC4345F200739AC00134AB7 /* Build configuration list for PBXNativeTarget "Jackal tvOS" */;
+			buildPhases = (
+				FBC43427200739AC00134AB7 /* Sources */,
+				FBC43428200739AC00134AB7 /* Frameworks */,
+				FBC43429200739AC00134AB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Jackal tvOS";
+			productName = "Jackal tvOS";
+			productReference = FBC4342B200739AC00134AB7 /* Jackal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FBC43438200739AC00134AB7 /* Jackal macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBC43462200739AC00134AB7 /* Build configuration list for PBXNativeTarget "Jackal macOS" */;
+			buildPhases = (
+				FBC43435200739AC00134AB7 /* Sources */,
+				FBC43436200739AC00134AB7 /* Frameworks */,
+				FBC43437200739AC00134AB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Jackal macOS";
+			productName = "Jackal macOS";
+			productReference = FBC43439200739AC00134AB7 /* Jackal.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBC433F3200739AC00134AB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Boring Company";
+				TargetAttributes = {
+					FBC433FF200739AC00134AB7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					FBC4340F200739AC00134AB7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					FBC4341C200739AC00134AB7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					FBC4342A200739AC00134AB7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					FBC43438200739AC00134AB7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FBC433F6200739AC00134AB7 /* Build configuration list for PBXProject "Jackal" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FBC433F2200739AC00134AB7;
+			productRefGroup = FBC43401200739AC00134AB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBC433FF200739AC00134AB7 /* Jackal iOS */,
+				FBC4340F200739AC00134AB7 /* Jackal watchOS App */,
+				FBC4341C200739AC00134AB7 /* Jackal watchOS App Extension */,
+				FBC4342A200739AC00134AB7 /* Jackal tvOS */,
+				FBC43438200739AC00134AB7 /* Jackal macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBC433FE200739AC00134AB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC43446200739AC00134AB7 /* GameScene.sks in Resources */,
+				FBC43409200739AC00134AB7 /* Main.storyboard in Resources */,
+				FBC43443200739AC00134AB7 /* Actions.sks in Resources */,
+				FBC4340C200739AC00134AB7 /* LaunchScreen.storyboard in Resources */,
+				FBC4344E200739AC00134AB7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBC4340E200739AC00134AB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC4344F200739AC00134AB7 /* Assets.xcassets in Resources */,
+				FBC43417200739AC00134AB7 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBC4341B200739AC00134AB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC43447200739AC00134AB7 /* GameScene.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBC43429200739AC00134AB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC43433200739AC00134AB7 /* Main.storyboard in Resources */,
+				FBC43448200739AC00134AB7 /* GameScene.sks in Resources */,
+				FBC43450200739AC00134AB7 /* Assets.xcassets in Resources */,
+				FBC43444200739AC00134AB7 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBC43437200739AC00134AB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC43441200739AC00134AB7 /* Main.storyboard in Resources */,
+				FBC43449200739AC00134AB7 /* GameScene.sks in Resources */,
+				FBC43451200739AC00134AB7 /* Assets.xcassets in Resources */,
+				FBC43445200739AC00134AB7 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBC433FC200739AC00134AB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC4344A200739AC00134AB7 /* GameScene.swift in Sources */,
+				FBC43406200739AC00134AB7 /* GameViewController.swift in Sources */,
+				FBC43404200739AC00134AB7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBC43419200739AC00134AB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC4344B200739AC00134AB7 /* GameScene.swift in Sources */,
+				FBC43425200739AC00134AB7 /* ExtensionDelegate.swift in Sources */,
+				FBC43423200739AC00134AB7 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBC43427200739AC00134AB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC4344C200739AC00134AB7 /* GameScene.swift in Sources */,
+				FBC43430200739AC00134AB7 /* GameViewController.swift in Sources */,
+				FBC4342E200739AC00134AB7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBC43435200739AC00134AB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC4344D200739AC00134AB7 /* GameScene.swift in Sources */,
+				FBC4343E200739AC00134AB7 /* GameViewController.swift in Sources */,
+				FBC4343C200739AC00134AB7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBC43413200739AC00134AB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBC4340F200739AC00134AB7 /* Jackal watchOS App */;
+			targetProxy = FBC43412200739AC00134AB7 /* PBXContainerItemProxy */;
+		};
+		FBC43420200739AC00134AB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBC4341C200739AC00134AB7 /* Jackal watchOS App Extension */;
+			targetProxy = FBC4341F200739AC00134AB7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FBC43407200739AC00134AB7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBC43408200739AC00134AB7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FBC4340A200739AC00134AB7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBC4340B200739AC00134AB7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FBC43415200739AC00134AB7 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBC43416200739AC00134AB7 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		FBC43431200739AC00134AB7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBC43432200739AC00134AB7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FBC4343F200739AC00134AB7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBC43440200739AC00134AB7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FBC43452200739AC00134AB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FBC43453200739AC00134AB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		FBC43455200739AC00134AB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Jackal watchOS App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "Jackal Extension";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Debug;
+		};
+		FBC43456200739AC00134AB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Jackal watchOS App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "Jackal Extension";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Release;
+		};
+		FBC43459200739AC00134AB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = Jackal_Extension;
+				INFOPLIST_FILE = "Jackal watchOS App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal.watchkitapp;
+				PRODUCT_NAME = Jackal;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Debug;
+		};
+		FBC4345A200739AC00134AB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = Jackal_Extension;
+				INFOPLIST_FILE = "Jackal watchOS App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal.watchkitapp;
+				PRODUCT_NAME = Jackal;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Release;
+		};
+		FBC4345D200739AC00134AB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Jackal iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal;
+				PRODUCT_NAME = Jackal;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FBC4345E200739AC00134AB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Jackal iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal;
+				PRODUCT_NAME = Jackal;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBC43460200739AC00134AB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "tvOS LaunchImage";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Jackal tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal;
+				PRODUCT_NAME = Jackal;
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		FBC43461200739AC00134AB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "tvOS LaunchImage";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Jackal tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal;
+				PRODUCT_NAME = Jackal;
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBC43463200739AC00134AB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Jackal macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal;
+				PRODUCT_NAME = Jackal;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		FBC43464200739AC00134AB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Jackal macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal;
+				PRODUCT_NAME = Jackal;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBC433F6200739AC00134AB7 /* Build configuration list for PBXProject "Jackal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBC43452200739AC00134AB7 /* Debug */,
+				FBC43453200739AC00134AB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBC43454200739AC00134AB7 /* Build configuration list for PBXNativeTarget "Jackal watchOS App Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBC43455200739AC00134AB7 /* Debug */,
+				FBC43456200739AC00134AB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBC43458200739AC00134AB7 /* Build configuration list for PBXNativeTarget "Jackal watchOS App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBC43459200739AC00134AB7 /* Debug */,
+				FBC4345A200739AC00134AB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBC4345C200739AC00134AB7 /* Build configuration list for PBXNativeTarget "Jackal iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBC4345D200739AC00134AB7 /* Debug */,
+				FBC4345E200739AC00134AB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBC4345F200739AC00134AB7 /* Build configuration list for PBXNativeTarget "Jackal tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBC43460200739AC00134AB7 /* Debug */,
+				FBC43461200739AC00134AB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBC43462200739AC00134AB7 /* Build configuration list for PBXNativeTarget "Jackal macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBC43463200739AC00134AB7 /* Debug */,
+				FBC43464200739AC00134AB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBC433F3200739AC00134AB7 /* Project object */;
+}
