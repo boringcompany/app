@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0FD80B2017904200A6A7A7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E69C20161D8500B9A75B /* Game.swift */; };
 		FB77E690201615CC00B9A75B /* FieldNodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* FieldNodeEntity.swift */; };
 		FB77E691201615CC00B9A75B /* FieldNodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* FieldNodeEntity.swift */; };
 		FB77E692201615CC00B9A75B /* FieldNodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* FieldNodeEntity.swift */; };
@@ -512,6 +513,7 @@
 				FBC4344B200739AC00134AB7 /* GameScene.swift in Sources */,
 				FBC43425200739AC00134AB7 /* ExtensionDelegate.swift in Sources */,
 				FBC43423200739AC00134AB7 /* InterfaceController.swift in Sources */,
+				FB0FD80B2017904200A6A7A7 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
