@@ -14,9 +14,9 @@ class Game {
     
     // MARK: Private Data Structures
     private enum Constants {
-        static let width: Int32 = 10
-        static let height: Int32 = 10
-        static let cellWidth = 100
+        static let width: Int32 = 11
+        static let height: Int32 = 11
+        static let cellWidth = 90
     }
     
     // MARK: Private Properties
@@ -46,6 +46,7 @@ class Game {
         let cellSize = CGSize(width: width, height: width)
         for i in 0..<size.width {
             for j in 0..<size.height {
+                guard !isCorner(x: i, y: j, height: size.height, width: size.width) else { continue }
                 if graph.node(atGridPosition: vector_int2(x: i, y: j)) != nil {
                     let node = SKSpriteNode(texture: SKTexture(imageNamed: "suit"),
                                             size: cellSize)
@@ -57,6 +58,11 @@ class Game {
             }
         }
         scene.addChild(board)
+    }
+    
+    func isCorner(x: Int32, y: Int32, height: Int32, width: Int32) -> Bool {
+        let conditions: [Bool] = [x == 0, y == 0, x == width - 1, y == height - 1]
+        return conditions.filter { $0 }.count == 2
     }
 }
 
