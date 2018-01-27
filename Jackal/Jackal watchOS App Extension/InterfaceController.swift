@@ -11,13 +11,15 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
-
+    
+    // MARK: Public Properties
     @IBOutlet var skInterface: WKInterfaceSKScene!
     
+    // MARK: Lifecycle
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        let scene = GameScene.newGameScene()
+        let scene = Game().gameScene
         
         // Present the scene
         self.skInterface.presentScene(scene)

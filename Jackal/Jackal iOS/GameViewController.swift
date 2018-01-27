@@ -11,11 +11,12 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scene = GameScene.newGameScene()
+        let scene = Game().gameScene
 
         // Present the scene
         let skView = self.view as! SKView
@@ -25,7 +26,7 @@ class GameViewController: UIViewController {
         skView.showsFPS = true
         skView.showsNodeCount = true
     }
-
+    
     override var shouldAutorotate: Bool {
         return true
     }

@@ -12,10 +12,11 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scene = GameScene.newGameScene()
+        let scene = Game().gameScene
         
         // Present the scene
         let skView = self.view as! SKView
@@ -29,7 +30,6 @@ class GameViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
     }
 
 }
