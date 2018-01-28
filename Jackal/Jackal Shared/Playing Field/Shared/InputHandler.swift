@@ -7,3 +7,29 @@
 //
 
 import Foundation
+
+struct Event {
+    let coordinate: (x: Float, y: Float)
+}
+
+protocol InputHandlerProtocol {
+    
+    func actionIn(event: Event)
+    func actionMove(event: Event)
+    func actionOut(event: Event)
+}
+
+class InputHandler: InputHandlerProtocol {
+    
+    func actionIn(event: Event) {
+        
+    }
+    
+    func actionMove(event: Event) {
+        
+    }
+    
+    func actionOut(event: Event) {
+        
+    }
+}
