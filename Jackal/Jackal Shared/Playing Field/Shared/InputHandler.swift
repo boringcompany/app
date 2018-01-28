@@ -22,14 +22,14 @@ protocol InputHandlerProtocol {
 class InputHandler: InputHandlerProtocol {
     
     func actionIn(event: Event) {
-        
+        print("actionIn \(event.coordinate)")
     }
     
     func actionMove(event: Event) {
-        
+        print("actionMove \(event.coordinate)")
     }
     
     func actionOut(event: Event) {
-        
+        print("actionOut \(event.coordinate)")
     }
 }

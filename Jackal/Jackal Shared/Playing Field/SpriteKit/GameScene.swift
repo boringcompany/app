@@ -16,7 +16,9 @@ class GameScene: SKScene {
     
     // MARK: Private Properties
     private var output: GameSceneOutput?
-    private let inputHandler = InputHandler()
+    
+    // MARK: Public Properties
+    let inputHandler: InputHandlerProtocol = InputHandler()
     
     // MARK: Lifecycle
     class func newGameScene(with output: GameSceneOutput) -> GameScene {
