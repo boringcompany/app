@@ -13,6 +13,12 @@
 		579CF3D9201D0A7000DCC9CF /* InputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CF3D8201D0A7000DCC9CF /* InputHandler.swift */; };
 		579CF3DA201D0A7000DCC9CF /* InputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CF3D8201D0A7000DCC9CF /* InputHandler.swift */; };
 		579CF3DB201D0A7000DCC9CF /* InputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CF3D8201D0A7000DCC9CF /* InputHandler.swift */; };
+		88746FEB201E43D10011D07A /* PirateNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88746FEA201E43D10011D07A /* PirateNode.swift */; };
+		88746FEC201E43D10011D07A /* PirateNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88746FEA201E43D10011D07A /* PirateNode.swift */; };
+		88746FED201E43D10011D07A /* PirateNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88746FEA201E43D10011D07A /* PirateNode.swift */; };
+		88746FEF201E45560011D07A /* PirateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88746FEE201E45560011D07A /* PirateEntity.swift */; };
+		88746FF0201E45560011D07A /* PirateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88746FEE201E45560011D07A /* PirateEntity.swift */; };
+		88746FF1201E45560011D07A /* PirateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88746FEE201E45560011D07A /* PirateEntity.swift */; };
 		FB77E690201615CC00B9A75B /* FieldNodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* FieldNodeEntity.swift */; };
 		FB77E691201615CC00B9A75B /* FieldNodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* FieldNodeEntity.swift */; };
 		FB77E692201615CC00B9A75B /* FieldNodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* FieldNodeEntity.swift */; };
@@ -62,6 +68,8 @@
 /* Begin PBXFileReference section */
 		579CF3D4201D038A00DCC9CF /* SpriteKit+Inputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpriteKit+Inputs.swift"; sourceTree = "<group>"; };
 		579CF3D8201D0A7000DCC9CF /* InputHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHandler.swift; sourceTree = "<group>"; };
+		88746FEA201E43D10011D07A /* PirateNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateNode.swift; sourceTree = "<group>"; };
+		88746FEE201E45560011D07A /* PirateEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateEntity.swift; sourceTree = "<group>"; };
 		FB77E68F201615CC00B9A75B /* FieldNodeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldNodeEntity.swift; sourceTree = "<group>"; };
 		FB77E6932016162F00B9A75B /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		FB77E6972016172400B9A75B /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
@@ -228,6 +236,7 @@
 				FBC433F9200739AC00134AB7 /* GameScene.sks */,
 				FBC433FA200739AC00134AB7 /* GameScene.swift */,
 				579CF3D4201D038A00DCC9CF /* SpriteKit+Inputs.swift */,
+				88746FEA201E43D10011D07A /* PirateNode.swift */,
 			);
 			path = SpriteKit;
 			sourceTree = "<group>";
@@ -245,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				FB77E68F201615CC00B9A75B /* FieldNodeEntity.swift */,
+				88746FEE201E45560011D07A /* PirateEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -324,7 +334,7 @@
 				TargetAttributes = {
 					FBC433FF200739AC00134AB7 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					FBC4342A200739AC00134AB7 = {
 						CreatedOnToolsVersion = 9.2;
@@ -395,10 +405,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88746FEB201E43D10011D07A /* PirateNode.swift in Sources */,
 				FB77E6982016172400B9A75B /* Level.swift in Sources */,
 				579CF3D9201D0A7000DCC9CF /* InputHandler.swift in Sources */,
 				FBC4344A200739AC00134AB7 /* GameScene.swift in Sources */,
 				FB77E69D20161D8500B9A75B /* Game.swift in Sources */,
+				88746FEF201E45560011D07A /* PirateEntity.swift in Sources */,
 				FB77E6942016162F00B9A75B /* SpriteComponent.swift in Sources */,
 				FBC43406200739AC00134AB7 /* GameViewController.swift in Sources */,
 				FBC43404200739AC00134AB7 /* AppDelegate.swift in Sources */,
@@ -411,10 +423,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88746FEC201E43D10011D07A /* PirateNode.swift in Sources */,
 				FB77E6992016172400B9A75B /* Level.swift in Sources */,
 				579CF3DA201D0A7000DCC9CF /* InputHandler.swift in Sources */,
 				FBC4344C200739AC00134AB7 /* GameScene.swift in Sources */,
 				FB77E69E20161D8500B9A75B /* Game.swift in Sources */,
+				88746FF0201E45560011D07A /* PirateEntity.swift in Sources */,
 				FB77E6952016162F00B9A75B /* SpriteComponent.swift in Sources */,
 				FBC43430200739AC00134AB7 /* GameViewController.swift in Sources */,
 				FBC4342E200739AC00134AB7 /* AppDelegate.swift in Sources */,
@@ -427,10 +441,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88746FED201E43D10011D07A /* PirateNode.swift in Sources */,
 				FB77E69A2016172400B9A75B /* Level.swift in Sources */,
 				579CF3DB201D0A7000DCC9CF /* InputHandler.swift in Sources */,
 				FBC4344D200739AC00134AB7 /* GameScene.swift in Sources */,
 				FB77E69F20161D8500B9A75B /* Game.swift in Sources */,
+				88746FF1201E45560011D07A /* PirateEntity.swift in Sources */,
 				FB77E6962016162F00B9A75B /* SpriteComponent.swift in Sources */,
 				FBC4343E200739AC00134AB7 /* GameViewController.swift in Sources */,
 				FBC4343C200739AC00134AB7 /* AppDelegate.swift in Sources */,
@@ -590,12 +606,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Jackal iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal;
 				PRODUCT_NAME = Jackal;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -607,12 +625,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Jackal iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal;
 				PRODUCT_NAME = Jackal;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -16,7 +16,12 @@ class Game {
     private enum Constants {
         static let width: Int32 = 11
         static let height: Int32 = 11
-        static let cellWidth = 90
+        
+        enum zPosition: CGFloat {
+            
+            case fieldCell = 0
+            case pirate = 100
+        }
     }
     
     // MARK: Private Properties
@@ -41,7 +46,8 @@ class Game {
         let sceneSize = min(scene.size.width, scene.size.height)
         let board = SKNode()
         board.position = CGPoint(x: -sceneSize/2, y: -sceneSize/2)
-        let width = CGFloat(Constants.cellWidth)
+        
+        let width = CGFloat(gameScene.cellWidth)
         let graph = level.graph
         let cellSize = CGSize(width: width, height: width)
         for i in 0..<size.width {
@@ -50,13 +56,20 @@ class Game {
                 if graph.node(atGridPosition: vector_int2(x: i, y: j)) != nil {
                     let node = SKSpriteNode(texture: SKTexture(imageNamed: "suit"),
                                             size: cellSize)
-                    let x = CGFloat(i) * width + width / 2
-                    let y = CGFloat(j) * width  + width / 2
-                    node.position = CGPoint(x: x, y: y)
+                    node.position = self.gameScene.point(at: int2(i, j))
+                    node.zPosition = Constants.zPosition.fieldCell.rawValue
                     board.addChild(node)
                 }
             }
         }
+        
+        let pirateSize = CGSize(width: width / 3, height: width / 3)
+        let pirateNode = PirateNode(size: pirateSize)
+        let pirateGridPosition = int2(size.width / 2, size.height / 2)
+        pirateNode.position = self.gameScene.point(at: pirateGridPosition)
+        pirateNode.zPosition = Constants.zPosition.pirate.rawValue
+        board.addChild(pirateNode)
+        
         scene.addChild(board)
     }
     

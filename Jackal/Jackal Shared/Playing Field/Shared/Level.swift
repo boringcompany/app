@@ -23,13 +23,10 @@ class Level {
     
     // MARK: Lifecycle
     init(with size: Size) {
+        
         graph = GKGridGraph(fromGridStartingAt: vector_int2(x: 0, y: 0),
                             width: size.width,
                             height: size.height,
                             diagonalsAllowed: true)
-        guard let nodes = graph.nodes else { return }
-        for node in nodes {
-            node.removeConnections(to: node.connectedNodes, bidirectional: true)
-        }
     }
 }
