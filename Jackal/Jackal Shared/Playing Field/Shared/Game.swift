@@ -48,18 +48,21 @@ class Game {
         board.position = CGPoint(x: -sceneSize/2, y: -sceneSize/2)
         
         let width = CGFloat(gameScene.cellWidth)
-        let graph = level.graph
         let cellSize = CGSize(width: width, height: width)
+        
         for i in 0..<size.width {
             for j in 0..<size.height {
-                guard !isCorner(x: i, y: j, height: size.height, width: size.width) else { continue }
-                if graph.node(atGridPosition: vector_int2(x: i, y: j)) != nil {
-                    let node = SKSpriteNode(texture: SKTexture(imageNamed: "suit"),
-                                            size: cellSize)
-                    node.position = self.gameScene.point(at: int2(i, j))
-                    node.zPosition = Constants.zPosition.fieldCell.rawValue
-                    board.addChild(node)
-                }
+                guard !isCorner(x: i,
+                                y: j,
+                                height: size.height,
+                                width: size.width)
+                    else { continue }
+                
+                let node = SKSpriteNode(texture: SKTexture(imageNamed: "suit"),
+                                        size: cellSize)
+                node.position = self.gameScene.point(at: int2(i, j))
+                node.zPosition = Constants.zPosition.fieldCell.rawValue
+                board.addChild(node)
             }
         }
         
@@ -72,6 +75,7 @@ class Game {
         
         scene.addChild(board)
     }
+    
     
     func isCorner(x: Int32, y: Int32, height: Int32, width: Int32) -> Bool {
         let conditions: [Bool] = [x == 0, y == 0, x == width - 1, y == height - 1]
