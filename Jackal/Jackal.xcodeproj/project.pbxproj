@@ -19,6 +19,9 @@
 		88746FEF201E45560011D07A /* PirateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88746FEE201E45560011D07A /* PirateEntity.swift */; };
 		88746FF0201E45560011D07A /* PirateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88746FEE201E45560011D07A /* PirateEntity.swift */; };
 		88746FF1201E45560011D07A /* PirateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88746FEE201E45560011D07A /* PirateEntity.swift */; };
+		88D281762038BE6B0046E67E /* CellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D281752038BE6B0046E67E /* CellNode.swift */; };
+		88D281772038BE6B0046E67E /* CellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D281752038BE6B0046E67E /* CellNode.swift */; };
+		88D281782038BE6B0046E67E /* CellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D281752038BE6B0046E67E /* CellNode.swift */; };
 		88FC9613201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC9612201F4FE900A979B9 /* BoardPositionComponent.swift */; };
 		88FC9614201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC9612201F4FE900A979B9 /* BoardPositionComponent.swift */; };
 		88FC9615201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC9612201F4FE900A979B9 /* BoardPositionComponent.swift */; };
@@ -31,6 +34,9 @@
 		88FC9620201F558B00A979B9 /* BoardGraphNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC961F201F558B00A979B9 /* BoardGraphNode.swift */; };
 		88FC9621201F558B00A979B9 /* BoardGraphNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC961F201F558B00A979B9 /* BoardGraphNode.swift */; };
 		88FC9622201F558B00A979B9 /* BoardGraphNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC961F201F558B00A979B9 /* BoardGraphNode.swift */; };
+		88FC9624201F690700A979B9 /* InputHandlingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC9623201F690700A979B9 /* InputHandlingComponent.swift */; };
+		88FC9625201F690700A979B9 /* InputHandlingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC9623201F690700A979B9 /* InputHandlingComponent.swift */; };
+		88FC9626201F690700A979B9 /* InputHandlingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC9623201F690700A979B9 /* InputHandlingComponent.swift */; };
 		FB77E690201615CC00B9A75B /* FieldNodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* FieldNodeEntity.swift */; };
 		FB77E691201615CC00B9A75B /* FieldNodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* FieldNodeEntity.swift */; };
 		FB77E692201615CC00B9A75B /* FieldNodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* FieldNodeEntity.swift */; };
@@ -82,10 +88,12 @@
 		579CF3D8201D0A7000DCC9CF /* InputHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHandler.swift; sourceTree = "<group>"; };
 		88746FEA201E43D10011D07A /* PirateNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateNode.swift; sourceTree = "<group>"; };
 		88746FEE201E45560011D07A /* PirateEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateEntity.swift; sourceTree = "<group>"; };
+		88D281752038BE6B0046E67E /* CellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellNode.swift; sourceTree = "<group>"; };
 		88FC9612201F4FE900A979B9 /* BoardPositionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPositionComponent.swift; sourceTree = "<group>"; };
 		88FC9616201F501900A979B9 /* BoardPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPosition.swift; sourceTree = "<group>"; };
 		88FC961B201F512B00A979B9 /* BoardGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGraph.swift; sourceTree = "<group>"; };
 		88FC961F201F558B00A979B9 /* BoardGraphNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGraphNode.swift; sourceTree = "<group>"; };
+		88FC9623201F690700A979B9 /* InputHandlingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHandlingComponent.swift; sourceTree = "<group>"; };
 		FB77E68F201615CC00B9A75B /* FieldNodeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldNodeEntity.swift; sourceTree = "<group>"; };
 		FB77E6932016162F00B9A75B /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		FB77E6972016172400B9A75B /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
@@ -264,6 +272,7 @@
 				FBC433FA200739AC00134AB7 /* GameScene.swift */,
 				579CF3D4201D038A00DCC9CF /* SpriteKit+Inputs.swift */,
 				88746FEA201E43D10011D07A /* PirateNode.swift */,
+				88D281752038BE6B0046E67E /* CellNode.swift */,
 			);
 			path = SpriteKit;
 			sourceTree = "<group>";
@@ -291,6 +300,7 @@
 			children = (
 				FB77E6932016162F00B9A75B /* SpriteComponent.swift */,
 				88FC9612201F4FE900A979B9 /* BoardPositionComponent.swift */,
+				88FC9623201F690700A979B9 /* InputHandlingComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -445,9 +455,11 @@
 				FBC43406200739AC00134AB7 /* GameViewController.swift in Sources */,
 				88FC961C201F512B00A979B9 /* BoardGraph.swift in Sources */,
 				FBC43404200739AC00134AB7 /* AppDelegate.swift in Sources */,
+				88D281762038BE6B0046E67E /* CellNode.swift in Sources */,
 				88FC9617201F501900A979B9 /* BoardPosition.swift in Sources */,
 				579CF3D5201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */,
 				FB77E690201615CC00B9A75B /* FieldNodeEntity.swift in Sources */,
+				88FC9624201F690700A979B9 /* InputHandlingComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,9 +479,11 @@
 				FBC43430200739AC00134AB7 /* GameViewController.swift in Sources */,
 				88FC961D201F512B00A979B9 /* BoardGraph.swift in Sources */,
 				FBC4342E200739AC00134AB7 /* AppDelegate.swift in Sources */,
+				88D281772038BE6B0046E67E /* CellNode.swift in Sources */,
 				88FC9618201F501900A979B9 /* BoardPosition.swift in Sources */,
 				579CF3D6201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */,
 				FB77E691201615CC00B9A75B /* FieldNodeEntity.swift in Sources */,
+				88FC9625201F690700A979B9 /* InputHandlingComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,9 +503,11 @@
 				FBC4343E200739AC00134AB7 /* GameViewController.swift in Sources */,
 				88FC961E201F512B00A979B9 /* BoardGraph.swift in Sources */,
 				FBC4343C200739AC00134AB7 /* AppDelegate.swift in Sources */,
+				88D281782038BE6B0046E67E /* CellNode.swift in Sources */,
 				88FC9619201F501900A979B9 /* BoardPosition.swift in Sources */,
 				579CF3D7201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */,
 				FB77E692201615CC00B9A75B /* FieldNodeEntity.swift in Sources */,
+				88FC9626201F690700A979B9 /* InputHandlingComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

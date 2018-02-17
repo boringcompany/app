@@ -1,8 +1,8 @@
 //
-//  PirateNode.swift
+//  CellNode.swift
 //  Jackal
 //
-//  Created by Anton Tyutin on 28.01.2018.
+//  Created by Anton Tyutin on 17.02.2018.
 //  Copyright © 2018 Boring Company. All rights reserved.
 //
 
@@ -10,17 +10,9 @@ import Foundation
 import SpriteKit
 
 
-class PirateNode: SKShapeNode {
+class CellNode: SKSpriteNode {
     
     var inputHandler: InputHandlerProtocol?
-    
-    convenience init(size: CGSize) {
-        
-        self.init(ellipseOf: size)
-        
-        self.fillColor = .yellow
-    }
-    
     
     #if os(iOS) || os(tvOS)
     

@@ -28,6 +28,10 @@ class Game {
     private let level: Level
     private let size: Level.Size
     
+    private var fieldCells: [FieldNodeEntity] = []
+    private var pirates: [PirateEntity] = []
+    
+    
     // MARK: Public Properties
     lazy var gameScene: GameScene = {
         return GameScene.newGameScene(with: self)
@@ -41,7 +45,8 @@ class Game {
     }
     
     // MARK: Private
-    private func setupPlayingBoard(in scene: SKScene) {
+    
+    private func setupPlayingBoard(in scene: SKScene) -> SKNode {
         scene.backgroundColor = .blue
         let sceneSize = min(scene.size.width, scene.size.height)
         let board = SKNode()
@@ -52,28 +57,37 @@ class Game {
         
         for i in 0..<size.width {
             for j in 0..<size.height {
-                guard !isCorner(x: i,
-                                y: j,
-                                height: size.height,
-                                width: size.width)
-                    else { continue }
                 
-                let node = SKSpriteNode(texture: SKTexture(imageNamed: "suit"),
-                                        size: cellSize)
-                node.position = self.gameScene.point(at: int2(i, j))
+                guard !isCorner(x: i, y: j, height: size.height, width: size.width) else { continue }
+                
+                let node = CellNode(texture: SKTexture(imageNamed: "suit"),
+                                    size: cellSize)
+                
+                node.position = gameScene.point(at: int2(i, j))
                 node.zPosition = Constants.zPosition.fieldCell.rawValue
                 board.addChild(node)
+                
+                // entity
+                let cell = FieldNodeEntity()
+                cell.addComponent(SpriteComponent(node: node))
+                
+                let inputHandlingComponent = InputHandlingComponent()
+                node.inputHandler = inputHandlingComponent
+                node.isUserInteractionEnabled = true
+                cell.addComponent(inputHandlingComponent)
+                
+                let boardPositionComponent = BoardPositionComponent()
+                boardPositionComponent.boardPosition = BoardPosition(BoardPosition.Unit(i),
+                                                                     BoardPosition.Unit(j))
+                cell.addComponent(boardPositionComponent)
+                
+                fieldCells.append(cell)
             }
         }
         
-        let pirateSize = CGSize(width: width / 3, height: width / 3)
-        let pirateNode = PirateNode(size: pirateSize)
-        let pirateGridPosition = int2(size.width / 2, size.height / 2)
-        pirateNode.position = self.gameScene.point(at: pirateGridPosition)
-        pirateNode.zPosition = Constants.zPosition.pirate.rawValue
-        board.addChild(pirateNode)
-        
         scene.addChild(board)
+
+        return board
     }
     
     
@@ -81,12 +95,43 @@ class Game {
         let conditions: [Bool] = [x == 0, y == 0, x == width - 1, y == height - 1]
         return conditions.filter { $0 }.count == 2
     }
+    
+    
+    private func setupPirates(on board: SKNode) {
+        
+        let width = CGFloat(gameScene.cellWidth)
+
+        let pirateSize = CGSize(width: width / 3, height: width / 3)
+        let pirateNode = PirateNode(size: pirateSize)
+        let pirateGridPosition = int2(size.width / 2, size.height / 2)
+        pirateNode.position = gameScene.point(at: pirateGridPosition)
+        pirateNode.zPosition = Constants.zPosition.pirate.rawValue
+        board.addChild(pirateNode)
+        
+        let pirate = PirateEntity()
+        
+        let nodeComponent = NodeComponent(node: pirateNode)
+        pirate.addComponent(nodeComponent)
+        
+        let inputHandlingComponent = InputHandlingComponent()
+        pirateNode.inputHandler = inputHandlingComponent
+        pirateNode.isUserInteractionEnabled = true
+        pirate.addComponent(inputHandlingComponent)
+        
+        let boardPositionComponent = BoardPositionComponent()
+        boardPositionComponent.boardPosition = BoardPosition(BoardPosition.Unit(pirateGridPosition.x),
+                                                             BoardPosition.Unit(pirateGridPosition.y))
+        pirate.addComponent(boardPositionComponent)
+        
+        pirates.append(pirate)
+    }
 }
 
 // MARK: - GameSceneOutput
 extension Game: GameSceneOutput {
     
     func sceneDidSetUp(scene: SKScene) {
-        setupPlayingBoard(in: scene)
+        let board = setupPlayingBoard(in: scene)
+        setupPirates(on: board)
     }
 }
