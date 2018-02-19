@@ -28,6 +28,8 @@ class Game {
     let level: Level
     private let size: Level.Size
     
+    var stateMachine: GKStateMachine?
+    
     var fieldCells: [FieldNodeEntity] = []
     var pirates: [PirateEntity] = []
     
@@ -132,8 +134,6 @@ class Game {
         pirates.append(pirate)
     }
     
-    
-    var stateMachine: GKStateMachine?
     
     func setupStates() {
         

@@ -54,6 +54,6 @@ extension StartTurnState: SelectionComponentDelegate {
     
     func entityDeselected(_ entity: GKEntity) {
         
-        fatalError("Can't be here")
+        assertionFailure("Can't be here")
     }
 }
