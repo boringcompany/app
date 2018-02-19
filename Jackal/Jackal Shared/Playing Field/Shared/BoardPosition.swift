@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SpriteKit
 
 
 struct BoardPosition {
@@ -25,6 +26,17 @@ struct BoardPosition {
     
     init(_ x: Unit, _ y: Unit, _ z: Unit = 0) {
         self.init(x: x, y: y, z: z)
+    }
+    
+    init(int2: int2) {
+        self.init(x: Unit(int2.x),
+                  y: Unit(int2.y),
+                  z: 0)
+    }
+    
+    
+    var int2Position: int2 {
+        return int2(Int32(x), Int32(y))
     }
 }
 

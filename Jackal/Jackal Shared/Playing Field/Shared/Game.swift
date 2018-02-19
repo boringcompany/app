@@ -25,12 +25,13 @@ class Game {
     }
     
     // MARK: Private Properties
-    private let level: Level
+    let level: Level
     private let size: Level.Size
     
-    private var fieldCells: [FieldNodeEntity] = []
-    private var pirates: [PirateEntity] = []
+    var fieldCells: [FieldNodeEntity] = []
+    var pirates: [PirateEntity] = []
     
+    var selectedPirate: PirateEntity?
     
     // MARK: Public Properties
     lazy var gameScene: GameScene = {
@@ -63,7 +64,8 @@ class Game {
                 let node = CellNode(texture: SKTexture(imageNamed: "suit"),
                                     size: cellSize)
                 
-                node.position = gameScene.point(at: int2(i, j))
+                let boardPosition = int2(i, j)
+                node.position = gameScene.point(at: boardPosition)
                 node.zPosition = Constants.zPosition.fieldCell.rawValue
                 board.addChild(node)
                 
@@ -73,12 +75,13 @@ class Game {
                 
                 let inputHandlingComponent = InputHandlingComponent()
                 node.inputHandler = inputHandlingComponent
-                node.isUserInteractionEnabled = true
                 cell.addComponent(inputHandlingComponent)
                 
+                let selectionComponent = SelectionComponent()
+                cell.addComponent(selectionComponent)
+                
                 let boardPositionComponent = BoardPositionComponent()
-                boardPositionComponent.boardPosition = BoardPosition(BoardPosition.Unit(i),
-                                                                     BoardPosition.Unit(j))
+                boardPositionComponent.boardPosition = BoardPosition(int2: boardPosition)
                 cell.addComponent(boardPositionComponent)
                 
                 fieldCells.append(cell)
@@ -115,8 +118,11 @@ class Game {
         
         let inputHandlingComponent = InputHandlingComponent()
         pirateNode.inputHandler = inputHandlingComponent
-        pirateNode.isUserInteractionEnabled = true
         pirate.addComponent(inputHandlingComponent)
+        
+        let selectionComponent = SelectionComponent()
+        pirate.addComponent(selectionComponent)
+        
         
         let boardPositionComponent = BoardPositionComponent()
         boardPositionComponent.boardPosition = BoardPosition(BoardPosition.Unit(pirateGridPosition.x),
@@ -124,6 +130,20 @@ class Game {
         pirate.addComponent(boardPositionComponent)
         
         pirates.append(pirate)
+    }
+    
+    
+    var stateMachine: GKStateMachine?
+    
+    func setupStates() {
+        
+        let states: [GKState] = [
+            StartTurnState(game: self),
+            PirateSelectedState(game: self)
+        ]
+        
+        self.stateMachine = GKStateMachine(states: states)
+        self.stateMachine?.enter(StartTurnState.self)
     }
 }
 
@@ -133,5 +153,6 @@ extension Game: GameSceneOutput {
     func sceneDidSetUp(scene: SKScene) {
         let board = setupPlayingBoard(in: scene)
         setupPirates(on: board)
+        setupStates()
     }
 }
