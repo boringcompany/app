@@ -52,7 +52,10 @@ class PirateSelectedState: TurnState {
             let selectionComponent = cell.component(ofType: SelectionComponent.self)
             selectionComponent?.delegate = self
             
-            cell.highlightedSpriteComponent?.node.isHidden = !isCellAvailable
+            let spriteComponent = cell.component(ofType: SpriteComponent.self)
+            if let cellNode = spriteComponent?.node as? CellNode {
+                cellNode.highlighted = isCellAvailable
+            }
         }
     }
     
@@ -107,7 +110,10 @@ extension PirateSelectedState: SelectionComponentDelegate {
             self.stateMachine?.enter(StartTurnState.self)
             
             for cell in self.game.fieldCells {
-                cell.highlightedSpriteComponent?.node.isHidden = true
+                let spriteComponent = cell.component(ofType: SpriteComponent.self)
+                if let cellNode = spriteComponent?.node as? CellNode {
+                    cellNode.highlighted = false
+                }
             }
             
         default:

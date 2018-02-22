@@ -72,26 +72,12 @@ class Game {
                 node.zPosition = Constants.zPosition.fieldCell.rawValue
                 board.addChild(node)
                 
-                let highlightedNode = CellNode(texture: SKTexture(imageNamed: "suit_highlighted"),
-                                               size: cellSize)
-                highlightedNode.position = node.position
-                highlightedNode.zPosition = Constants.zPosition.highlightedFieldCell.rawValue
-                highlightedNode.isHidden = true
-                board.addChild(highlightedNode)
-                
                 // entity
                 let cell = FieldNodeEntity()
-                
-                let baseSpriteComponent = SpriteComponent(node: node)
-                cell.baseSpriteComponent = baseSpriteComponent
-                cell.addComponent(baseSpriteComponent)
-                
-                let highlightedSpriteComponent = SpriteComponent(node: highlightedNode)
-                cell.highlightedSpriteComponent = highlightedSpriteComponent
-                cell.addComponent(highlightedSpriteComponent)
+                cell.addComponent(SpriteComponent(node: node))
                 
                 let inputHandlingComponent = InputHandlingComponent()
-                highlightedNode.inputHandler = inputHandlingComponent
+                node.inputHandler = inputHandlingComponent
                 cell.addComponent(inputHandlingComponent)
                 
                 let selectionComponent = SelectionComponent()
