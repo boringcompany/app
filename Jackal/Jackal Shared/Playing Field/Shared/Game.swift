@@ -26,7 +26,7 @@ class Game {
     
     // MARK: Private Properties
     let level: Level
-    private let size: Level.Size
+    private let size: Level.Configuration.Size
     
     var stateMachine: GKStateMachine?
     
@@ -42,9 +42,9 @@ class Game {
     
     // MARK: Lifecycle
     init() {
-        size = Level.Size(width: Constants.width,
-                          height: Constants.height)
-        level = Level(with: size)
+        let configuration = Level.Configuration.standard
+        size = configuration.size
+        level = Level(configuration: configuration)
     }
     
     // MARK: Private
