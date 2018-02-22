@@ -10,4 +10,5 @@ import Foundation
 import GameplayKit
 
 class FieldNodeEntity: GKEntity {
+    
 }

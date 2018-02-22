@@ -20,7 +20,6 @@ class Game {
         enum zPosition: CGFloat {
             
             case fieldCell = 0
-            case highlightedFieldCell = 1
             case pirate = 100
         }
     }
