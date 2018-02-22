@@ -20,6 +20,7 @@ class Game {
         enum zPosition: CGFloat {
             
             case fieldCell = 0
+            case highlightedFieldCell = 1
             case pirate = 100
         }
     }
@@ -71,12 +72,26 @@ class Game {
                 node.zPosition = Constants.zPosition.fieldCell.rawValue
                 board.addChild(node)
                 
+                let highlightedNode = CellNode(texture: SKTexture(imageNamed: "suit_highlighted"),
+                                               size: cellSize)
+                highlightedNode.position = node.position
+                highlightedNode.zPosition = Constants.zPosition.highlightedFieldCell.rawValue
+                highlightedNode.isHidden = true
+                board.addChild(highlightedNode)
+                
                 // entity
                 let cell = FieldNodeEntity()
-                cell.addComponent(SpriteComponent(node: node))
+                
+                let baseSpriteComponent = SpriteComponent(node: node)
+                cell.baseSpriteComponent = baseSpriteComponent
+                cell.addComponent(baseSpriteComponent)
+                
+                let highlightedSpriteComponent = SpriteComponent(node: highlightedNode)
+                cell.highlightedSpriteComponent = highlightedSpriteComponent
+                cell.addComponent(highlightedSpriteComponent)
                 
                 let inputHandlingComponent = InputHandlingComponent()
-                node.inputHandler = inputHandlingComponent
+                highlightedNode.inputHandler = inputHandlingComponent
                 cell.addComponent(inputHandlingComponent)
                 
                 let selectionComponent = SelectionComponent()

@@ -10,5 +10,6 @@ import Foundation
 import GameplayKit
 
 class FieldNodeEntity: GKEntity {
-    
+    var baseSpriteComponent: SpriteComponent?
+    var highlightedSpriteComponent: SpriteComponent?
 }
