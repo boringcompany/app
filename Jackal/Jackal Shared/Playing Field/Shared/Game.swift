@@ -16,12 +16,24 @@ class Game {
     private enum Constants {
         static let width: Int32 = 11
         static let height: Int32 = 11
-        static let cellWidth = 90
+        
+        enum zPosition: CGFloat {
+            
+            case fieldCell = 0
+            case pirate = 100
+        }
     }
     
     // MARK: Private Properties
-    private let level: Level
+    let level: Level
     private let size: Level.Size
+    
+    var stateMachine: GKStateMachine?
+    
+    var fieldCells: [FieldNodeEntity] = []
+    var pirates: [PirateEntity] = []
+    
+    var selectedPirate: PirateEntity?
     
     // MARK: Public Properties
     lazy var gameScene: GameScene = {
@@ -36,33 +48,102 @@ class Game {
     }
     
     // MARK: Private
-    private func setupPlayingBoard(in scene: SKScene) {
+    
+    private func setupPlayingBoard(in scene: SKScene) -> SKNode {
         scene.backgroundColor = .blue
         let sceneSize = min(scene.size.width, scene.size.height)
         let board = SKNode()
         board.position = CGPoint(x: -sceneSize/2, y: -sceneSize/2)
-        let width = CGFloat(Constants.cellWidth)
-        let graph = level.graph
+        
+        let width = CGFloat(gameScene.cellWidth)
         let cellSize = CGSize(width: width, height: width)
+        
         for i in 0..<size.width {
             for j in 0..<size.height {
+                
                 guard !isCorner(x: i, y: j, height: size.height, width: size.width) else { continue }
-                if graph.node(atGridPosition: vector_int2(x: i, y: j)) != nil {
-                    let node = SKSpriteNode(texture: SKTexture(imageNamed: "suit"),
-                                            size: cellSize)
-                    let x = CGFloat(i) * width + width / 2
-                    let y = CGFloat(j) * width  + width / 2
-                    node.position = CGPoint(x: x, y: y)
-                    board.addChild(node)
-                }
+                
+                let node = CellNode(texture: SKTexture(imageNamed: "suit"),
+                                    size: cellSize)
+                
+                let boardPosition = int2(i, j)
+                node.position = gameScene.point(at: boardPosition)
+                node.zPosition = Constants.zPosition.fieldCell.rawValue
+                board.addChild(node)
+                
+                // entity
+                let cell = FieldNodeEntity()
+                cell.addComponent(SpriteComponent(node: node))
+                
+                let inputHandlingComponent = InputHandlingComponent()
+                node.inputHandler = inputHandlingComponent
+                cell.addComponent(inputHandlingComponent)
+                
+                let selectionComponent = SelectionComponent()
+                cell.addComponent(selectionComponent)
+                
+                let boardPositionComponent = BoardPositionComponent()
+                boardPositionComponent.boardPosition = BoardPosition(int2: boardPosition)
+                cell.addComponent(boardPositionComponent)
+                
+                fieldCells.append(cell)
             }
         }
+        
         scene.addChild(board)
+
+        return board
     }
+    
     
     func isCorner(x: Int32, y: Int32, height: Int32, width: Int32) -> Bool {
         let conditions: [Bool] = [x == 0, y == 0, x == width - 1, y == height - 1]
         return conditions.filter { $0 }.count == 2
+    }
+    
+    
+    private func setupPirates(on board: SKNode) {
+        
+        let width = CGFloat(gameScene.cellWidth)
+
+        let pirateSize = CGSize(width: width / 3, height: width / 3)
+        let pirateNode = PirateNode(size: pirateSize)
+        let pirateGridPosition = int2(size.width / 2, size.height / 2)
+        pirateNode.position = gameScene.point(at: pirateGridPosition)
+        pirateNode.zPosition = Constants.zPosition.pirate.rawValue
+        board.addChild(pirateNode)
+        
+        let pirate = PirateEntity()
+        
+        let nodeComponent = NodeComponent(node: pirateNode)
+        pirate.addComponent(nodeComponent)
+        
+        let inputHandlingComponent = InputHandlingComponent()
+        pirateNode.inputHandler = inputHandlingComponent
+        pirate.addComponent(inputHandlingComponent)
+        
+        let selectionComponent = SelectionComponent()
+        pirate.addComponent(selectionComponent)
+        
+        
+        let boardPositionComponent = BoardPositionComponent()
+        boardPositionComponent.boardPosition = BoardPosition(BoardPosition.Unit(pirateGridPosition.x),
+                                                             BoardPosition.Unit(pirateGridPosition.y))
+        pirate.addComponent(boardPositionComponent)
+        
+        pirates.append(pirate)
+    }
+    
+    
+    func setupStates() {
+        
+        let states: [GKState] = [
+            StartTurnState(game: self),
+            PirateSelectedState(game: self)
+        ]
+        
+        self.stateMachine = GKStateMachine(states: states)
+        self.stateMachine?.enter(StartTurnState.self)
     }
 }
 
@@ -70,6 +151,8 @@ class Game {
 extension Game: GameSceneOutput {
     
     func sceneDidSetUp(scene: SKScene) {
-        setupPlayingBoard(in: scene)
+        let board = setupPlayingBoard(in: scene)
+        setupPirates(on: board)
+        setupStates()
     }
 }
