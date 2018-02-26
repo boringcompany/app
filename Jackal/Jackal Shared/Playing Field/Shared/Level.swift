@@ -19,14 +19,14 @@ class Level {
             let height: Int
         }
         
-        struct FieldNoteAmount {
+        struct FieldNodeAmount {
             let node: FieldNodeDescribable.Type
             let amount: UInt
         }
         
         // MARK: Public Properties
         let size: Size
-        let amountOfFields: [FieldNoteAmount]
+        let amountOfFields: [FieldNodeAmount]
     }
     
     // MARK: Private Properties
