@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570AA19620447DCF00B4EB0B /* ArrowNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AA19520447DCF00B4EB0B /* ArrowNode.swift */; };
+		570AA19720447DCF00B4EB0B /* ArrowNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AA19520447DCF00B4EB0B /* ArrowNode.swift */; };
+		570AA19820447DCF00B4EB0B /* ArrowNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AA19520447DCF00B4EB0B /* ArrowNode.swift */; };
 		5758C033204474C200F552AA /* Int2+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758C032204474C200F552AA /* Int2+Initialization.swift */; };
 		5758C034204474C200F552AA /* Int2+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758C032204474C200F552AA /* Int2+Initialization.swift */; };
 		5758C035204474C200F552AA /* Int2+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758C032204474C200F552AA /* Int2+Initialization.swift */; };
@@ -126,6 +129,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		570AA19520447DCF00B4EB0B /* ArrowNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowNode.swift; sourceTree = "<group>"; };
 		5758C032204474C200F552AA /* Int2+Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int2+Initialization.swift"; sourceTree = "<group>"; };
 		5758C0362044762A00F552AA /* MoveType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveType.swift; sourceTree = "<group>"; };
 		579CF3D4201D038A00DCC9CF /* SpriteKit+Inputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpriteKit+Inputs.swift"; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 			children = (
 				FB20C937203F1E08008491E6 /* FieldNodeDescribable.swift */,
 				FB20C93B203F1ED8008491E6 /* EmptyFieldNode.swift */,
+				570AA19520447DCF00B4EB0B /* ArrowNode.swift */,
 			);
 			path = FieldNodes;
 			sourceTree = "<group>";
@@ -581,6 +586,7 @@
 				5758C0372044762A00F552AA /* MoveType.swift in Sources */,
 				FBC43404200739AC00134AB7 /* AppDelegate.swift in Sources */,
 				88D281762038BE6B0046E67E /* CellNode.swift in Sources */,
+				570AA19620447DCF00B4EB0B /* ArrowNode.swift in Sources */,
 				88FC9617201F501900A979B9 /* BoardPosition.swift in Sources */,
 				579CF3D5201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */,
 				FB77E690201615CC00B9A75B /* FieldNodeEntity.swift in Sources */,
@@ -618,6 +624,7 @@
 				5758C0382044762A00F552AA /* MoveType.swift in Sources */,
 				FBC4342E200739AC00134AB7 /* AppDelegate.swift in Sources */,
 				88D281772038BE6B0046E67E /* CellNode.swift in Sources */,
+				570AA19720447DCF00B4EB0B /* ArrowNode.swift in Sources */,
 				88FC9618201F501900A979B9 /* BoardPosition.swift in Sources */,
 				579CF3D6201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */,
 				FB77E691201615CC00B9A75B /* FieldNodeEntity.swift in Sources */,
@@ -655,6 +662,7 @@
 				5758C0392044762A00F552AA /* MoveType.swift in Sources */,
 				FBC4343C200739AC00134AB7 /* AppDelegate.swift in Sources */,
 				88D281782038BE6B0046E67E /* CellNode.swift in Sources */,
+				570AA19820447DCF00B4EB0B /* ArrowNode.swift in Sources */,
 				88FC9619201F501900A979B9 /* BoardPosition.swift in Sources */,
 				579CF3D7201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */,
 				FB77E692201615CC00B9A75B /* FieldNodeEntity.swift in Sources */,
