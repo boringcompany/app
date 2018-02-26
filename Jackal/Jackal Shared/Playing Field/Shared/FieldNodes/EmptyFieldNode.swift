@@ -8,10 +8,12 @@
 
 struct EmptyFieldNode: FieldNodeDescribable {
     
+    // MARK: Public Properties
     var moveType: MoveType
     var rotation: Rotation
     var textureName = "suit"
     
+    // MARK: Lifecycle
     init(rotation: Rotation) {
         let moves: [Move] = [Move(x: -1, y: -1),
                              Move(x:  0, y: -1),

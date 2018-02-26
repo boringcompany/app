@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum MoveType {
-    case any
-    case oneOf([Move])
-}
-
 struct Move {
     
     typealias Unit = Int8
@@ -21,6 +16,7 @@ struct Move {
     let y: Unit
 }
 
+// MARK: - Hashable
 extension Move: Hashable {
     
     static func ==(lhs: Move, rhs: Move) -> Bool {
