@@ -15,8 +15,8 @@ class Level {
         
         // MARK: Public Data Structures
         struct Size {
-            let width: Int32
-            let height: Int32
+            let width: Int
+            let height: Int
         }
         
         struct FieldNoteAmount {
@@ -89,5 +89,9 @@ class Level {
         }
         
         return positions
+    }
+    
+    func textureNameAt(x: Int, y: Int) -> String {
+        return initialNodes[x][y].textureName
     }
 }

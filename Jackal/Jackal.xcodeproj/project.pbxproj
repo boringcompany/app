@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5758C033204474C200F552AA /* Int2+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758C032204474C200F552AA /* Int2+Initialization.swift */; };
+		5758C034204474C200F552AA /* Int2+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758C032204474C200F552AA /* Int2+Initialization.swift */; };
+		5758C035204474C200F552AA /* Int2+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758C032204474C200F552AA /* Int2+Initialization.swift */; };
 		579CF3D5201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CF3D4201D038A00DCC9CF /* SpriteKit+Inputs.swift */; };
 		579CF3D6201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CF3D4201D038A00DCC9CF /* SpriteKit+Inputs.swift */; };
 		579CF3D7201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CF3D4201D038A00DCC9CF /* SpriteKit+Inputs.swift */; };
@@ -120,6 +123,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5758C032204474C200F552AA /* Int2+Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int2+Initialization.swift"; sourceTree = "<group>"; };
 		579CF3D4201D038A00DCC9CF /* SpriteKit+Inputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpriteKit+Inputs.swift"; sourceTree = "<group>"; };
 		579CF3D8201D0A7000DCC9CF /* InputHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHandler.swift; sourceTree = "<group>"; };
 		88746FEA201E43D10011D07A /* PirateNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateNode.swift; sourceTree = "<group>"; };
@@ -197,6 +201,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5758C0312044748F00F552AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5758C032204474C200F552AA /* Int2+Initialization.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		88D28181203ABCD10046E67E /* GameStates */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +258,7 @@
 		FB77E69B20161D7100B9A75B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5758C0312044748F00F552AA /* Extensions */,
 				FB20C944203F2A03008491E6 /* Basic Types */,
 				FB20C936203F1DDE008491E6 /* FieldNodes */,
 				88D28181203ABCD10046E67E /* GameStates */,
@@ -552,6 +565,7 @@
 				88D28183203ABCE40046E67E /* GameState.swift in Sources */,
 				88D28187203ABD330046E67E /* TurnState.swift in Sources */,
 				FB20C93C203F1ED8008491E6 /* EmptyFieldNode.swift in Sources */,
+				5758C033204474C200F552AA /* Int2+Initialization.swift in Sources */,
 				88746FEF201E45560011D07A /* PirateEntity.swift in Sources */,
 				FB77E6942016162F00B9A75B /* SpriteComponent.swift in Sources */,
 				88D2818F203ABD980046E67E /* PirateSelectedState.swift in Sources */,
@@ -587,6 +601,7 @@
 				88D28184203ABCE40046E67E /* GameState.swift in Sources */,
 				88D28188203ABD330046E67E /* TurnState.swift in Sources */,
 				FB20C93D203F1ED8008491E6 /* EmptyFieldNode.swift in Sources */,
+				5758C034204474C200F552AA /* Int2+Initialization.swift in Sources */,
 				88746FF0201E45560011D07A /* PirateEntity.swift in Sources */,
 				FB77E6952016162F00B9A75B /* SpriteComponent.swift in Sources */,
 				88D28190203ABD980046E67E /* PirateSelectedState.swift in Sources */,
@@ -622,6 +637,7 @@
 				88D28185203ABCE40046E67E /* GameState.swift in Sources */,
 				88D28189203ABD330046E67E /* TurnState.swift in Sources */,
 				FB20C93E203F1ED8008491E6 /* EmptyFieldNode.swift in Sources */,
+				5758C035204474C200F552AA /* Int2+Initialization.swift in Sources */,
 				88746FF1201E45560011D07A /* PirateEntity.swift in Sources */,
 				FB77E6962016162F00B9A75B /* SpriteComponent.swift in Sources */,
 				88D28191203ABD980046E67E /* PirateSelectedState.swift in Sources */,

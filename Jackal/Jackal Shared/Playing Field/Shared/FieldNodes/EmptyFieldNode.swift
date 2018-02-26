@@ -10,6 +10,7 @@ struct EmptyFieldNode: FieldNodeDescribable {
     
     var moveType: MoveType
     var rotation: Rotation
+    var textureName = "suit"
     
     init(rotation: Rotation) {
         let moves: [Move] = [Move(x: -1, y: -1),

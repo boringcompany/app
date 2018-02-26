@@ -14,8 +14,6 @@ class Game {
     
     // MARK: Private Data Structures
     private enum Constants {
-        static let width: Int32 = 11
-        static let height: Int32 = 11
         
         enum zPosition: CGFloat {
             
@@ -48,7 +46,6 @@ class Game {
     }
     
     // MARK: Private
-    
     private func setupPlayingBoard(in scene: SKScene) -> SKNode {
         scene.backgroundColor = .blue
         let sceneSize = min(scene.size.width, scene.size.height)
@@ -58,15 +55,16 @@ class Game {
         let width = CGFloat(gameScene.cellWidth)
         let cellSize = CGSize(width: width, height: width)
         
-        for i in 0..<size.width {
-            for j in 0..<size.height {
+        for x in 0..<size.width {
+            for y in 0..<size.height {
                 
-                guard !isCorner(x: i, y: j, height: size.height, width: size.width) else { continue }
+                guard !isCorner(x: x, y: y, height: size.height, width: size.width) else { continue }
                 
-                let node = CellNode(texture: SKTexture(imageNamed: "suit"),
+                let textureName = level.textureNameAt(x: x, y: y)
+                let node = CellNode(texture: SKTexture(imageNamed: textureName),
                                     size: cellSize)
                 
-                let boardPosition = int2(i, j)
+                let boardPosition = int2(x, y)
                 node.position = gameScene.point(at: boardPosition)
                 node.zPosition = Constants.zPosition.fieldCell.rawValue
                 board.addChild(node)
@@ -96,7 +94,7 @@ class Game {
     }
     
     
-    func isCorner(x: Int32, y: Int32, height: Int32, width: Int32) -> Bool {
+    func isCorner(x: Int, y: Int, height: Int, width: Int) -> Bool {
         let conditions: [Bool] = [x == 0, y == 0, x == width - 1, y == height - 1]
         return conditions.filter { $0 }.count == 2
     }

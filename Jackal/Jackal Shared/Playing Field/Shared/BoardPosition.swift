@@ -36,7 +36,7 @@ struct BoardPosition {
     
     
     var int2Position: int2 {
-        return int2(Int32(x), Int32(y))
+        return int2(x, y)
     }
 }
 

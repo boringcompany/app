@@ -12,4 +12,5 @@ protocol FieldNodeDescribable {
     
     var moveType: MoveType { get }
     var rotation: Rotation { get }
+    var textureName: String { get }
 }
