@@ -61,6 +61,10 @@
 		88FC9624201F690700A979B9 /* InputHandlingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC9623201F690700A979B9 /* InputHandlingComponent.swift */; };
 		88FC9625201F690700A979B9 /* InputHandlingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC9623201F690700A979B9 /* InputHandlingComponent.swift */; };
 		88FC9626201F690700A979B9 /* InputHandlingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC9623201F690700A979B9 /* InputHandlingComponent.swift */; };
+		BD5E78952046DA1C00DBAC18 /* TurntableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */; };
+		BD5E78962046DA1C00DBAC18 /* TurntableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */; };
+		BD5E78972046DA1C00DBAC18 /* TurntableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */; };
+		BD5E78982046DA1C00DBAC18 /* TurntableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */; };
 		BDAC86D2203F05BD006D39DA /* HighlightedCellShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = BDAC86D1203F05BD006D39DA /* HighlightedCellShader.fsh */; };
 		BDAC86D3203F05BD006D39DA /* HighlightedCellShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = BDAC86D1203F05BD006D39DA /* HighlightedCellShader.fsh */; };
 		BDAC86D4203F05BD006D39DA /* HighlightedCellShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = BDAC86D1203F05BD006D39DA /* HighlightedCellShader.fsh */; };
@@ -172,6 +176,7 @@
 		88FC961B201F512B00A979B9 /* BoardGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGraph.swift; sourceTree = "<group>"; };
 		88FC961F201F558B00A979B9 /* BoardGraphNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGraphNode.swift; sourceTree = "<group>"; };
 		88FC9623201F690700A979B9 /* InputHandlingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHandlingComponent.swift; sourceTree = "<group>"; };
+		BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableNode.swift; sourceTree = "<group>"; };
 		BDAC86D1203F05BD006D39DA /* HighlightedCellShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = HighlightedCellShader.fsh; sourceTree = "<group>"; };
 		BDAC86D5203F0818006D39DA /* ShaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderManager.swift; sourceTree = "<group>"; };
 		FB079931204690B200F75B82 /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
@@ -298,6 +303,7 @@
 				FB20C93B203F1ED8008491E6 /* EmptyNode.swift */,
 				570AA19520447DCF00B4EB0B /* ArrowNode.swift */,
 				FB9C53D82046D83600CE366D /* HorseNode.swift */,
+				BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */,
 			);
 			path = FieldNodes;
 			sourceTree = "<group>";
@@ -642,6 +648,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD5E78982046DA1C00DBAC18 /* TurntableNode.swift in Sources */,
 				FB07995F2046A1C000F75B82 /* EmptyNode.swift in Sources */,
 				FB0799632046A1C500F75B82 /* Rotation.swift in Sources */,
 				FB07995E2046A1C000F75B82 /* FieldNodeDescribing.swift in Sources */,
@@ -658,6 +665,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD5E78952046DA1C00DBAC18 /* TurntableNode.swift in Sources */,
 				FB20C94E203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */,
 				88746FEB201E43D10011D07A /* PirateNode.swift in Sources */,
 				FB77E6982016172400B9A75B /* Level.swift in Sources */,
@@ -698,6 +706,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD5E78962046DA1C00DBAC18 /* TurntableNode.swift in Sources */,
 				FB20C94F203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */,
 				88746FEC201E43D10011D07A /* PirateNode.swift in Sources */,
 				FB77E6992016172400B9A75B /* Level.swift in Sources */,
@@ -738,6 +747,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD5E78972046DA1C00DBAC18 /* TurntableNode.swift in Sources */,
 				FB20C950203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */,
 				88746FED201E43D10011D07A /* PirateNode.swift in Sources */,
 				FB77E69A2016172400B9A75B /* Level.swift in Sources */,
