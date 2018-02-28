@@ -24,7 +24,10 @@ class FieldNodesTests: XCTest {
     }
     
     var nodes: [FieldNodeDescribing] {
-        return [EmptyFieldNode(rotation: .none),
+        return [EmptyNode(rotation: .none, type: .hole),
+                EmptyNode(rotation: .none, type: .tree),
+                EmptyNode(rotation: .none, type: .stump),
+                EmptyNode(rotation: .none, type: .log),
                 ArrowNode(rotation: .none, type: .unidirectionalStraight),
                 ArrowNode(rotation: .none, type: .unidirectionalDiagonal),
                 ArrowNode(rotation: .none, type: .bidirectionalStraight),

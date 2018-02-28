@@ -16,7 +16,7 @@ extension Level.Configuration.Size {
 extension Level.Configuration {
     
     static var standard: Level.Configuration {
-        let empty = FieldNodeAmount(node: EmptyFieldNode.self,
+        let empty = FieldNodeAmount(node: EmptyNode.self,
                                     amount: UInt(Size.standard.height * Size.standard.width))
         return Level.Configuration(size: Size.standard,
                                    amountOfFields: [empty])

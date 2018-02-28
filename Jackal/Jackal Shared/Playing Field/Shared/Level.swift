@@ -43,7 +43,7 @@ class Level {
         
         graph = BoardGraph()
         let size = configuration.size
-        var fieldNodes: [[FieldNodeDescribing]] = Array(repeating: Array(repeating: EmptyFieldNode(rotation: .none),
+        var fieldNodes: [[FieldNodeDescribing]] = Array(repeating: Array(repeating: EmptyNode(rotation: .none, type: .hole),
                                                                          count: Int(size.height)),
                                                         count: Int(size.width))
         for x in 0..<Int8(size.width) {

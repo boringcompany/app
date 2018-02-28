@@ -7,7 +7,8 @@
 //
 
 struct ArrowNode: FieldNodeDescribing {
-    
+
+    // MARK: Public Data Structures
     enum `Type`: String {
         case unidirectionalStraight
         case unidirectionalDiagonal

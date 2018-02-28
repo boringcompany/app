@@ -72,7 +72,7 @@
 		FB079934204690B200F75B82 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB079931204690B200F75B82 /* ActionType.swift */; };
 		FB07995D2046A17D00F75B82 /* AssetsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB07995C2046A17D00F75B82 /* AssetsTest.swift */; };
 		FB07995E2046A1C000F75B82 /* FieldNodeDescribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C937203F1E08008491E6 /* FieldNodeDescribing.swift */; };
-		FB07995F2046A1C000F75B82 /* EmptyFieldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C93B203F1ED8008491E6 /* EmptyFieldNode.swift */; };
+		FB07995F2046A1C000F75B82 /* EmptyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C93B203F1ED8008491E6 /* EmptyNode.swift */; };
 		FB0799602046A1C000F75B82 /* ArrowNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AA19520447DCF00B4EB0B /* ArrowNode.swift */; };
 		FB0799612046A1C500F75B82 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C940203F28AB008491E6 /* Move.swift */; };
 		FB0799622046A1C500F75B82 /* MoveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758C0362044762A00F552AA /* MoveType.swift */; };
@@ -81,9 +81,9 @@
 		FB20C938203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C937203F1E08008491E6 /* FieldNodeDescribing.swift */; };
 		FB20C939203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C937203F1E08008491E6 /* FieldNodeDescribing.swift */; };
 		FB20C93A203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C937203F1E08008491E6 /* FieldNodeDescribing.swift */; };
-		FB20C93C203F1ED8008491E6 /* EmptyFieldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C93B203F1ED8008491E6 /* EmptyFieldNode.swift */; };
-		FB20C93D203F1ED8008491E6 /* EmptyFieldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C93B203F1ED8008491E6 /* EmptyFieldNode.swift */; };
-		FB20C93E203F1ED8008491E6 /* EmptyFieldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C93B203F1ED8008491E6 /* EmptyFieldNode.swift */; };
+		FB20C93C203F1ED8008491E6 /* EmptyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C93B203F1ED8008491E6 /* EmptyNode.swift */; };
+		FB20C93D203F1ED8008491E6 /* EmptyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C93B203F1ED8008491E6 /* EmptyNode.swift */; };
+		FB20C93E203F1ED8008491E6 /* EmptyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C93B203F1ED8008491E6 /* EmptyNode.swift */; };
 		FB20C941203F28AB008491E6 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C940203F28AB008491E6 /* Move.swift */; };
 		FB20C942203F28AB008491E6 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C940203F28AB008491E6 /* Move.swift */; };
 		FB20C943203F28AB008491E6 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C940203F28AB008491E6 /* Move.swift */; };
@@ -175,7 +175,7 @@
 		FB0799562046A16C00F75B82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB07995C2046A17D00F75B82 /* AssetsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTest.swift; sourceTree = "<group>"; };
 		FB20C937203F1E08008491E6 /* FieldNodeDescribing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldNodeDescribing.swift; sourceTree = "<group>"; };
-		FB20C93B203F1ED8008491E6 /* EmptyFieldNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFieldNode.swift; sourceTree = "<group>"; };
+		FB20C93B203F1ED8008491E6 /* EmptyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNode.swift; sourceTree = "<group>"; };
 		FB20C940203F28AB008491E6 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		FB20C945203F2A16008491E6 /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
 		FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Level+StandartConfiguration.swift"; sourceTree = "<group>"; };
@@ -290,7 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				FB20C937203F1E08008491E6 /* FieldNodeDescribing.swift */,
-				FB20C93B203F1ED8008491E6 /* EmptyFieldNode.swift */,
+				FB20C93B203F1ED8008491E6 /* EmptyNode.swift */,
 				570AA19520447DCF00B4EB0B /* ArrowNode.swift */,
 			);
 			path = FieldNodes;
@@ -636,7 +636,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB07995F2046A1C000F75B82 /* EmptyFieldNode.swift in Sources */,
+				FB07995F2046A1C000F75B82 /* EmptyNode.swift in Sources */,
 				FB0799632046A1C500F75B82 /* Rotation.swift in Sources */,
 				FB07995E2046A1C000F75B82 /* FieldNodeDescribing.swift in Sources */,
 				FB07995D2046A17D00F75B82 /* AssetsTest.swift in Sources */,
@@ -665,7 +665,7 @@
 				BDAC86D6203F0818006D39DA /* ShaderManager.swift in Sources */,
 				88D28183203ABCE40046E67E /* GameState.swift in Sources */,
 				88D28187203ABD330046E67E /* TurnState.swift in Sources */,
-				FB20C93C203F1ED8008491E6 /* EmptyFieldNode.swift in Sources */,
+				FB20C93C203F1ED8008491E6 /* EmptyNode.swift in Sources */,
 				5758C033204474C200F552AA /* Int2+Initialization.swift in Sources */,
 				88746FEF201E45560011D07A /* PirateEntity.swift in Sources */,
 				FB77E6942016162F00B9A75B /* SpriteComponent.swift in Sources */,
@@ -704,7 +704,7 @@
 				BDAC86D7203F0818006D39DA /* ShaderManager.swift in Sources */,
 				88D28184203ABCE40046E67E /* GameState.swift in Sources */,
 				88D28188203ABD330046E67E /* TurnState.swift in Sources */,
-				FB20C93D203F1ED8008491E6 /* EmptyFieldNode.swift in Sources */,
+				FB20C93D203F1ED8008491E6 /* EmptyNode.swift in Sources */,
 				5758C034204474C200F552AA /* Int2+Initialization.swift in Sources */,
 				88746FF0201E45560011D07A /* PirateEntity.swift in Sources */,
 				FB77E6952016162F00B9A75B /* SpriteComponent.swift in Sources */,
@@ -743,7 +743,7 @@
 				BDAC86D8203F0818006D39DA /* ShaderManager.swift in Sources */,
 				88D28185203ABCE40046E67E /* GameState.swift in Sources */,
 				88D28189203ABD330046E67E /* TurnState.swift in Sources */,
-				FB20C93E203F1ED8008491E6 /* EmptyFieldNode.swift in Sources */,
+				FB20C93E203F1ED8008491E6 /* EmptyNode.swift in Sources */,
 				5758C035204474C200F552AA /* Int2+Initialization.swift in Sources */,
 				88746FF1201E45560011D07A /* PirateEntity.swift in Sources */,
 				FB77E6962016162F00B9A75B /* SpriteComponent.swift in Sources */,
