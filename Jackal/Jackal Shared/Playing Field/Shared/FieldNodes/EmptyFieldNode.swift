@@ -6,12 +6,15 @@
 //  Copyright © 2018 Boring Company. All rights reserved.
 //
 
-struct EmptyFieldNode: FieldNodeDescribable {
+struct EmptyFieldNode: FieldNodeDescribing {
     
     // MARK: Public Properties
     var moveType: MoveType
     var rotation: Rotation
     var textureName = "suit"
+    var canContainObject = true
+    var canStay = true
+    var actionType: ActionType = .permanent
     
     // MARK: Lifecycle
     init(rotation: Rotation) {
