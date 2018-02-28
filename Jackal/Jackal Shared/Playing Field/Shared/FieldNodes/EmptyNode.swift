@@ -18,7 +18,7 @@ struct EmptyNode: FieldNodeDescribing {
     
     // MARK: Public Properties
     var moveType: MoveType
-    var rotation: Rotation
+    var rotation: Rotation = .none
     var canContainObject = true
     var canStay = true
     var actionType: ActionType = .permanent
@@ -26,7 +26,7 @@ struct EmptyNode: FieldNodeDescribing {
     var textureName: String
     
     // MARK: Lifecycle
-    init(rotation: Rotation, type: Type) {
+    init(type: Type = .hole) {
         let moves: [Move] = [Move(x: -1, y: -1),
                              Move(x:  0, y: -1),
                              Move(x: +1, y: -1),
@@ -37,7 +37,6 @@ struct EmptyNode: FieldNodeDescribing {
                              Move(x: +1, y: +1)]
         moveType = .oneOf(moves)
         textureName = type.rawValue
-        self.rotation = rotation
     }
     
     // MARK: Public

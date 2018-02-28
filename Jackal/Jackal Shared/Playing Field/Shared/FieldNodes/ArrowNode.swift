@@ -21,7 +21,7 @@ struct ArrowNode: FieldNodeDescribing {
     
     // MARK: Public Properties
     var moveType: MoveType
-    var rotation: Rotation
+    var rotation: Rotation = .none
     var canContainObject = true
     var canStay = false
     var actionType: ActionType = .permanent
@@ -29,11 +29,10 @@ struct ArrowNode: FieldNodeDescribing {
     var textureName: String
     
     // MARK: Lifecycle
-    init(rotation: Rotation, type: Type) {
+    init(type: Type) {
         let info = ArrowNode.info(for: type)
         moveType = .oneOf(info.moves)
         textureName = info.textureName
-        self.rotation = rotation
     }
     
     // MARK: Private

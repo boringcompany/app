@@ -43,9 +43,9 @@ class Level {
         
         graph = BoardGraph()
         let size = configuration.size
-        var fieldNodes: [[FieldNodeDescribing]] = Array(repeating: Array(repeating: EmptyNode(rotation: .none, type: .hole),
-                                                                         count: Int(size.height)),
-                                                        count: Int(size.width))
+        
+        var fieldNodes = Level.nodes(for: configuration)//Some kind of mapping
+        
         for x in 0..<Int8(size.width) {
             for y in 0..<Int8(size.height) {
                 let position = BoardPosition(x, y)
@@ -93,5 +93,27 @@ class Level {
     
     func textureNameAt(x: Int, y: Int) -> String {
         return initialNodes[x][y].currentTextureName
+    }
+    
+    //For now, i have no idea how to do it more clearly and safe, u a welcome :-)
+    static func nodes(for configuration: Configuration) -> [[FieldNodeDescribing]] {
+        var nodes: [[FieldNodeDescribing]] = Array(repeating: Array(repeating: EmptyNode(),
+                                      count: Int(configuration.size.height)),
+                     count: Int(configuration.size.width))
+        
+        var x = 0
+        var y = 0
+        
+        for field in configuration.amountOfFields {
+            for _ in 0..<field.amount {
+                nodes[x][y] = field.node
+                x += 1
+                if x == configuration.size.width {
+                    x = 0
+                    y += 1
+                }
+            }
+        }
+        return nodes
     }
 }
