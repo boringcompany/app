@@ -24,17 +24,18 @@ class FieldNodesTests: XCTest {
     }
     
     var nodes: [FieldNodeDescribing] {
-        return [EmptyNode(rotation: .none, type: .hole),
-                EmptyNode(rotation: .none, type: .tree),
-                EmptyNode(rotation: .none, type: .stump),
-                EmptyNode(rotation: .none, type: .log),
-                ArrowNode(rotation: .none, type: .unidirectionalStraight),
-                ArrowNode(rotation: .none, type: .unidirectionalDiagonal),
-                ArrowNode(rotation: .none, type: .bidirectionalStraight),
-                ArrowNode(rotation: .none, type: .bidirectionalDiagonal),
-                ArrowNode(rotation: .none, type: .threeDirectional),
-                ArrowNode(rotation: .none, type: .fourDirectionalStraight),
-                ArrowNode(rotation: .none, type: .fourDirectionalDiagonal)]
+        return [EmptyNode(type: .hole),
+                EmptyNode(type: .tree),
+                EmptyNode(type: .stump),
+                EmptyNode(type: .log),
+                ArrowNode(type: .unidirectionalStraight),
+                ArrowNode(type: .unidirectionalDiagonal),
+                ArrowNode(type: .bidirectionalStraight),
+                ArrowNode(type: .bidirectionalDiagonal),
+                ArrowNode(type: .threeDirectional),
+                ArrowNode(type: .fourDirectionalStraight),
+                ArrowNode(type: .fourDirectionalDiagonal),
+                HorseNode()]
     }
     
     func testAssets() {
