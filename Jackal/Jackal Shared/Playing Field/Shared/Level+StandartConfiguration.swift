@@ -16,9 +16,47 @@ extension Level.Configuration.Size {
 extension Level.Configuration {
     
     static var standard: Level.Configuration {
-        let empty = FieldNodeAmount(node: EmptyNode.self,
-                                    amount: UInt(Size.standard.height * Size.standard.width))
-        return Level.Configuration(size: Size.standard,
-                                   amountOfFields: [empty])
+        let size = Size.standard
+        var fields: [FieldNodeAmount] = []
+        
+        fields.append(FieldNodeAmount(node: EmptyNode(rotation: .none, type: .hole),
+                                      amount: 4))
+        
+        fields.append(FieldNodeAmount(node: EmptyNode(rotation: .none, type: .log),
+                                      amount: 4))
+        
+        fields.append(FieldNodeAmount(node: EmptyNode(rotation: .none, type: .stump),
+                                      amount: 4))
+        
+        fields.append(FieldNodeAmount(node: EmptyNode(rotation: .none, type: .tree),
+                                      amount: 4))
+        
+        fields.append(FieldNodeAmount(node: ArrowNode(rotation: .none, type: .unidirectionalStraight),
+                                      amount: 3))
+        
+        fields.append(FieldNodeAmount(node: ArrowNode(rotation: .none, type: .unidirectionalDiagonal),
+                                      amount: 3))
+        
+        fields.append(FieldNodeAmount(node: ArrowNode(rotation: .none, type: .bidirectionalStraight),
+                                      amount: 3))
+        
+        fields.append(FieldNodeAmount(node: ArrowNode(rotation: .none, type: .bidirectionalDiagonal),
+                                      amount: 3))
+        
+        fields.append(FieldNodeAmount(node: ArrowNode(rotation: .none, type: .threeDirectional),
+                                      amount: 3))
+        
+        fields.append(FieldNodeAmount(node: ArrowNode(rotation: .none, type: .fourDirectionalStraight),
+                                      amount: 3))
+        
+        fields.append(FieldNodeAmount(node: ArrowNode(rotation: .none, type: .fourDirectionalDiagonal),
+                                      amount: 3))
+        
+        //TODO: remove stubs when all kinds of nodes will b ready
+        let amount = fields.map {$0.amount}.reduce(0) { $0 + $1 }
+        fields.append(FieldNodeAmount(node: EmptyNode(rotation: .none, type: .hole),
+                                      amount: UInt(size.width * size.height) - amount))
+        
+        return Level.Configuration(size: size, amountOfFields: fields)
     }
 }

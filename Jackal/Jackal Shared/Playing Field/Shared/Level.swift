@@ -20,7 +20,7 @@ class Level {
         }
         
         struct FieldNodeAmount {
-            let node: FieldNodeDescribing.Type
+            let node: FieldNodeDescribing
             let amount: UInt
         }
         
@@ -92,6 +92,6 @@ class Level {
     }
     
     func textureNameAt(x: Int, y: Int) -> String {
-        return initialNodes[x][y].textureName
+        return initialNodes[x][y].currentTextureName
     }
 }
