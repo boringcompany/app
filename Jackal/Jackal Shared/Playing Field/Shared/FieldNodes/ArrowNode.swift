@@ -8,7 +8,7 @@
 
 struct ArrowNode: FieldNodeDescribing {
     
-    enum `Type` {
+    enum `Type`: String {
         case unidirectionalStraight
         case unidirectionalDiagonal
         case bidirectionalStraight
@@ -24,17 +24,22 @@ struct ArrowNode: FieldNodeDescribing {
     var canContainObject = true
     var canStay = false
     var actionType: ActionType = .permanent
-    var isOpenned = false
+    var isOpen = false
+    var textureName: String
     
     // MARK: Lifecycle
     init(rotation: Rotation, type: Type) {
-        moveType = .oneOf(ArrowNode.moves(for: type))
+        let info = ArrowNode.info(for: type)
+        moveType = .oneOf(info.moves)
+        textureName = info.textureName
         self.rotation = rotation
     }
     
     // MARK: Private
-    private static func moves(for type: Type) -> [Move] {
+    private static func info(for type: Type) -> (moves: [Move], textureName: String) {
         let moves: [Move]
+        let textureName: String = type.rawValue
+        
         switch type {
         case .unidirectionalStraight:
             moves = [Move(x: 0, y: 1)]
@@ -67,6 +72,11 @@ struct ArrowNode: FieldNodeDescribing {
                      Move(x: -1, y: 1),
                      Move(x: 1, y: -1)]
         }
-        return moves
+        return (moves, textureName)
+    }
+    
+    // MARK: Public
+    mutating func toggle() {
+        isOpen = !isOpen
     }
 }

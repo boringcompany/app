@@ -14,7 +14,7 @@ struct EmptyFieldNode: FieldNodeDescribing {
     var canContainObject = true
     var canStay = true
     var actionType: ActionType = .permanent
-    var isOpenned = false
+    var isOpen = false
     
     // MARK: Lifecycle
     init(rotation: Rotation) {
@@ -28,5 +28,10 @@ struct EmptyFieldNode: FieldNodeDescribing {
                              Move(x: +1, y: +1)]
         moveType = .oneOf(moves)
         self.rotation = rotation
+    }
+    
+    // MARK: Public
+    mutating func toggle() {
+        isOpen = !isOpen
     }
 }

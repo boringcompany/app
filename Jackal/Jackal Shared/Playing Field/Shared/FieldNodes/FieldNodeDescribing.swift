@@ -29,7 +29,10 @@ protocol FieldNodeDescribing {
     /// Тип действия (постоянно, при открытии)
     var actionType: ActionType { get }
     
-    var isOpenned: Bool { get }
+    var isOpen: Bool { get }
+    
+    /// Toggling isOpen property if possible
+    mutating func toggle()
 }
 
 extension FieldNodeDescribing {
@@ -39,10 +42,10 @@ extension FieldNodeDescribing {
     }
     
     var currentTextureName: String {
-        return isOpenned ? textureName : suitTextureName
+        return isOpen ? textureName : suitTextureName
     }
     
     var textureName: String {
-        return String(describing: self)
+        return String(describing: Self.self)
     }
 }

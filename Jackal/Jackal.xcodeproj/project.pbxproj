@@ -70,6 +70,14 @@
 		FB079932204690B200F75B82 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB079931204690B200F75B82 /* ActionType.swift */; };
 		FB079933204690B200F75B82 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB079931204690B200F75B82 /* ActionType.swift */; };
 		FB079934204690B200F75B82 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB079931204690B200F75B82 /* ActionType.swift */; };
+		FB07995D2046A17D00F75B82 /* AssetsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB07995C2046A17D00F75B82 /* AssetsTest.swift */; };
+		FB07995E2046A1C000F75B82 /* FieldNodeDescribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C937203F1E08008491E6 /* FieldNodeDescribing.swift */; };
+		FB07995F2046A1C000F75B82 /* EmptyFieldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C93B203F1ED8008491E6 /* EmptyFieldNode.swift */; };
+		FB0799602046A1C000F75B82 /* ArrowNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AA19520447DCF00B4EB0B /* ArrowNode.swift */; };
+		FB0799612046A1C500F75B82 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C940203F28AB008491E6 /* Move.swift */; };
+		FB0799622046A1C500F75B82 /* MoveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758C0362044762A00F552AA /* MoveType.swift */; };
+		FB0799632046A1C500F75B82 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C945203F2A16008491E6 /* Rotation.swift */; };
+		FB0799642046A1C500F75B82 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB079931204690B200F75B82 /* ActionType.swift */; };
 		FB20C938203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C937203F1E08008491E6 /* FieldNodeDescribing.swift */; };
 		FB20C939203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C937203F1E08008491E6 /* FieldNodeDescribing.swift */; };
 		FB20C93A203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C937203F1E08008491E6 /* FieldNodeDescribing.swift */; };
@@ -118,6 +126,16 @@
 		FBC43451200739AC00134AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC433FB200739AC00134AB7 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FB0799572046A16C00F75B82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBC433F3200739AC00134AB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBC433FF200739AC00134AB7;
+			remoteInfo = "Jackal iOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		FBC4345B200739AC00134AB7 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -153,6 +171,9 @@
 		BDAC86D1203F05BD006D39DA /* HighlightedCellShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = HighlightedCellShader.fsh; sourceTree = "<group>"; };
 		BDAC86D5203F0818006D39DA /* ShaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderManager.swift; sourceTree = "<group>"; };
 		FB079931204690B200F75B82 /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
+		FB0799522046A16C00F75B82 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0799562046A16C00F75B82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB07995C2046A17D00F75B82 /* AssetsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTest.swift; sourceTree = "<group>"; };
 		FB20C937203F1E08008491E6 /* FieldNodeDescribing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldNodeDescribing.swift; sourceTree = "<group>"; };
 		FB20C93B203F1ED8008491E6 /* EmptyFieldNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFieldNode.swift; sourceTree = "<group>"; };
 		FB20C940203F28AB008491E6 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
@@ -189,6 +210,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FB07994F2046A16C00F75B82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBC433FD200739AC00134AB7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,6 +277,15 @@
 			path = Shaders;
 			sourceTree = "<group>";
 		};
+		FB0799532046A16C00F75B82 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				FB0799562046A16C00F75B82 /* Info.plist */,
+				FB07995C2046A17D00F75B82 /* AssetsTest.swift */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
 		FB20C936203F1DDE008491E6 /* FieldNodes */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +333,7 @@
 				FBC43421200739AC00134AB7 /* Jackal watchOS App Extension */,
 				FBC4342C200739AC00134AB7 /* Jackal tvOS */,
 				FBC4343A200739AC00134AB7 /* Jackal macOS */,
+				FB0799532046A16C00F75B82 /* UnitTests */,
 				FBC43401200739AC00134AB7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -315,6 +353,7 @@
 				FBC43400200739AC00134AB7 /* Jackal.app */,
 				FBC4342B200739AC00134AB7 /* Jackal.app */,
 				FBC43439200739AC00134AB7 /* Jackal.app */,
+				FB0799522046A16C00F75B82 /* UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -428,6 +467,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FB0799512046A16C00F75B82 /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB07995B2046A16C00F75B82 /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				FB07994E2046A16C00F75B82 /* Sources */,
+				FB07994F2046A16C00F75B82 /* Frameworks */,
+				FB0799502046A16C00F75B82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB0799582046A16C00F75B82 /* PBXTargetDependency */,
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = FB0799522046A16C00F75B82 /* UnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FBC433FF200739AC00134AB7 /* Jackal iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBC4345C200739AC00134AB7 /* Build configuration list for PBXNativeTarget "Jackal iOS" */;
@@ -490,6 +547,11 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Boring Company";
 				TargetAttributes = {
+					FB0799512046A16C00F75B82 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FBC433FF200739AC00134AB7;
+					};
 					FBC433FF200739AC00134AB7 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Manual;
@@ -520,11 +582,19 @@
 				FBC433FF200739AC00134AB7 /* Jackal iOS */,
 				FBC4342A200739AC00134AB7 /* Jackal tvOS */,
 				FBC43438200739AC00134AB7 /* Jackal macOS */,
+				FB0799512046A16C00F75B82 /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FB0799502046A16C00F75B82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBC433FE200739AC00134AB7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -562,6 +632,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FB07994E2046A16C00F75B82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB07995F2046A1C000F75B82 /* EmptyFieldNode.swift in Sources */,
+				FB0799632046A1C500F75B82 /* Rotation.swift in Sources */,
+				FB07995E2046A1C000F75B82 /* FieldNodeDescribing.swift in Sources */,
+				FB07995D2046A17D00F75B82 /* AssetsTest.swift in Sources */,
+				FB0799602046A1C000F75B82 /* ArrowNode.swift in Sources */,
+				FB0799612046A1C500F75B82 /* Move.swift in Sources */,
+				FB0799642046A1C500F75B82 /* ActionType.swift in Sources */,
+				FB0799622046A1C500F75B82 /* MoveType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBC433FC200739AC00134AB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -681,6 +766,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FB0799582046A16C00F75B82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBC433FF200739AC00134AB7 /* Jackal iOS */;
+			targetProxy = FB0799572046A16C00F75B82 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		FBC43407200739AC00134AB7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -725,6 +818,49 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FB0799592046A16C00F75B82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = UnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jackal.app/Jackal";
+			};
+			name = Debug;
+		};
+		FB07995A2046A16C00F75B82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = UnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jackal.app/Jackal";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		FBC43452200739AC00134AB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -936,6 +1072,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FB07995B2046A16C00F75B82 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB0799592046A16C00F75B82 /* Debug */,
+				FB07995A2046A16C00F75B82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FBC433F6200739AC00134AB7 /* Build configuration list for PBXProject "Jackal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
