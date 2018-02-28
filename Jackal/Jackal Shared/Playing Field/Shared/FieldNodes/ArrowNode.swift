@@ -6,7 +6,7 @@
 //  Copyright © 2018 Boring Company. All rights reserved.
 //
 
-struct ArrowNode: FieldNodeDescribable {
+struct ArrowNode: FieldNodeDescribing {
     
     enum `Type` {
         case unidirectionalStraight
@@ -22,6 +22,9 @@ struct ArrowNode: FieldNodeDescribable {
     var moveType: MoveType
     var rotation: Rotation
     var textureName = "suit"
+    var canContainObject = true
+    var canStay = false
+    var actionType: ActionType = .permanent
     
     // MARK: Lifecycle
     init(rotation: Rotation, type: Type) {
