@@ -42,23 +42,23 @@ struct ArrowNode: FieldNodeDescribing {
         
         switch type {
         case .unidirectionalStraight:
-            moves = [Move(x: 0, y: 1)]
+            moves = [Move(x: 1, y: 0)]
             
         case .unidirectionalDiagonal:
             moves = [Move(x: 1, y: 1)]
             
         case .bidirectionalStraight:
-            moves = [Move(x: 0, y: 1),
-                     Move(x: 0, y: -1)]
+            moves = [Move(x: 1, y: 0),
+                     Move(x: -1, y: 0)]
             
         case .bidirectionalDiagonal:
             moves = [Move(x: 1, y: 1),
                      Move(x: -1, y: -1)]
             
         case .threeDirectional:
-            moves = [Move(x: 0, y: 1),
-                     Move(x: 0, y: -1),
-                     Move(x: -1, y: 0)]
+            moves = [Move(x: 0, y: -1),
+                     Move(x: 1, y: 0),
+                     Move(x: -1, y: 1)]
             
         case .fourDirectionalStraight:
             moves = [Move(x: 0, y: 1),
@@ -69,8 +69,8 @@ struct ArrowNode: FieldNodeDescribing {
         case .fourDirectionalDiagonal:
             moves = [Move(x: -1, y: 1),
                      Move(x: 1, y: -1),
-                     Move(x: -1, y: 1),
-                     Move(x: 1, y: -1)]
+                     Move(x: -1, y: -1),
+                     Move(x: 1, y: 1)]
         }
         return (moves, textureName)
     }

@@ -92,7 +92,7 @@ class Level {
     }
     
     func textureNameAt(x: Int, y: Int) -> String {
-        return initialNodes[x][y].currentTextureName
+        return initialNodes[x][y].textureName
     }
     
     //For now, i have no idea how to do it more clearly and safe, u a welcome :-)
