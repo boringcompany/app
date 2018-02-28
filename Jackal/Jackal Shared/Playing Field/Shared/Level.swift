@@ -20,7 +20,7 @@ class Level {
         }
         
         struct FieldNodeAmount {
-            let node: FieldNodeDescribable.Type
+            let node: FieldNodeDescribing.Type
             let amount: UInt
         }
         
@@ -30,7 +30,7 @@ class Level {
     }
     
     // MARK: Private Properties
-    private let initialNodes: [[FieldNodeDescribable]]
+    private let initialNodes: [[FieldNodeDescribing]]
     private let configuration: Configuration
     
     // MARK: Public Properties
@@ -43,9 +43,9 @@ class Level {
         
         graph = BoardGraph()
         let size = configuration.size
-        var fieldNodes: [[FieldNodeDescribable]] = Array(repeating: Array(repeating: EmptyFieldNode(rotation: .none),
-                                                                          count: Int(size.height)),
-                                                         count: Int(size.width))
+        var fieldNodes: [[FieldNodeDescribing]] = Array(repeating: Array(repeating: EmptyFieldNode(rotation: .none),
+                                                                         count: Int(size.height)),
+                                                        count: Int(size.width))
         for x in 0..<Int8(size.width) {
             for y in 0..<Int8(size.height) {
                 let position = BoardPosition(x, y)
