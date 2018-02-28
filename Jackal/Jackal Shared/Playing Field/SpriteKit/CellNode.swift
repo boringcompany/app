@@ -14,6 +14,12 @@ class CellNode: SKSpriteNode {
     
     var inputHandler: InputHandlerProtocol?
     
+    var highlighted: Bool = false {
+        didSet {
+            shader = highlighted ? ShaderManager.highlightedCellShader : nil
+        }
+    }
+    
     #if os(iOS) || os(tvOS)
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

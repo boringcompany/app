@@ -44,11 +44,18 @@ class PirateSelectedState: TurnState {
             guard let cellPosition =
                 cell.component(ofType: BoardPositionComponent.self)?.boardPosition else { continue }
             
+            let isCellAvailable = availablePositions.contains(cellPosition)
+            
             let inputComponent = cell.component(ofType: InputHandlingComponent.self)
-            inputComponent?.interactionEnabled = availablePositions.contains(cellPosition)
+            inputComponent?.interactionEnabled = isCellAvailable
             
             let selectionComponent = cell.component(ofType: SelectionComponent.self)
             selectionComponent?.delegate = self
+            
+            let spriteComponent = cell.component(ofType: SpriteComponent.self)
+            if let cellNode = spriteComponent?.node as? CellNode {
+                cellNode.highlighted = isCellAvailable
+            }
         }
     }
     
@@ -101,6 +108,13 @@ extension PirateSelectedState: SelectionComponentDelegate {
             
             self.game.selectedPirate = nil
             self.stateMachine?.enter(StartTurnState.self)
+            
+            for cell in self.game.fieldCells {
+                let spriteComponent = cell.component(ofType: SpriteComponent.self)
+                if let cellNode = spriteComponent?.node as? CellNode {
+                    cellNode.highlighted = false
+                }
+            }
             
         default:
             break
