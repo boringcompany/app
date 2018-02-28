@@ -12,7 +12,6 @@ import GameplayKit
 
 class PirateSelectedState: TurnState {
     
-    
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         
         return stateClass == StartTurnState.self
@@ -93,7 +92,11 @@ extension PirateSelectedState: SelectionComponentDelegate {
         case let cell as FieldNodeEntity:
             
             self.movePirate(self.game.selectedPirate!, to: cell)
-            self.game.selectedPirate?.component(ofType: SelectionComponent.self)?.isSelected = false
+            
+            self.game.selectedPirate?.component(ofType: SelectionComponent.self)?.isSelected = !cell.info.canStay
+            if !cell.info.canStay {
+                self.stateMachine?.enter(PirateSelectedState.self)
+            }
             
         default:
             break

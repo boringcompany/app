@@ -95,6 +95,10 @@ class Level {
         return initialNodes[x][y].textureName
     }
     
+    func fieldNodeInfoAt(x: Int, y: Int) -> FieldNodeDescribing {
+        return initialNodes[x][y]
+    }
+    
     //For now, i have no idea how to do it more clearly and safe, u a welcome :-)
     static func nodes(for configuration: Configuration) -> [[FieldNodeDescribing]] {
         var nodes: [[FieldNodeDescribing]] = Array(repeating: Array(repeating: EmptyNode(),
