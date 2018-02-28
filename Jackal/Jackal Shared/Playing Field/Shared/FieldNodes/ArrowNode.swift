@@ -21,10 +21,10 @@ struct ArrowNode: FieldNodeDescribing {
     // MARK: Public Properties
     var moveType: MoveType
     var rotation: Rotation
-    var textureName = "suit"
     var canContainObject = true
     var canStay = false
     var actionType: ActionType = .permanent
+    var isOpenned = false
     
     // MARK: Lifecycle
     init(rotation: Rotation, type: Type) {

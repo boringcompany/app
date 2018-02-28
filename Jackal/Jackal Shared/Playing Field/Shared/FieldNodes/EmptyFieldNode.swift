@@ -11,10 +11,10 @@ struct EmptyFieldNode: FieldNodeDescribing {
     // MARK: Public Properties
     var moveType: MoveType
     var rotation: Rotation
-    var textureName = "suit"
     var canContainObject = true
     var canStay = true
     var actionType: ActionType = .permanent
+    var isOpenned = false
     
     // MARK: Lifecycle
     init(rotation: Rotation) {
