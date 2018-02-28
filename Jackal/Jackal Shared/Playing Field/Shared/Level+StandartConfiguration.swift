@@ -55,6 +55,18 @@ extension Level.Configuration {
         fields.append(FieldNodeAmount(node: HorseNode(),
                                       amount: 2))
         
+        fields.append(FieldNodeAmount(node: TurntableNode(type: .twoSteps),
+                                      amount: 5))
+        
+        fields.append(FieldNodeAmount(node: TurntableNode(type: .threeSteps),
+                                      amount: 4))
+        
+        fields.append(FieldNodeAmount(node: TurntableNode(type: .fourSteps),
+                                      amount: 2))
+        
+        fields.append(FieldNodeAmount(node: TurntableNode(type: .fiveSteps),
+                                      amount: 1))
+        
         //TODO: remove stubs when all kinds of nodes will b ready
         let amount = fields.map {$0.amount}.reduce(0) { $0 + $1 }
         fields.append(FieldNodeAmount(node: EmptyNode(type: .hole),
