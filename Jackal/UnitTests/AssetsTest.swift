@@ -35,7 +35,11 @@ class FieldNodesTests: XCTest {
                 ArrowNode(type: .threeDirectional),
                 ArrowNode(type: .fourDirectionalStraight),
                 ArrowNode(type: .fourDirectionalDiagonal),
-                HorseNode()]
+                HorseNode(),
+                TurntableNode(type: .twoSteps),
+                TurntableNode(type: .threeSteps),
+                TurntableNode(type: .fourSteps),
+                TurntableNode(type: .fiveSteps)]
     }
     
     func testAssets() {
