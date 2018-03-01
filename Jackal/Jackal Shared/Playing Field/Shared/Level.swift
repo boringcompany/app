@@ -48,33 +48,25 @@ class Level {
         
         for x in 0..<Int8(size.width) {
             for y in 0..<Int8(size.height) {
-                let position = BoardPosition(x, y)
-                let node = BoardGraphNode(boardPosition: position)
-                graph.add([node])
+                let fieldNode = fieldNodes[Int(x)][Int(y)]
+                fieldNode.nodeConnector.createNodes(fieldNode: fieldNode, graph: graph, x: x, y: y)
             }
         }
         
-        for x in 0..<Int8(configuration.size.width) {
+        for x in 0..<Int8(size.width) {
             for y in 0..<Int8(size.height) {
-                
                 let fieldNode = fieldNodes[Int(x)][Int(y)]
-                let position = BoardPosition(x, y)
-                guard let centre = graph.node(at: position) else { continue }
-                
-                let connectedPositions: [BoardPosition]
-                
-                switch fieldNode.moveType {
-                case .any:
-                    connectedPositions = []//TODO: Fix
-                    
-                case .oneOf(let moves):
-                    connectedPositions = moves.map { BoardPosition(x + $0.x, y + $0.y) }
-                }
-                
-                let connectedNodes = connectedPositions.flatMap(graph.node(at:))
-                centre.addConnections(to: connectedNodes, bidirectional: false)
+                fieldNode.nodeConnector.addNodesConnections(fieldNode: fieldNode, graph: graph, x: x, y: y)
             }
         }
+        
+        for x in 0..<Int8(size.width) {
+            for y in 0..<Int8(size.height) {
+                let fieldNode = fieldNodes[Int(x)][Int(y)]
+                fieldNode.nodeConnector.removeNodesConnections(fieldNode: fieldNode, graph: graph, x: x, y: y)
+            }
+        }
+        
         initialNodes = fieldNodes
     }
     
@@ -97,6 +89,12 @@ class Level {
     
     func fieldNodeInfoAt(x: Int, y: Int) -> FieldNodeDescribing {
         return initialNodes[x][y]
+    }
+    
+    func relativePosition(for boardPosition: BoardPosition) -> Position? {
+        
+        let fieldNode = initialNodes[Int(boardPosition.x)][Int(boardPosition.y)]
+        return fieldNode.relativePosition(boardPosition:boardPosition)
     }
     
     //For now, i have no idea how to do it more clearly and safe, u a welcome :-)

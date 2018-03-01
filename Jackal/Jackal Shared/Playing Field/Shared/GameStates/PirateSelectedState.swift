@@ -38,12 +38,16 @@ class PirateSelectedState: TurnState {
         let availablePositions: Set<BoardPosition> =
             Set(self.game.level.availableDestinations(for: selectedPiratePosition))
         
+        let filteredAvailablePositions = availablePositions.map { (position) -> BoardPosition in
+            return BoardPosition(int2: position.int2Position)
+        }
+        
         for cell in self.game.fieldCells {
             
             guard let cellPosition =
                 cell.component(ofType: BoardPositionComponent.self)?.boardPosition else { continue }
             
-            let isCellAvailable = availablePositions.contains(cellPosition)
+            let isCellAvailable = filteredAvailablePositions.contains(cellPosition)
             
             let inputComponent = cell.component(ofType: InputHandlingComponent.self)
             inputComponent?.interactionEnabled = isCellAvailable
@@ -63,13 +67,24 @@ class PirateSelectedState: TurnState {
         
         guard
             let cellPosition = cell.component(ofType: BoardPositionComponent.self)?.boardPosition,
-            let pirateNode = pirate.component(ofType: NodeComponent.self)?.node
+            let pirateNode = pirate.component(ofType: NodeComponent.self)?.node,
+            let piratePositionComponent = pirate.component(ofType: BoardPositionComponent.self),
+            var piratePosition = piratePositionComponent.boardPosition
             else { return }
         
-        let point = self.game.gameScene.point(at: cellPosition.int2Position)
+        if piratePosition.int2Position == cellPosition.int2Position {
+            piratePosition.z += 1
+        } else {
+            piratePosition = cellPosition
+        }
+        piratePositionComponent.boardPosition = piratePosition
         
-        pirate.component(ofType: BoardPositionComponent.self)?.boardPosition = cellPosition
-        
+        let point: CGPoint
+        if let relativePosition = self.game.level.relativePosition(for: piratePosition) {
+            point = self.game.gameScene.point(at: cellPosition.int2Position, relativePosition: relativePosition)
+        } else {
+            point = self.game.gameScene.point(at: cellPosition.int2Position)
+        }
         let action = SKAction.move(to: point, duration: 0.3)
         pirateNode.run(action)
     }

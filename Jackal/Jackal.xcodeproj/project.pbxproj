@@ -61,6 +61,26 @@
 		88FC9624201F690700A979B9 /* InputHandlingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC9623201F690700A979B9 /* InputHandlingComponent.swift */; };
 		88FC9625201F690700A979B9 /* InputHandlingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC9623201F690700A979B9 /* InputHandlingComponent.swift */; };
 		88FC9626201F690700A979B9 /* InputHandlingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC9623201F690700A979B9 /* InputHandlingComponent.swift */; };
+		BD5E78952046DA1C00DBAC18 /* TurntableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */; };
+		BD5E78962046DA1C00DBAC18 /* TurntableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */; };
+		BD5E78972046DA1C00DBAC18 /* TurntableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */; };
+		BD5E78982046DA1C00DBAC18 /* TurntableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */; };
+		BD5E789A2046EC2200DBAC18 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78992046EC2200DBAC18 /* Position.swift */; };
+		BD5E789B2046EC2200DBAC18 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78992046EC2200DBAC18 /* Position.swift */; };
+		BD5E789C2046EC2200DBAC18 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78992046EC2200DBAC18 /* Position.swift */; };
+		BD5E789D2046EC2200DBAC18 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78992046EC2200DBAC18 /* Position.swift */; };
+		BD5E78AF2047F74700DBAC18 /* NodeConnectorDescribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78AE2047F74700DBAC18 /* NodeConnectorDescribing.swift */; };
+		BD5E78B02047F74700DBAC18 /* NodeConnectorDescribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78AE2047F74700DBAC18 /* NodeConnectorDescribing.swift */; };
+		BD5E78B12047F74700DBAC18 /* NodeConnectorDescribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78AE2047F74700DBAC18 /* NodeConnectorDescribing.swift */; };
+		BD5E78B22047F74700DBAC18 /* NodeConnectorDescribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78AE2047F74700DBAC18 /* NodeConnectorDescribing.swift */; };
+		BD5E78B92047F85A00DBAC18 /* TurntableNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78B82047F85A00DBAC18 /* TurntableNodeConnector.swift */; };
+		BD5E78BA2047F85A00DBAC18 /* TurntableNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78B82047F85A00DBAC18 /* TurntableNodeConnector.swift */; };
+		BD5E78BB2047F85A00DBAC18 /* TurntableNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78B82047F85A00DBAC18 /* TurntableNodeConnector.swift */; };
+		BD5E78BC2047F85A00DBAC18 /* TurntableNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78B82047F85A00DBAC18 /* TurntableNodeConnector.swift */; };
+		BD5E78BE2047FBA800DBAC18 /* DefaultNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78BD2047FBA800DBAC18 /* DefaultNodeConnector.swift */; };
+		BD5E78BF2047FBA800DBAC18 /* DefaultNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78BD2047FBA800DBAC18 /* DefaultNodeConnector.swift */; };
+		BD5E78C02047FBA800DBAC18 /* DefaultNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78BD2047FBA800DBAC18 /* DefaultNodeConnector.swift */; };
+		BD5E78C12047FBA800DBAC18 /* DefaultNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78BD2047FBA800DBAC18 /* DefaultNodeConnector.swift */; };
 		BDAC86D2203F05BD006D39DA /* HighlightedCellShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = BDAC86D1203F05BD006D39DA /* HighlightedCellShader.fsh */; };
 		BDAC86D3203F05BD006D39DA /* HighlightedCellShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = BDAC86D1203F05BD006D39DA /* HighlightedCellShader.fsh */; };
 		BDAC86D4203F05BD006D39DA /* HighlightedCellShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = BDAC86D1203F05BD006D39DA /* HighlightedCellShader.fsh */; };
@@ -172,6 +192,11 @@
 		88FC961B201F512B00A979B9 /* BoardGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGraph.swift; sourceTree = "<group>"; };
 		88FC961F201F558B00A979B9 /* BoardGraphNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGraphNode.swift; sourceTree = "<group>"; };
 		88FC9623201F690700A979B9 /* InputHandlingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHandlingComponent.swift; sourceTree = "<group>"; };
+		BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableNode.swift; sourceTree = "<group>"; };
+		BD5E78992046EC2200DBAC18 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		BD5E78AE2047F74700DBAC18 /* NodeConnectorDescribing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeConnectorDescribing.swift; sourceTree = "<group>"; };
+		BD5E78B82047F85A00DBAC18 /* TurntableNodeConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableNodeConnector.swift; sourceTree = "<group>"; };
+		BD5E78BD2047FBA800DBAC18 /* DefaultNodeConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNodeConnector.swift; sourceTree = "<group>"; };
 		BDAC86D1203F05BD006D39DA /* HighlightedCellShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = HighlightedCellShader.fsh; sourceTree = "<group>"; };
 		BDAC86D5203F0818006D39DA /* ShaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderManager.swift; sourceTree = "<group>"; };
 		FB079931204690B200F75B82 /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
@@ -274,6 +299,16 @@
 			path = BoardGraph;
 			sourceTree = "<group>";
 		};
+		BD5E78A82047F71700DBAC18 /* GraphConnectors */ = {
+			isa = PBXGroup;
+			children = (
+				BD5E78BD2047FBA800DBAC18 /* DefaultNodeConnector.swift */,
+				BD5E78AE2047F74700DBAC18 /* NodeConnectorDescribing.swift */,
+				BD5E78B82047F85A00DBAC18 /* TurntableNodeConnector.swift */,
+			);
+			path = GraphConnectors;
+			sourceTree = "<group>";
+		};
 		BDAC86D0203F05BD006D39DA /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +333,7 @@
 				FB20C93B203F1ED8008491E6 /* EmptyNode.swift */,
 				570AA19520447DCF00B4EB0B /* ArrowNode.swift */,
 				FB9C53D82046D83600CE366D /* HorseNode.swift */,
+				BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */,
 			);
 			path = FieldNodes;
 			sourceTree = "<group>";
@@ -309,6 +345,7 @@
 				5758C0362044762A00F552AA /* MoveType.swift */,
 				FB20C945203F2A16008491E6 /* Rotation.swift */,
 				FB079931204690B200F75B82 /* ActionType.swift */,
+				BD5E78992046EC2200DBAC18 /* Position.swift */,
 			);
 			path = "Basic Types";
 			sourceTree = "<group>";
@@ -321,6 +358,7 @@
 				FB20C936203F1DDE008491E6 /* FieldNodes */,
 				88D28181203ABCD10046E67E /* GameStates */,
 				88FC961A201F511900A979B9 /* BoardGraph */,
+				BD5E78A82047F71700DBAC18 /* GraphConnectors */,
 				FB77E6972016172400B9A75B /* Level.swift */,
 				FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */,
 				FB77E69C20161D8500B9A75B /* Game.swift */,
@@ -642,11 +680,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD5E789D2046EC2200DBAC18 /* Position.swift in Sources */,
+				BD5E78C12047FBA800DBAC18 /* DefaultNodeConnector.swift in Sources */,
+				BD5E78982046DA1C00DBAC18 /* TurntableNode.swift in Sources */,
 				FB07995F2046A1C000F75B82 /* EmptyNode.swift in Sources */,
 				FB0799632046A1C500F75B82 /* Rotation.swift in Sources */,
 				FB07995E2046A1C000F75B82 /* FieldNodeDescribing.swift in Sources */,
 				FB07995D2046A17D00F75B82 /* AssetsTest.swift in Sources */,
+				BD5E78BC2047F85A00DBAC18 /* TurntableNodeConnector.swift in Sources */,
 				FB0799602046A1C000F75B82 /* ArrowNode.swift in Sources */,
+				BD5E78B22047F74700DBAC18 /* NodeConnectorDescribing.swift in Sources */,
 				FB0799612046A1C500F75B82 /* Move.swift in Sources */,
 				FB0799642046A1C500F75B82 /* ActionType.swift in Sources */,
 				FB0799622046A1C500F75B82 /* MoveType.swift in Sources */,
@@ -658,10 +701,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD5E78952046DA1C00DBAC18 /* TurntableNode.swift in Sources */,
 				FB20C94E203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */,
 				88746FEB201E43D10011D07A /* PirateNode.swift in Sources */,
 				FB77E6982016172400B9A75B /* Level.swift in Sources */,
 				FB079932204690B200F75B82 /* ActionType.swift in Sources */,
+				BD5E78BE2047FBA800DBAC18 /* DefaultNodeConnector.swift in Sources */,
 				88D2817E203ABA8E0046E67E /* SelectionComponent.swift in Sources */,
 				579CF3D9201D0A7000DCC9CF /* InputHandler.swift in Sources */,
 				FBC4344A200739AC00134AB7 /* GameScene.swift in Sources */,
@@ -685,8 +730,11 @@
 				FBC43404200739AC00134AB7 /* AppDelegate.swift in Sources */,
 				88D281762038BE6B0046E67E /* CellNode.swift in Sources */,
 				FB9C53D92046D83600CE366D /* HorseNode.swift in Sources */,
+				BD5E789A2046EC2200DBAC18 /* Position.swift in Sources */,
 				570AA19620447DCF00B4EB0B /* ArrowNode.swift in Sources */,
 				88FC9617201F501900A979B9 /* BoardPosition.swift in Sources */,
+				BD5E78AF2047F74700DBAC18 /* NodeConnectorDescribing.swift in Sources */,
+				BD5E78B92047F85A00DBAC18 /* TurntableNodeConnector.swift in Sources */,
 				579CF3D5201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */,
 				FB77E690201615CC00B9A75B /* FieldNodeEntity.swift in Sources */,
 				88D2818B203ABD770046E67E /* StartTurnState.swift in Sources */,
@@ -698,10 +746,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD5E78962046DA1C00DBAC18 /* TurntableNode.swift in Sources */,
 				FB20C94F203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */,
 				88746FEC201E43D10011D07A /* PirateNode.swift in Sources */,
 				FB77E6992016172400B9A75B /* Level.swift in Sources */,
 				FB079933204690B200F75B82 /* ActionType.swift in Sources */,
+				BD5E78BF2047FBA800DBAC18 /* DefaultNodeConnector.swift in Sources */,
 				88D2817F203ABA8E0046E67E /* SelectionComponent.swift in Sources */,
 				579CF3DA201D0A7000DCC9CF /* InputHandler.swift in Sources */,
 				FBC4344C200739AC00134AB7 /* GameScene.swift in Sources */,
@@ -725,8 +775,11 @@
 				FBC4342E200739AC00134AB7 /* AppDelegate.swift in Sources */,
 				88D281772038BE6B0046E67E /* CellNode.swift in Sources */,
 				FB9C53DA2046D83600CE366D /* HorseNode.swift in Sources */,
+				BD5E789B2046EC2200DBAC18 /* Position.swift in Sources */,
 				570AA19720447DCF00B4EB0B /* ArrowNode.swift in Sources */,
 				88FC9618201F501900A979B9 /* BoardPosition.swift in Sources */,
+				BD5E78B02047F74700DBAC18 /* NodeConnectorDescribing.swift in Sources */,
+				BD5E78BA2047F85A00DBAC18 /* TurntableNodeConnector.swift in Sources */,
 				579CF3D6201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */,
 				FB77E691201615CC00B9A75B /* FieldNodeEntity.swift in Sources */,
 				88D2818C203ABD770046E67E /* StartTurnState.swift in Sources */,
@@ -738,10 +791,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD5E78972046DA1C00DBAC18 /* TurntableNode.swift in Sources */,
 				FB20C950203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */,
 				88746FED201E43D10011D07A /* PirateNode.swift in Sources */,
 				FB77E69A2016172400B9A75B /* Level.swift in Sources */,
 				FB079934204690B200F75B82 /* ActionType.swift in Sources */,
+				BD5E78C02047FBA800DBAC18 /* DefaultNodeConnector.swift in Sources */,
 				88D28180203ABA8E0046E67E /* SelectionComponent.swift in Sources */,
 				579CF3DB201D0A7000DCC9CF /* InputHandler.swift in Sources */,
 				FBC4344D200739AC00134AB7 /* GameScene.swift in Sources */,
@@ -765,8 +820,11 @@
 				FBC4343C200739AC00134AB7 /* AppDelegate.swift in Sources */,
 				88D281782038BE6B0046E67E /* CellNode.swift in Sources */,
 				FB9C53DB2046D83600CE366D /* HorseNode.swift in Sources */,
+				BD5E789C2046EC2200DBAC18 /* Position.swift in Sources */,
 				570AA19820447DCF00B4EB0B /* ArrowNode.swift in Sources */,
 				88FC9619201F501900A979B9 /* BoardPosition.swift in Sources */,
+				BD5E78B12047F74700DBAC18 /* NodeConnectorDescribing.swift in Sources */,
+				BD5E78BB2047F85A00DBAC18 /* TurntableNodeConnector.swift in Sources */,
 				579CF3D7201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */,
 				FB77E692201615CC00B9A75B /* FieldNodeEntity.swift in Sources */,
 				88D2818D203ABD770046E67E /* StartTurnState.swift in Sources */,
