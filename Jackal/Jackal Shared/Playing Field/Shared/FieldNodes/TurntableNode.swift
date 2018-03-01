@@ -24,6 +24,11 @@ struct TurntableNode: FieldNodeDescribing {
     var actionType: ActionType = .permanent
     var isOpen = false
     var textureName: String
+    var nodeConnector: NodeConnectorDescribing
+    var positions: [Position]
+    var stepsCount: Int {
+        return positions.count
+    }
     
     // MARK: Lifecycle
     init(type: Type) {
@@ -36,11 +41,49 @@ struct TurntableNode: FieldNodeDescribing {
                              Move(x:  0, y: +1),
                              Move(x: +1, y: +1)]
         moveType = .oneOf(moves)
-        textureName = type.rawValue
+        let info = TurntableNode.info(for: type)
+        positions = info.positions
+        textureName = info.textureName
+        nodeConnector = TurntableNodeConnector()
+    }
+    
+    // MARK: Private
+    private static func info(for type: Type) -> (positions: [Position], textureName: String) {
+        let positions: [Position]
+        let textureName: String = type.rawValue
+        
+        switch type {
+        case .twoSteps:
+            positions = [Position(x: -0.3, y: -0.3),
+                         Position(x: 0.25, y: 0.3)]
+            
+        case .threeSteps:
+            positions = [Position(x: 0.3, y: -0.3),
+                         Position(x: -0.1, y: 0),
+                         Position(x: 0.3, y: 0.3)]
+            
+        case .fourSteps:
+            positions = [Position(x: 0.3, y: -0.3),
+                         Position(x: -0.25, y: -0.15),
+                         Position(x: 0.2, y: 0.2),
+                         Position(x: -0.2, y: 0.4)]
+            
+        case .fiveSteps:
+            positions = [Position(x: 0.35, y: 0.3),
+                         Position(x: 0, y: 0.3),
+                         Position(x: -0.3, y: 0.05),
+                         Position(x: -0.15, y: -0.25),
+                         Position(x: 0.3, y: -0.3)]
+        }
+        return (positions, textureName)
     }
     
     // MARK: Public
     mutating func toggle() {
         isOpen = !isOpen
+    }
+    
+    func relativePosition(boardPosition: BoardPosition) -> Position? {
+        return positions[Int(boardPosition.z)]
     }
 }

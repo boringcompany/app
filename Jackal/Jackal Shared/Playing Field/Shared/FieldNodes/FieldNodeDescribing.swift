@@ -33,6 +33,10 @@ protocol FieldNodeDescribing {
     
     /// Toggling isOpen property if possible
     mutating func toggle()
+    
+    var nodeConnector: NodeConnectorDescribing { get }
+    
+    func relativePosition(boardPosition: BoardPosition) -> Position?
 }
 
 extension FieldNodeDescribing {
@@ -47,5 +51,13 @@ extension FieldNodeDescribing {
     
     var textureName: String {
         return String(describing: Self.self)
+    }
+    
+    var nodeConnector: NodeConnectorDescribing {
+        return DefaultNodeConnector()
+    }
+    
+    func relativePosition(boardPosition: BoardPosition) -> Position? {
+        return nil
     }
 }
