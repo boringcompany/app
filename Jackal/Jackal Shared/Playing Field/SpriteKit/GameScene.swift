@@ -55,11 +55,18 @@ class GameScene: SKScene {
         setupInputs()
     }
     
-    
     func point(at gridPosition: int2) -> CGPoint {
         
         let point = CGPoint(x: cellWidth * CGFloat(gridPosition.x) + cellWidth * 0.5,
                             y: cellWidth * CGFloat(gridPosition.y) + cellWidth * 0.5)
+        
+        return point
+    }
+    
+    func point(at gridPosition: int2, relativePosition: Position) -> CGPoint {
+        
+        let point = CGPoint(x: cellWidth * CGFloat(gridPosition.x) + cellWidth * (0.5 + relativePosition.x),
+                            y: cellWidth * CGFloat(gridPosition.y) + cellWidth * (0.5 + relativePosition.y))
         
         return point
     }

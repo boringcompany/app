@@ -20,7 +20,7 @@ class Level {
         }
         
         struct FieldNodeAmount {
-            let node: FieldNodeDescribing.Type
+            let node: FieldNodeDescribing
             let amount: UInt
         }
         
@@ -43,38 +43,30 @@ class Level {
         
         graph = BoardGraph()
         let size = configuration.size
-        var fieldNodes: [[FieldNodeDescribing]] = Array(repeating: Array(repeating: EmptyFieldNode(rotation: .none),
-                                                                         count: Int(size.height)),
-                                                        count: Int(size.width))
+        
+        var fieldNodes = Level.nodes(for: configuration)//Some kind of mapping
+        
         for x in 0..<Int8(size.width) {
             for y in 0..<Int8(size.height) {
-                let position = BoardPosition(x, y)
-                let node = BoardGraphNode(boardPosition: position)
-                graph.add([node])
+                let fieldNode = fieldNodes[Int(x)][Int(y)]
+                fieldNode.nodeConnector.createNodes(fieldNode: fieldNode, graph: graph, x: x, y: y)
             }
         }
         
-        for x in 0..<Int8(configuration.size.width) {
+        for x in 0..<Int8(size.width) {
             for y in 0..<Int8(size.height) {
-                
                 let fieldNode = fieldNodes[Int(x)][Int(y)]
-                let position = BoardPosition(x, y)
-                guard let centre = graph.node(at: position) else { continue }
-                
-                let connectedPositions: [BoardPosition]
-                
-                switch fieldNode.moveType {
-                case .any:
-                    connectedPositions = []//TODO: Fix
-                    
-                case .oneOf(let moves):
-                    connectedPositions = moves.map { BoardPosition(x + $0.x, y + $0.y) }
-                }
-                
-                let connectedNodes = connectedPositions.flatMap(graph.node(at:))
-                centre.addConnections(to: connectedNodes, bidirectional: false)
+                fieldNode.nodeConnector.addNodesConnections(fieldNode: fieldNode, graph: graph, x: x, y: y)
             }
         }
+        
+        for x in 0..<Int8(size.width) {
+            for y in 0..<Int8(size.height) {
+                let fieldNode = fieldNodes[Int(x)][Int(y)]
+                fieldNode.nodeConnector.removeNodesConnections(fieldNode: fieldNode, graph: graph, x: x, y: y)
+            }
+        }
+        
         initialNodes = fieldNodes
     }
     
@@ -93,5 +85,33 @@ class Level {
     
     func textureNameAt(x: Int, y: Int) -> String {
         return initialNodes[x][y].textureName
+    }
+    
+    func relativePosition(for boardPosition: BoardPosition) -> Position? {
+        
+        let fieldNode = initialNodes[Int(boardPosition.x)][Int(boardPosition.y)]
+        return fieldNode.relativePosition(boardPosition:boardPosition)
+    }
+    
+    //For now, i have no idea how to do it more clearly and safe, u a welcome :-)
+    static func nodes(for configuration: Configuration) -> [[FieldNodeDescribing]] {
+        var nodes: [[FieldNodeDescribing]] = Array(repeating: Array(repeating: EmptyNode(),
+                                      count: Int(configuration.size.height)),
+                     count: Int(configuration.size.width))
+        
+        var x = 0
+        var y = 0
+        
+        for field in configuration.amountOfFields {
+            for _ in 0..<field.amount {
+                nodes[x][y] = field.node
+                x += 1
+                if x == configuration.size.width {
+                    x = 0
+                    y += 1
+                }
+            }
+        }
+        return nodes
     }
 }
