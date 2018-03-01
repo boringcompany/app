@@ -80,7 +80,7 @@ class PirateSelectedState: TurnState {
         }
         piratePositionComponent.boardPosition = piratePosition
         
-        var point: CGPoint
+        let point: CGPoint
         if let relativePosition = self.game.level.relativePosition(for: piratePosition) {
             point = self.game.gameScene.point(at: cellPosition.int2Position, relativePosition: relativePosition)
         } else {

@@ -9,7 +9,7 @@
 struct TurntableNodeConnector: NodeConnectorDescribing {
     
     // MARK: Private
-    func castFieldNode(fieldNode: FieldNodeDescribing) -> TurntableNode {
+    private func castFieldNode(fieldNode: FieldNodeDescribing) -> TurntableNode {
         assert(fieldNode is TurntableNode, "Wrong field node type")
         return fieldNode as! TurntableNode
     }
