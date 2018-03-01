@@ -12,7 +12,6 @@ import GameplayKit
 
 class PirateSelectedState: TurnState {
     
-    
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         
         return stateClass == StartTurnState.self
@@ -89,6 +88,15 @@ class PirateSelectedState: TurnState {
         let action = SKAction.move(to: point, duration: 0.3)
         pirateNode.run(action)
     }
+    
+    private func updateState(for cell: FieldNodeEntity) {
+        self.movePirate(self.game.selectedPirate!, to: cell)
+        
+        self.game.selectedPirate?.component(ofType: SelectionComponent.self)?.isSelected = !cell.info.canStay
+        if !cell.info.canStay {
+            self.stateMachine?.enter(PirateSelectedState.self)
+        }
+    }
 }
 
 
@@ -106,9 +114,7 @@ extension PirateSelectedState: SelectionComponentDelegate {
             self.stateMachine?.enter(PirateSelectedState.self)
             
         case let cell as FieldNodeEntity:
-            
-            self.movePirate(self.game.selectedPirate!, to: cell)
-            self.game.selectedPirate?.component(ofType: SelectionComponent.self)?.isSelected = false
+            self.updateState(for: cell)
             
         default:
             break
@@ -130,6 +136,9 @@ extension PirateSelectedState: SelectionComponentDelegate {
                     cellNode.highlighted = false
                 }
             }
+            
+        case let cell as FieldNodeEntity:
+            self.updateState(for: cell)
             
         default:
             break

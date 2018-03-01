@@ -70,7 +70,7 @@ class Game {
                 board.addChild(node)
                 
                 // entity
-                let cell = FieldNodeEntity()
+                let cell = FieldNodeEntity(with: level.fieldNodeInfoAt(x: x, y: y))
                 cell.addComponent(SpriteComponent(node: node))
                 
                 let inputHandlingComponent = InputHandlingComponent()
