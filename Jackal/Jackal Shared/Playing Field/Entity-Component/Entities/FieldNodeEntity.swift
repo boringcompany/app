@@ -22,3 +22,10 @@ class FieldNodeEntity: GKEntity {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+extension FieldNodeEntity {
+    
+    var texture: SKTexture {
+        return SKTexture(imageNamed: info.textureName)
+    }
+}

@@ -85,8 +85,10 @@ class PirateSelectedState: TurnState {
         } else {
             point = self.game.gameScene.point(at: cellPosition.int2Position)
         }
-        let action = SKAction.move(to: point, duration: 0.3)
-        pirateNode.run(action)
+        let moveAction = SKAction.move(to: point, duration: 0.3)
+        cell.component(ofType: FlipSpriteComponent.self)?.flip(to: cell.texture)
+        
+        pirateNode.run(moveAction)
     }
     
     private func updateState(for cell: FieldNodeEntity) {

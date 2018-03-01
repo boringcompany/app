@@ -72,6 +72,7 @@ class Game {
                 // entity
                 let cell = FieldNodeEntity(with: level.fieldNodeInfoAt(x: x, y: y))
                 cell.addComponent(SpriteComponent(node: node))
+                cell.addComponent(FlipSpriteComponent())
                 
                 let inputHandlingComponent = InputHandlingComponent()
                 node.inputHandler = inputHandlingComponent

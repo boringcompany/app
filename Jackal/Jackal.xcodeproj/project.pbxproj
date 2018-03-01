@@ -19,6 +19,9 @@
 		577C1ED2204876630024DB31 /* SuitNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C1ED1204876630024DB31 /* SuitNode.swift */; };
 		577C1ED3204876630024DB31 /* SuitNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C1ED1204876630024DB31 /* SuitNode.swift */; };
 		577C1ED4204876630024DB31 /* SuitNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C1ED1204876630024DB31 /* SuitNode.swift */; };
+		577C1ED620487E810024DB31 /* FlipComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C1ED520487E810024DB31 /* FlipComponent.swift */; };
+		577C1ED720487E810024DB31 /* FlipComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C1ED520487E810024DB31 /* FlipComponent.swift */; };
+		577C1ED820487E810024DB31 /* FlipComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C1ED520487E810024DB31 /* FlipComponent.swift */; };
 		579CF3D5201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CF3D4201D038A00DCC9CF /* SpriteKit+Inputs.swift */; };
 		579CF3D6201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CF3D4201D038A00DCC9CF /* SpriteKit+Inputs.swift */; };
 		579CF3D7201D038A00DCC9CF /* SpriteKit+Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CF3D4201D038A00DCC9CF /* SpriteKit+Inputs.swift */; };
@@ -181,6 +184,7 @@
 		5758C032204474C200F552AA /* Int2+Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int2+Initialization.swift"; sourceTree = "<group>"; };
 		5758C0362044762A00F552AA /* MoveType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveType.swift; sourceTree = "<group>"; };
 		577C1ED1204876630024DB31 /* SuitNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitNode.swift; sourceTree = "<group>"; };
+		577C1ED520487E810024DB31 /* FlipComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipComponent.swift; sourceTree = "<group>"; };
 		579CF3D4201D038A00DCC9CF /* SpriteKit+Inputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpriteKit+Inputs.swift"; sourceTree = "<group>"; };
 		579CF3D8201D0A7000DCC9CF /* InputHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHandler.swift; sourceTree = "<group>"; };
 		88746FEA201E43D10011D07A /* PirateNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateNode.swift; sourceTree = "<group>"; };
@@ -509,6 +513,7 @@
 				88FC9612201F4FE900A979B9 /* BoardPositionComponent.swift */,
 				88FC9623201F690700A979B9 /* InputHandlingComponent.swift */,
 				88D2817D203ABA8E0046E67E /* SelectionComponent.swift */,
+				577C1ED520487E810024DB31 /* FlipComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -726,6 +731,7 @@
 				5758C033204474C200F552AA /* Int2+Initialization.swift in Sources */,
 				88746FEF201E45560011D07A /* PirateEntity.swift in Sources */,
 				FB77E6942016162F00B9A75B /* SpriteComponent.swift in Sources */,
+				577C1ED620487E810024DB31 /* FlipComponent.swift in Sources */,
 				88D2818F203ABD980046E67E /* PirateSelectedState.swift in Sources */,
 				88FC9613201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */,
 				FB20C941203F28AB008491E6 /* Move.swift in Sources */,
@@ -772,6 +778,7 @@
 				5758C034204474C200F552AA /* Int2+Initialization.swift in Sources */,
 				88746FF0201E45560011D07A /* PirateEntity.swift in Sources */,
 				FB77E6952016162F00B9A75B /* SpriteComponent.swift in Sources */,
+				577C1ED720487E810024DB31 /* FlipComponent.swift in Sources */,
 				88D28190203ABD980046E67E /* PirateSelectedState.swift in Sources */,
 				88FC9614201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */,
 				FB20C942203F28AB008491E6 /* Move.swift in Sources */,
@@ -818,6 +825,7 @@
 				5758C035204474C200F552AA /* Int2+Initialization.swift in Sources */,
 				88746FF1201E45560011D07A /* PirateEntity.swift in Sources */,
 				FB77E6962016162F00B9A75B /* SpriteComponent.swift in Sources */,
+				577C1ED820487E810024DB31 /* FlipComponent.swift in Sources */,
 				88D28191203ABD980046E67E /* PirateSelectedState.swift in Sources */,
 				88FC9615201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */,
 				FB20C943203F28AB008491E6 /* Move.swift in Sources */,
