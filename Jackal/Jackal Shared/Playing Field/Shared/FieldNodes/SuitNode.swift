@@ -1,20 +1,12 @@
 //
-//  EmptyNode.swift
+//  SuitNode.swift
 //  Jackal
 //
-//  Created by Andrey Zonov on 22/02/2018.
+//  Created by Andrey Zonov on 01/03/2018.
 //  Copyright © 2018 Boring Company. All rights reserved.
 //
 
-struct EmptyNode: FieldNodeDescribing {
-    
-    // MARK: Public Data Structures
-    enum `Type`: String {
-        case tree
-        case log
-        case stump
-        case hole
-    }
+struct SuitNode: FieldNodeDescribing {
     
     // MARK: Public Properties
     var moveType: MoveType
@@ -25,7 +17,7 @@ struct EmptyNode: FieldNodeDescribing {
     var textureName: String
     
     // MARK: Lifecycle
-    init(type: Type = .hole) {
+    init() {
         let moves: [Move] = [Move(x: -1, y: -1),
                              Move(x:  0, y: -1),
                              Move(x: +1, y: -1),
@@ -35,6 +27,6 @@ struct EmptyNode: FieldNodeDescribing {
                              Move(x:  0, y: +1),
                              Move(x: +1, y: +1)]
         moveType = .oneOf(moves)
-        textureName = type.rawValue
+        textureName = "suit"
     }
 }

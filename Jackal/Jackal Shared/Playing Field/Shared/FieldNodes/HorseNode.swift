@@ -15,7 +15,6 @@ struct HorseNode: FieldNodeDescribing {
     var canContainObject = true
     var canStay = false
     var actionType: ActionType = .permanent
-    var isOpen = false
     
     // MARK: Lifecycle
     init() {
@@ -27,10 +26,5 @@ struct HorseNode: FieldNodeDescribing {
                            Move(x: 1, y: -2),
                            Move(x: 2, y: 1),
                            Move(x: 2, y: -1)])
-    }
-    
-    // MARK: Public
-    mutating func toggle() {
-        isOpen = !isOpen
     }
 }

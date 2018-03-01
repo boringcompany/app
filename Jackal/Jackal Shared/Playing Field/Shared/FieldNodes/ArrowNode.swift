@@ -25,7 +25,6 @@ struct ArrowNode: FieldNodeDescribing {
     var canContainObject = true
     var canStay = false
     var actionType: ActionType = .permanent
-    var isOpen = false
     var textureName: String
     
     // MARK: Lifecycle
@@ -73,10 +72,5 @@ struct ArrowNode: FieldNodeDescribing {
                      Move(x: 1, y: 1)]
         }
         return (moves, textureName)
-    }
-    
-    // MARK: Public
-    mutating func toggle() {
-        isOpen = !isOpen
     }
 }
