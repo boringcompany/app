@@ -91,12 +91,6 @@ class Level {
         return initialNodes[x][y]
     }
     
-    func relativePosition(for boardPosition: BoardPosition) -> Position? {
-        
-        let fieldNode = initialNodes[Int(boardPosition.x)][Int(boardPosition.y)]
-        return fieldNode.relativePosition(boardPosition:boardPosition)
-    }
-    
     //For now, i have no idea how to do it more clearly and safe, u a welcome :-)
     static func nodes(for configuration: Configuration) -> [[FieldNodeDescribing]] {
         var nodes: [[FieldNodeDescribing]] = Array(repeating: Array(repeating: EmptyNode(),
