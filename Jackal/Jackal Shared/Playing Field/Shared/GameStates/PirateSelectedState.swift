@@ -92,7 +92,11 @@ class PirateSelectedState: TurnState {
     private func updateState(for cell: FieldNodeEntity) {
         self.movePirate(self.game.selectedPirate!, to: cell)
         
-        self.game.selectedPirate?.component(ofType: SelectionComponent.self)?.isSelected = !cell.info.canStay
+        if let pirateSelectionComponent = self.game.selectedPirate?.component(ofType: SelectionComponent.self) {
+            pirateSelectionComponent.isSelected = !cell.info.canStay
+            pirateSelectionComponent.isUserInteractionEnabled = cell.info.canStay
+        }
+        
         if !cell.info.canStay {
             self.stateMachine?.enter(PirateSelectedState.self)
         }
