@@ -27,6 +27,10 @@ struct DefaultNodeConnector: NodeConnectorDescribing {
             
         case .oneOf(let moves):
             connectedPositions = moves.map { BoardPosition(x + $0.x, y + $0.y) }
+            
+        case .none:
+            assertionFailure("Should not be here")
+            connectedPositions = []
         }
         
         let connectedNodes = connectedPositions.flatMap(graph.node(at:))

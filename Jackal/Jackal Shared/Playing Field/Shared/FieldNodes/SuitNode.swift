@@ -18,15 +18,7 @@ struct SuitNode: FieldNodeDescribing {
     
     // MARK: Lifecycle
     init() {
-        let moves: [Move] = [Move(x: -1, y: -1),
-                             Move(x:  0, y: -1),
-                             Move(x: +1, y: -1),
-                             Move(x: -1, y:  0),
-                             Move(x: +1, y:  0),
-                             Move(x: -1, y: +1),
-                             Move(x:  0, y: +1),
-                             Move(x: +1, y: +1)]
-        moveType = .oneOf(moves)
+        moveType = .none
         textureName = "suit"
     }
 }
