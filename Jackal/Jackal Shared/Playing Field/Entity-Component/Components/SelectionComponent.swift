@@ -24,7 +24,7 @@ class SelectionComponent: GKComponent {
         
         didSet {
             
-            guard let entity = self.entity else { return }
+            guard isUserInteractionEnabled, let entity = self.entity else { return }
             
             if isSelected {
                 self.delegate?.entitySelected(entity)
@@ -33,4 +33,6 @@ class SelectionComponent: GKComponent {
             }
         }
     }
+    
+    var isUserInteractionEnabled: Bool = true
 }
