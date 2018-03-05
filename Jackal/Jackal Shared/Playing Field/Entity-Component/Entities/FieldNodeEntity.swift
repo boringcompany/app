@@ -11,4 +11,14 @@ import GameplayKit
 
 class FieldNodeEntity: GKEntity {
     
+    public let info: FieldNodeDescribing
+    
+    init(with info: FieldNodeDescribing) {
+        self.info = info
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

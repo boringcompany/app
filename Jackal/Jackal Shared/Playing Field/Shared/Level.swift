@@ -87,6 +87,10 @@ class Level {
         return initialNodes[x][y].textureName
     }
     
+    func fieldNodeInfoAt(x: Int, y: Int) -> FieldNodeDescribing {
+        return initialNodes[x][y]
+    }
+    
     func relativePosition(for boardPosition: BoardPosition) -> Position? {
         
         let fieldNode = initialNodes[Int(boardPosition.x)][Int(boardPosition.y)]
