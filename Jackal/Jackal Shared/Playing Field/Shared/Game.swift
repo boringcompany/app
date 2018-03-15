@@ -47,7 +47,7 @@ class Game {
     
     // MARK: Private
     private func setupPlayingBoard(in scene: SKScene) -> SKNode {
-        scene.backgroundColor = .blue
+        scene.backgroundColor = .gray
         let sceneSize = min(scene.size.width, scene.size.height)
         let board = SKNode()
         board.position = CGPoint(x: -sceneSize/2, y: -sceneSize/2)
@@ -58,7 +58,8 @@ class Game {
         for x in 0..<size.width {
             for y in 0..<size.height {
                 
-                guard !isCorner(x: x, y: y, height: size.height, width: size.width) else { continue }
+                let fieldNodeInfo = level.fieldNodeInfoAt(x: x, y: y)
+                if (fieldNodeInfo is OutboundNode) { continue }
                 
                 let textureName = level.textureNameAt(x: x, y: y)
                 let node = CellNode(texture: SKTexture(imageNamed: textureName),
@@ -70,7 +71,7 @@ class Game {
                 board.addChild(node)
                 
                 // entity
-                let cell = FieldNodeEntity(with: level.fieldNodeInfoAt(x: x, y: y))
+                let cell = FieldNodeEntity(with: fieldNodeInfo)
                 cell.addComponent(SpriteComponent(node: node))
                 cell.addComponent(FlipSpriteComponent())
                 
@@ -92,12 +93,6 @@ class Game {
         scene.addChild(board)
 
         return board
-    }
-    
-    
-    func isCorner(x: Int, y: Int, height: Int, width: Int) -> Bool {
-        let conditions: [Bool] = [x == 0, y == 0, x == width - 1, y == height - 1]
-        return conditions.filter { $0 }.count == 2
     }
     
     

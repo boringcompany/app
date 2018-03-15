@@ -15,7 +15,7 @@ struct DefaultNodeConnector: NodeConnectorDescribing {
         graph.add([node])
     }
     
-    func addNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, x: Int8, y: Int8) {
+    func addNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, map: [[FieldNodeDescribing]], x: Int8, y: Int8) {
         let position = BoardPosition(x, y)
         guard let centre = graph.node(at: position) else { return }
         
@@ -29,7 +29,6 @@ struct DefaultNodeConnector: NodeConnectorDescribing {
             connectedPositions = moves.map { BoardPosition(x + $0.x, y + $0.y) }
             
         case .none:
-            assertionFailure("Should not be here")
             connectedPositions = []
         }
         
@@ -37,6 +36,6 @@ struct DefaultNodeConnector: NodeConnectorDescribing {
         centre.addConnections(to: connectedNodes, bidirectional: false)
     }
     
-    func removeNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, x: Int8, y: Int8) {
+    func removeNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, map: [[FieldNodeDescribing]], x: Int8, y: Int8) {
     }
 }

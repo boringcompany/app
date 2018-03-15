@@ -56,14 +56,14 @@ class Level {
         for x in 0..<Int8(size.width) {
             for y in 0..<Int8(size.height) {
                 let fieldNode = fieldNodes[Int(x)][Int(y)]
-                fieldNode.nodeConnector.addNodesConnections(fieldNode: fieldNode, graph: graph, x: x, y: y)
+                fieldNode.nodeConnector.addNodesConnections(fieldNode: fieldNode, graph: graph, map: fieldNodes, x: x, y: y)
             }
         }
         
         for x in 0..<Int8(size.width) {
             for y in 0..<Int8(size.height) {
                 let fieldNode = fieldNodes[Int(x)][Int(y)]
-                fieldNode.nodeConnector.removeNodesConnections(fieldNode: fieldNode, graph: graph, x: x, y: y)
+                fieldNode.nodeConnector.removeNodesConnections(fieldNode: fieldNode, graph: graph, map: fieldNodes, x: x, y: y)
             }
         }
         
@@ -91,25 +91,54 @@ class Level {
         return initialNodes[x][y]
     }
     
-    //For now, i have no idea how to do it more clearly and safe, u a welcome :-)
+    //For now, I have no idea how to do it more clearly and safe, u r welcome :-)
     static func nodes(for configuration: Configuration) -> [[FieldNodeDescribing]] {
-        var nodes: [[FieldNodeDescribing]] = Array(repeating: Array(repeating: EmptyNode(),
+        var nodes: [[FieldNodeDescribing]] = Array(repeating: Array(repeating: OutboundNode(),
                                       count: Int(configuration.size.height)),
                      count: Int(configuration.size.width))
         
-        var x = 0
-        var y = 0
-        
+        var sourcefieldNodes: [FieldNodeDescribing] = []
         for field in configuration.amountOfFields {
             for _ in 0..<field.amount {
-                nodes[x][y] = field.node
-                x += 1
-                if x == configuration.size.width {
-                    x = 0
-                    y += 1
+                sourcefieldNodes.append(field.node)
+            }
+        }
+        let shuffledNodes = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: sourcefieldNodes) as! [FieldNodeDescribing]
+        var shuffledNodesCounter = 0
+        
+        let height = configuration.size.height
+        let width = configuration.size.width
+        
+        for y in 0...(height - 1) {
+            for x in 0...(width - 1) {
+                if isCorner(x: x, y: y, height: height, width: width) { continue }
+                if isSea(x: x, y: y, height: height, width: width) {
+                    nodes[x][y] = SeaNode()
+                } else {
+                    nodes[x][y] = shuffledNodes[shuffledNodesCounter]
+                    shuffledNodesCounter += 1
                 }
             }
         }
+        
         return nodes
+    }
+    
+    private static func isCorner(x: Int, y: Int, height: Int, width: Int) -> Bool {
+        let firstConditions: [Bool] = [x == 0, y == 0, x == width - 1, y == height - 1]
+        let secondCondions: [Bool] = [x == 1, y == 1, x == width - 2, y == height - 2]
+        let firstCount = firstConditions.filter { $0 }.count
+        let secondCount = secondCondions.filter { $0 }.count
+        return firstCount != 0 && firstCount + secondCount == 2
+    }
+    
+    private static func isSea(x: Int, y: Int, height: Int, width: Int) -> Bool {
+        let firstConditions: [Bool] = [x == 0, y == 0, x == width - 1, y == height - 1]
+        let secondCondions: [Bool] = [x > 1 && x < width - 2, y > 1 && y < height - 2]
+        let thirdCondions: [Bool] = [x == 1, y == 1, x == width - 2, y == height - 2]
+        let firstCount = firstConditions.filter { $0 }.count
+        let secondCount = secondCondions.filter { $0 }.count
+        let thirdCount = thirdCondions.filter { $0 }.count
+        return (firstCount == 1 && secondCount == 1) || thirdCount == 2
     }
 }
