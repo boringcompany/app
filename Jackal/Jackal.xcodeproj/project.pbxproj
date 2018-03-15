@@ -74,6 +74,10 @@
 		BD29C6F42059AB16002A13DC /* OutboundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29C6F22059AAA2002A13DC /* OutboundNode.swift */; };
 		BD29C6F52059AB17002A13DC /* OutboundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29C6F22059AAA2002A13DC /* OutboundNode.swift */; };
 		BD29C6F62059AB18002A13DC /* OutboundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29C6F22059AAA2002A13DC /* OutboundNode.swift */; };
+		BD29C6F8205AA881002A13DC /* GameBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29C6F7205AA881002A13DC /* GameBorder.swift */; };
+		BD29C6F9205AB0DC002A13DC /* GameBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29C6F7205AA881002A13DC /* GameBorder.swift */; };
+		BD29C6FA205AB0DD002A13DC /* GameBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29C6F7205AA881002A13DC /* GameBorder.swift */; };
+		BD29C6FB205AB0DD002A13DC /* GameBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29C6F7205AA881002A13DC /* GameBorder.swift */; };
 		BD5E78952046DA1C00DBAC18 /* TurntableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */; };
 		BD5E78962046DA1C00DBAC18 /* TurntableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */; };
 		BD5E78972046DA1C00DBAC18 /* TurntableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */; };
@@ -213,6 +217,7 @@
 		88FC961F201F558B00A979B9 /* BoardGraphNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGraphNode.swift; sourceTree = "<group>"; };
 		88FC9623201F690700A979B9 /* InputHandlingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHandlingComponent.swift; sourceTree = "<group>"; };
 		BD29C6F22059AAA2002A13DC /* OutboundNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutboundNode.swift; sourceTree = "<group>"; };
+		BD29C6F7205AA881002A13DC /* GameBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBorder.swift; sourceTree = "<group>"; };
 		BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableNode.swift; sourceTree = "<group>"; };
 		BD5E78992046EC2200DBAC18 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		BD5E78AE2047F74700DBAC18 /* NodeConnectorDescribing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeConnectorDescribing.swift; sourceTree = "<group>"; };
@@ -386,11 +391,12 @@
 				88D28181203ABCD10046E67E /* GameStates */,
 				88FC961A201F511900A979B9 /* BoardGraph */,
 				BD5E78A82047F71700DBAC18 /* GraphConnectors */,
+				88FC9616201F501900A979B9 /* BoardPosition.swift */,
+				FB77E69C20161D8500B9A75B /* Game.swift */,
+				BD29C6F7205AA881002A13DC /* GameBorder.swift */,
+				579CF3D8201D0A7000DCC9CF /* InputHandler.swift */,
 				FB77E6972016172400B9A75B /* Level.swift */,
 				FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */,
-				FB77E69C20161D8500B9A75B /* Game.swift */,
-				579CF3D8201D0A7000DCC9CF /* InputHandler.swift */,
-				88FC9616201F501900A979B9 /* BoardPosition.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -708,6 +714,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD29C6FA205AB0DD002A13DC /* GameBorder.swift in Sources */,
 				BD5E789D2046EC2200DBAC18 /* Position.swift in Sources */,
 				BD5E78C12047FBA800DBAC18 /* DefaultNodeConnector.swift in Sources */,
 				BD5E78982046DA1C00DBAC18 /* TurntableNode.swift in Sources */,
@@ -746,6 +753,7 @@
 				88FC9620201F558B00A979B9 /* BoardGraphNode.swift in Sources */,
 				FB20C938203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */,
 				BDAC86D6203F0818006D39DA /* ShaderManager.swift in Sources */,
+				BD29C6F8205AA881002A13DC /* GameBorder.swift in Sources */,
 				BD29C6F32059AAA2002A13DC /* OutboundNode.swift in Sources */,
 				88D28183203ABCE40046E67E /* GameState.swift in Sources */,
 				88D28187203ABD330046E67E /* TurnState.swift in Sources */,
@@ -796,6 +804,7 @@
 				88FC9621201F558B00A979B9 /* BoardGraphNode.swift in Sources */,
 				FB20C939203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */,
 				BDAC86D7203F0818006D39DA /* ShaderManager.swift in Sources */,
+				BD29C6F9205AB0DC002A13DC /* GameBorder.swift in Sources */,
 				BD29C6F42059AB16002A13DC /* OutboundNode.swift in Sources */,
 				88D28184203ABCE40046E67E /* GameState.swift in Sources */,
 				88D28188203ABD330046E67E /* TurnState.swift in Sources */,
@@ -846,6 +855,7 @@
 				88FC9622201F558B00A979B9 /* BoardGraphNode.swift in Sources */,
 				FB20C93A203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */,
 				BDAC86D8203F0818006D39DA /* ShaderManager.swift in Sources */,
+				BD29C6FB205AB0DD002A13DC /* GameBorder.swift in Sources */,
 				BD29C6F52059AB17002A13DC /* OutboundNode.swift in Sources */,
 				88D28185203ABCE40046E67E /* GameState.swift in Sources */,
 				88D28189203ABD330046E67E /* TurnState.swift in Sources */,

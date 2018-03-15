@@ -14,7 +14,7 @@ struct SeaNode: FieldNodeDescribing {
     var canContainObject = false
     var canStay = true
     var actionType: ActionType = .permanent
-    var textureName: String = ""
+    var textureName: String = "transparentNode"
     var nodeConnector: NodeConnectorDescribing
     
     // MARK: Lifecycle

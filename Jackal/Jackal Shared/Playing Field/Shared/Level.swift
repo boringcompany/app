@@ -83,10 +83,6 @@ class Level {
         return positions
     }
     
-    func textureNameAt(x: Int, y: Int) -> String {
-        return initialNodes[x][y].textureName
-    }
-    
     func fieldNodeInfoAt(x: Int, y: Int) -> FieldNodeDescribing {
         return initialNodes[x][y]
     }
