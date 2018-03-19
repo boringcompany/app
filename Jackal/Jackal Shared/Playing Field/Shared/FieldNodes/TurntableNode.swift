@@ -22,7 +22,6 @@ struct TurntableNode: FieldNodeDescribing {
     var canContainObject = true
     var canStay = true
     var actionType: ActionType = .permanent
-    var isOpen = false
     var textureName: String
     var nodeConnector: NodeConnectorDescribing
     var positions: [Position]
@@ -76,11 +75,6 @@ struct TurntableNode: FieldNodeDescribing {
                          Position(x: 0.3, y: -0.3)]
         }
         return (positions, textureName)
-    }
-    
-    // MARK: Public
-    mutating func toggle() {
-        isOpen = !isOpen
     }
     
     func relativePosition(boardPosition: BoardPosition) -> Position? {

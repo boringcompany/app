@@ -80,13 +80,15 @@ class PirateSelectedState: TurnState {
         piratePositionComponent.boardPosition = piratePosition
         
         let point: CGPoint
-        if let relativePosition = self.game.level.relativePosition(for: piratePosition) {
+        if let relativePosition = cell.info.relativePosition(boardPosition: piratePosition) {
             point = self.game.gameScene.point(at: cellPosition.int2Position, relativePosition: relativePosition)
         } else {
             point = self.game.gameScene.point(at: cellPosition.int2Position)
         }
-        let action = SKAction.move(to: point, duration: 0.3)
-        pirateNode.run(action)
+        let moveAction = SKAction.move(to: point, duration: 0.3)
+        cell.component(ofType: FlipSpriteComponent.self)?.flip(to: cell.texture)
+        
+        pirateNode.run(moveAction)
     }
     
     private func updateState(for cell: FieldNodeEntity) {

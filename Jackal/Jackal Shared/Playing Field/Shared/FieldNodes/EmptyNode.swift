@@ -22,7 +22,6 @@ struct EmptyNode: FieldNodeDescribing {
     var canContainObject = true
     var canStay = true
     var actionType: ActionType = .permanent
-    var isOpen = false
     var textureName: String
     
     // MARK: Lifecycle
@@ -37,10 +36,5 @@ struct EmptyNode: FieldNodeDescribing {
                              Move(x: +1, y: +1)]
         moveType = .oneOf(moves)
         textureName = type.rawValue
-    }
-    
-    // MARK: Public
-    mutating func toggle() {
-        isOpen = !isOpen
     }
 }

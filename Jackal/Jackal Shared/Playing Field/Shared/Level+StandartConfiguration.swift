@@ -10,7 +10,7 @@ import Foundation
 
 extension Level.Configuration.Size {
     
-    static var standard = Level.Configuration.Size(width: 11, height: 11)
+    static var standard = Level.Configuration.Size(width: 13, height: 13)
 }
 
 extension Level.Configuration {
@@ -69,8 +69,9 @@ extension Level.Configuration {
         
         //TODO: remove stubs when all kinds of nodes will b ready
         let amount = fields.map {$0.amount}.reduce(0) { $0 + $1 }
+        let borderNodesCount = UInt((size.width + size.height) * 2)
         fields.append(FieldNodeAmount(node: EmptyNode(type: .hole),
-                                      amount: UInt(size.width * size.height) - amount))
+                                      amount: UInt(size.width * size.height) - amount - borderNodesCount))
         
         return Level.Configuration(size: size, amountOfFields: fields)
     }
