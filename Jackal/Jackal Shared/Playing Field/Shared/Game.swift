@@ -47,10 +47,11 @@ class Game {
     
     // MARK: Private
     private func setupPlayingBoard(in scene: SKScene) -> SKNode {
-        scene.backgroundColor = .blue
-        let sceneSize = min(scene.size.width, scene.size.height)
+        scene.backgroundColor = SKColor(red: CGFloat(243.0/255.0),
+                                        green: CGFloat(243.0/255.0),
+                                        blue: CGFloat(243.0/255.0),
+                                        alpha: CGFloat(1.0))
         let board = SKNode()
-        board.position = CGPoint(x: -sceneSize/2, y: -sceneSize/2)
         
         let width = CGFloat(gameScene.cellWidth)
         let cellSize = CGSize(width: width, height: width)
@@ -58,9 +59,10 @@ class Game {
         for x in 0..<size.width {
             for y in 0..<size.height {
                 
-                guard !isCorner(x: x, y: y, height: size.height, width: size.width) else { continue }
+                let fieldNodeInfo = level.fieldNodeInfoAt(x: x, y: y)
+                if (fieldNodeInfo is OutboundNode) { continue }
                 
-                let textureName = level.textureNameAt(x: x, y: y)
+                let textureName = fieldNodeInfo.textureName
                 let node = CellNode(texture: SKTexture(imageNamed: textureName),
                                     size: cellSize)
                 
@@ -70,7 +72,7 @@ class Game {
                 board.addChild(node)
                 
                 // entity
-                let cell = FieldNodeEntity(with: level.fieldNodeInfoAt(x: x, y: y))
+                let cell = FieldNodeEntity(with: fieldNodeInfo)
                 cell.addComponent(SpriteComponent(node: node))
                 cell.addComponent(FlipSpriteComponent())
                 
@@ -89,15 +91,20 @@ class Game {
             }
         }
         
+        let boardSize = CGSize(width: CGFloat(size.width) * cellSize.width,
+                               height: CGFloat(size.height) * cellSize.height)
+        GameBorder.addBorder(to: board, boardSize: boardSize)
+        
         scene.addChild(board)
+        
+        let cameraNode = SKCameraNode()
+        cameraNode.position = CGPoint(x: scene.size.width/2 - 100, y: scene.size.height/2 + 65)
+        cameraNode.xScale = 1.3
+        cameraNode.yScale = 1.3
+        scene.addChild(cameraNode)
+        scene.camera = cameraNode
 
         return board
-    }
-    
-    
-    func isCorner(x: Int, y: Int, height: Int, width: Int) -> Bool {
-        let conditions: [Bool] = [x == 0, y == 0, x == width - 1, y == height - 1]
-        return conditions.filter { $0 }.count == 2
     }
     
     

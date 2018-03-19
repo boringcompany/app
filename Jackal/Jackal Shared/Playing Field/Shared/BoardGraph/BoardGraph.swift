@@ -33,8 +33,13 @@ class BoardGraph<NodeType>: GKGraph where NodeType: BoardGraphNode {
     }
     
     
-    
     func node(at boardPosition: BoardPosition) -> NodeType? {
         return self.nodesByPosition[boardPosition]
+    }
+    
+    
+    func inputConnectionsToNode(at boardPosition: BoardPosition) -> [BoardPosition: NodeType]? {
+        guard let targetNode = node(at: boardPosition) else { return nil }
+        return self.nodesByPosition.filter { $0.value.connectedNodes.contains(targetNode) }
     }
 }

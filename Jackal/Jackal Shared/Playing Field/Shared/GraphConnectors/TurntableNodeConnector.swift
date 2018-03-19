@@ -26,7 +26,7 @@ struct TurntableNodeConnector: NodeConnectorDescribing {
         graph.add(graphNodes)
     }
     
-    func addNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, x: Int8, y: Int8) {
+    func addNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, map: [[FieldNodeDescribing]], x: Int8, y: Int8) {
         let turntableNode = castFieldNode(fieldNode: fieldNode)
         for z in 0..<turntableNode.stepsCount-1 {
             let position = BoardPosition(x, y, Int8(z))
@@ -46,6 +46,6 @@ struct TurntableNodeConnector: NodeConnectorDescribing {
         }
     }
     
-    func removeNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, x: Int8, y: Int8) {
+    func removeNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, map: [[FieldNodeDescribing]], x: Int8, y: Int8) {
     }
 }

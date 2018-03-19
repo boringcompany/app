@@ -12,7 +12,7 @@ protocol NodeConnectorDescribing {
     
     func createNodes(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, x: Int8, y: Int8)
     
-    func addNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, x: Int8, y: Int8)
+    func addNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, map: [[FieldNodeDescribing]], x: Int8, y: Int8)
     
-    func removeNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, x: Int8, y: Int8)
+    func removeNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, map: [[FieldNodeDescribing]], x: Int8, y: Int8)
 }
