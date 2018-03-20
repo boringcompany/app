@@ -23,18 +23,19 @@ class StartTurnState: TurnState {
         
         for pirate in self.game.pirates {
             
-            let inputComponent = pirate.component(ofType: InputHandlingComponent.self)
-            inputComponent?.interactionEnabled = true
+            pirate.setSelectable(true)
             
             let selectionComponent = pirate.component(ofType: SelectionComponent.self)
             selectionComponent?.delegate = self
+            
+            pirate.setHighlighted(false)
         }
         
         
         for cell in self.game.fieldCells {
             
-            let inputComponent = cell.component(ofType: InputHandlingComponent.self)
-            inputComponent?.interactionEnabled = false
+            cell.setSelectable(false)
+            cell.setHighlighted(false)
         }
     }
 }
@@ -49,11 +50,5 @@ extension StartTurnState: SelectionComponentDelegate {
         let pirate = entity as! PirateEntity
         self.game.selectedPirate = pirate
         self.stateMachine?.enter(PirateSelectedState.self)
-    }
-    
-    
-    func entityDeselected(_ entity: GKEntity) {
-        
-        assertionFailure("Can't be here")
     }
 }

@@ -14,19 +14,23 @@ class PirateSelectedState: TurnState {
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         
-        return stateClass == StartTurnState.self
-            || stateClass == PirateSelectedState.self
+        let isValid = stateClass == PirateSelectedState.self
+            || stateClass == FieldSelectedState.self
+        
+        return isValid
     }
     
     
     override func didEnter(from previousState: GKState?) {
         
-        let selectedPirate = self.game.selectedPirate!
+        guard let selectedPirate = self.game.selectedPirate else {
+            assertionFailure("Cannot enter \(PirateSelectedState.self) without any pirate selected")
+            return
+        }
         
         for pirate in self.game.pirates {
             
-            let inputComponent = pirate.component(ofType: InputHandlingComponent.self)
-            inputComponent?.interactionEnabled = true
+            pirate.setSelectable(true)
             
             let selectionComponent = pirate.component(ofType: SelectionComponent.self)
             selectionComponent?.delegate = self
@@ -49,58 +53,12 @@ class PirateSelectedState: TurnState {
             
             let isCellAvailable = filteredAvailablePositions.contains(cellPosition)
             
-            let inputComponent = cell.component(ofType: InputHandlingComponent.self)
-            inputComponent?.interactionEnabled = isCellAvailable
+            cell.setSelectable(isCellAvailable)
             
             let selectionComponent = cell.component(ofType: SelectionComponent.self)
             selectionComponent?.delegate = self
             
-            let spriteComponent = cell.component(ofType: SpriteComponent.self)
-            if let cellNode = spriteComponent?.node as? CellNode {
-                cellNode.highlighted = isCellAvailable
-            }
-        }
-    }
-    
-    
-    private func movePirate(_ pirate: PirateEntity, to cell: FieldNodeEntity) {
-        
-        guard
-            let cellPosition = cell.component(ofType: BoardPositionComponent.self)?.boardPosition,
-            let pirateNode = pirate.component(ofType: NodeComponent.self)?.node,
-            let piratePositionComponent = pirate.component(ofType: BoardPositionComponent.self),
-            var piratePosition = piratePositionComponent.boardPosition
-            else { return }
-        
-        if piratePosition.int2Position == cellPosition.int2Position {
-            piratePosition.z += 1
-        } else {
-            piratePosition = cellPosition
-        }
-        piratePositionComponent.boardPosition = piratePosition
-        
-        let point: CGPoint
-        if let relativePosition = cell.info.relativePosition(boardPosition: piratePosition) {
-            point = self.game.gameScene.point(at: cellPosition.int2Position, relativePosition: relativePosition)
-        } else {
-            point = self.game.gameScene.point(at: cellPosition.int2Position)
-        }
-        let moveAction = SKAction.move(to: point, duration: 0.3)
-        cell.component(ofType: FlipSpriteComponent.self)?.flip(to: cell.texture)
-        
-        pirateNode.run(moveAction)
-    }
-    
-    private func updateState(for cell: FieldNodeEntity) {
-        self.movePirate(self.game.selectedPirate!, to: cell)
-        
-        if let pirateSelectionComponent = self.game.selectedPirate?.component(ofType: SelectionComponent.self) {
-            pirateSelectionComponent.isSelected = !cell.info.canStay
-            pirateSelectionComponent.isUserInteractionEnabled = cell.info.canStay
-        }
-        
-        if !cell.info.canStay {
-            self.stateMachine?.enter(PirateSelectedState.self)
+            cell.setHighlighted(isCellAvailable)
         }
     }
 }
@@ -120,31 +78,9 @@ extension PirateSelectedState: SelectionComponentDelegate {
             self.stateMachine?.enter(PirateSelectedState.self)
             
         case let cell as FieldNodeEntity:
-            self.updateState(for: cell)
             
-        default:
-            break
-        }
-    }
-    
-    
-    func entityDeselected(_ entity: GKEntity) {
-        
-        switch entity {
-        case let pirate as PirateEntity where self.game.selectedPirate == pirate:
-            
-            self.game.selectedPirate = nil
-            self.stateMachine?.enter(StartTurnState.self)
-            
-            for cell in self.game.fieldCells {
-                let spriteComponent = cell.component(ofType: SpriteComponent.self)
-                if let cellNode = spriteComponent?.node as? CellNode {
-                    cellNode.highlighted = false
-                }
-            }
-            
-        case let cell as FieldNodeEntity:
-            self.updateState(for: cell)
+            self.game.selectedField = cell
+            self.stateMachine?.enter(FieldSelectedState.self)
             
         default:
             break

@@ -32,6 +32,7 @@ class Game {
     var pirates: [PirateEntity] = []
     
     var selectedPirate: PirateEntity?
+    var selectedField: FieldNodeEntity?
     
     // MARK: Public Properties
     lazy var gameScene: GameScene = {
@@ -145,7 +146,9 @@ class Game {
         
         let states: [GKState] = [
             StartTurnState(game: self),
-            PirateSelectedState(game: self)
+            PirateSelectedState(game: self),
+            FieldSelectedState(game: self),
+            EndTurnState(game: self)
         ]
         
         self.stateMachine = GKStateMachine(states: states)

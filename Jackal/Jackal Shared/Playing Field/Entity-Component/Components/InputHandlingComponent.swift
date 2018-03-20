@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+
 class InputHandlingComponent: GKComponent, InputHandlerProtocol {
     
     
@@ -52,7 +53,7 @@ class InputHandlingComponent: GKComponent, InputHandlerProtocol {
         print("actionOut \(event.coordinate)")
         
         if let selectionComponent = self.entity?.component(ofType: SelectionComponent.self) {
-            selectionComponent.isSelected = !selectionComponent.isSelected
+            selectionComponent.select()
         }
     }
 }

@@ -28,6 +28,15 @@
 		579CF3D9201D0A7000DCC9CF /* InputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CF3D8201D0A7000DCC9CF /* InputHandler.swift */; };
 		579CF3DA201D0A7000DCC9CF /* InputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CF3D8201D0A7000DCC9CF /* InputHandler.swift */; };
 		579CF3DB201D0A7000DCC9CF /* InputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CF3D8201D0A7000DCC9CF /* InputHandler.swift */; };
+		8820C2D5205FF8CC00F13014 /* FieldSelectedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820C2D4205FF8CC00F13014 /* FieldSelectedState.swift */; };
+		8820C2D6205FF8CC00F13014 /* FieldSelectedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820C2D4205FF8CC00F13014 /* FieldSelectedState.swift */; };
+		8820C2D7205FF8CC00F13014 /* FieldSelectedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820C2D4205FF8CC00F13014 /* FieldSelectedState.swift */; };
+		8820C2D92060C6C000F13014 /* GKEntityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820C2D82060C6C000F13014 /* GKEntityExtensions.swift */; };
+		8820C2DA2060C6C000F13014 /* GKEntityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820C2D82060C6C000F13014 /* GKEntityExtensions.swift */; };
+		8820C2DB2060C6C000F13014 /* GKEntityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820C2D82060C6C000F13014 /* GKEntityExtensions.swift */; };
+		8820C2DD2060D9F000F13014 /* EndTurnState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820C2DC2060D9F000F13014 /* EndTurnState.swift */; };
+		8820C2DE2060D9F000F13014 /* EndTurnState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820C2DC2060D9F000F13014 /* EndTurnState.swift */; };
+		8820C2DF2060D9F000F13014 /* EndTurnState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820C2DC2060D9F000F13014 /* EndTurnState.swift */; };
 		88746FEB201E43D10011D07A /* PirateNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88746FEA201E43D10011D07A /* PirateNode.swift */; };
 		88746FEC201E43D10011D07A /* PirateNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88746FEA201E43D10011D07A /* PirateNode.swift */; };
 		88746FED201E43D10011D07A /* PirateNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88746FEA201E43D10011D07A /* PirateNode.swift */; };
@@ -203,6 +212,9 @@
 		577C1ED520487E810024DB31 /* FlipComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipComponent.swift; sourceTree = "<group>"; };
 		579CF3D4201D038A00DCC9CF /* SpriteKit+Inputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpriteKit+Inputs.swift"; sourceTree = "<group>"; };
 		579CF3D8201D0A7000DCC9CF /* InputHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHandler.swift; sourceTree = "<group>"; };
+		8820C2D4205FF8CC00F13014 /* FieldSelectedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldSelectedState.swift; sourceTree = "<group>"; };
+		8820C2D82060C6C000F13014 /* GKEntityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GKEntityExtensions.swift; sourceTree = "<group>"; };
+		8820C2DC2060D9F000F13014 /* EndTurnState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndTurnState.swift; sourceTree = "<group>"; };
 		88746FEA201E43D10011D07A /* PirateNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateNode.swift; sourceTree = "<group>"; };
 		88746FEE201E45560011D07A /* PirateEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateEntity.swift; sourceTree = "<group>"; };
 		88D281752038BE6B0046E67E /* CellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellNode.swift; sourceTree = "<group>"; };
@@ -303,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				5758C032204474C200F552AA /* Int2+Initialization.swift */,
+				8820C2D82060C6C000F13014 /* GKEntityExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -314,6 +327,8 @@
 				88D28186203ABD330046E67E /* TurnState.swift */,
 				88D2818A203ABD770046E67E /* StartTurnState.swift */,
 				88D2818E203ABD980046E67E /* PirateSelectedState.swift */,
+				8820C2D4205FF8CC00F13014 /* FieldSelectedState.swift */,
+				8820C2DC2060D9F000F13014 /* EndTurnState.swift */,
 			);
 			path = GameStates;
 			sourceTree = "<group>";
@@ -750,6 +765,7 @@
 				FBC4344A200739AC00134AB7 /* GameScene.swift in Sources */,
 				FB20C946203F2A16008491E6 /* Rotation.swift in Sources */,
 				FB77E69D20161D8500B9A75B /* Game.swift in Sources */,
+				8820C2DD2060D9F000F13014 /* EndTurnState.swift in Sources */,
 				88FC9620201F558B00A979B9 /* BoardGraphNode.swift in Sources */,
 				FB20C938203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */,
 				BDAC86D6203F0818006D39DA /* ShaderManager.swift in Sources */,
@@ -766,10 +782,12 @@
 				88D2818F203ABD980046E67E /* PirateSelectedState.swift in Sources */,
 				88FC9613201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */,
 				FB20C941203F28AB008491E6 /* Move.swift in Sources */,
+				8820C2D5205FF8CC00F13014 /* FieldSelectedState.swift in Sources */,
 				FBC43406200739AC00134AB7 /* GameViewController.swift in Sources */,
 				88FC961C201F512B00A979B9 /* BoardGraph.swift in Sources */,
 				5758C0372044762A00F552AA /* MoveType.swift in Sources */,
 				FBC43404200739AC00134AB7 /* AppDelegate.swift in Sources */,
+				8820C2D92060C6C000F13014 /* GKEntityExtensions.swift in Sources */,
 				88D281762038BE6B0046E67E /* CellNode.swift in Sources */,
 				FB9C53D92046D83600CE366D /* HorseNode.swift in Sources */,
 				BD5E789A2046EC2200DBAC18 /* Position.swift in Sources */,
@@ -801,6 +819,7 @@
 				FBC4344C200739AC00134AB7 /* GameScene.swift in Sources */,
 				FB20C947203F2A16008491E6 /* Rotation.swift in Sources */,
 				FB77E69E20161D8500B9A75B /* Game.swift in Sources */,
+				8820C2DE2060D9F000F13014 /* EndTurnState.swift in Sources */,
 				88FC9621201F558B00A979B9 /* BoardGraphNode.swift in Sources */,
 				FB20C939203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */,
 				BDAC86D7203F0818006D39DA /* ShaderManager.swift in Sources */,
@@ -817,10 +836,12 @@
 				88D28190203ABD980046E67E /* PirateSelectedState.swift in Sources */,
 				88FC9614201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */,
 				FB20C942203F28AB008491E6 /* Move.swift in Sources */,
+				8820C2D6205FF8CC00F13014 /* FieldSelectedState.swift in Sources */,
 				FBC43430200739AC00134AB7 /* GameViewController.swift in Sources */,
 				88FC961D201F512B00A979B9 /* BoardGraph.swift in Sources */,
 				5758C0382044762A00F552AA /* MoveType.swift in Sources */,
 				FBC4342E200739AC00134AB7 /* AppDelegate.swift in Sources */,
+				8820C2DA2060C6C000F13014 /* GKEntityExtensions.swift in Sources */,
 				88D281772038BE6B0046E67E /* CellNode.swift in Sources */,
 				FB9C53DA2046D83600CE366D /* HorseNode.swift in Sources */,
 				BD5E789B2046EC2200DBAC18 /* Position.swift in Sources */,
@@ -852,6 +873,7 @@
 				FBC4344D200739AC00134AB7 /* GameScene.swift in Sources */,
 				FB20C948203F2A16008491E6 /* Rotation.swift in Sources */,
 				FB77E69F20161D8500B9A75B /* Game.swift in Sources */,
+				8820C2DF2060D9F000F13014 /* EndTurnState.swift in Sources */,
 				88FC9622201F558B00A979B9 /* BoardGraphNode.swift in Sources */,
 				FB20C93A203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */,
 				BDAC86D8203F0818006D39DA /* ShaderManager.swift in Sources */,
@@ -868,10 +890,12 @@
 				88D28191203ABD980046E67E /* PirateSelectedState.swift in Sources */,
 				88FC9615201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */,
 				FB20C943203F28AB008491E6 /* Move.swift in Sources */,
+				8820C2D7205FF8CC00F13014 /* FieldSelectedState.swift in Sources */,
 				FBC4343E200739AC00134AB7 /* GameViewController.swift in Sources */,
 				88FC961E201F512B00A979B9 /* BoardGraph.swift in Sources */,
 				5758C0392044762A00F552AA /* MoveType.swift in Sources */,
 				FBC4343C200739AC00134AB7 /* AppDelegate.swift in Sources */,
+				8820C2DB2060C6C000F13014 /* GKEntityExtensions.swift in Sources */,
 				88D281782038BE6B0046E67E /* CellNode.swift in Sources */,
 				FB9C53DB2046D83600CE366D /* HorseNode.swift in Sources */,
 				BD5E789C2046EC2200DBAC18 /* Position.swift in Sources */,
