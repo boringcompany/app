@@ -12,7 +12,6 @@ import GameplayKit
 protocol SelectionComponentDelegate: class {
     
     func entitySelected(_ entity: GKEntity)
-    func entityDeselected(_ entity: GKEntity)
 }
 
 
@@ -20,19 +19,10 @@ class SelectionComponent: GKComponent {
     
     weak var delegate: SelectionComponentDelegate?
     
-    var isSelected: Bool = false {
+    func select() {
         
-        didSet {
-            
-            guard isUserInteractionEnabled, let entity = self.entity else { return }
-            
-            if isSelected {
-                self.delegate?.entitySelected(entity)
-            } else {
-                self.delegate?.entityDeselected(entity)
-            }
+        if let entity = self.entity {
+            self.delegate?.entitySelected(entity)
         }
     }
-    
-    var isUserInteractionEnabled: Bool = true
 }
