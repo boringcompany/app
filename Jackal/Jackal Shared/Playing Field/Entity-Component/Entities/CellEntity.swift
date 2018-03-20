@@ -1,5 +1,5 @@
 //
-//  FieldNodeEntity.swift
+//  CellEntity.swift
 //  Jackal
 //
 //  Created by Andrey Zonov on 22/01/2018.
@@ -9,7 +9,7 @@
 import Foundation
 import GameplayKit
 
-class FieldNodeEntity: GKEntity {
+class CellEntity: GKEntity {
     
     public let info: FieldNodeDescribing
     
@@ -23,7 +23,7 @@ class FieldNodeEntity: GKEntity {
     }
 }
 
-extension FieldNodeEntity {
+extension CellEntity {
     
     var texture: SKTexture {
         return SKTexture(imageNamed: info.textureName)

@@ -32,7 +32,7 @@ class StartTurnState: TurnState {
         }
         
         
-        for cell in self.game.fieldCells {
+        for cell in self.game.cells {
             
             cell.setSelectable(false)
             cell.setHighlighted(false)

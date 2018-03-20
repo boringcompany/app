@@ -28,11 +28,11 @@ class Game {
     
     var stateMachine: GKStateMachine?
     
-    var fieldCells: [FieldNodeEntity] = []
+    var cells: [CellEntity] = []
     var pirates: [PirateEntity] = []
     
     var selectedPirate: PirateEntity?
-    var selectedField: FieldNodeEntity?
+    var selectedCellIndex: Int?
     
     // MARK: Public Properties
     lazy var gameScene: GameScene = {
@@ -73,7 +73,7 @@ class Game {
                 board.addChild(node)
                 
                 // entity
-                let cell = FieldNodeEntity(with: fieldNodeInfo)
+                let cell = CellEntity(with: fieldNodeInfo)
                 cell.addComponent(SpriteComponent(node: node))
                 cell.addComponent(FlipSpriteComponent())
                 
@@ -88,7 +88,7 @@ class Game {
                 boardPositionComponent.boardPosition = BoardPosition(int2: boardPosition)
                 cell.addComponent(boardPositionComponent)
                 
-                fieldCells.append(cell)
+                cells.append(cell)
             }
         }
         
