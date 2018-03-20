@@ -60,8 +60,8 @@ class FieldSelectedState: TurnState {
         
         if cell.info is SuitNode {
             
-            let openedCellInfo = self.game.level.fieldNodeInfoAt(x: Int(position.x), y: Int(position.y))
-            self.game.cells[cellIndex] = CellEntity(with: openedCellInfo)
+            let openedCellInfo = self.game.level.openCell(x: Int(position.x), y: Int(position.y))
+            self.game.cells[cellIndex].info = openedCellInfo
             
             let texture = SKTexture(imageNamed: openedCellInfo.textureName)
             let flipComponent = cell.component(ofType: FlipSpriteComponent.self)

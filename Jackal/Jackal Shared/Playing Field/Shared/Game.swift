@@ -57,6 +57,9 @@ class Game {
         let width = CGFloat(gameScene.cellWidth)
         let cellSize = CGSize(width: width, height: width)
         
+        // FIXME: this line is here while pirates are not on the ship
+        self.level.openCell(x: size.width / 2, y: size.height / 2)
+        
         for x in 0..<size.width {
             for y in 0..<size.height {
                 

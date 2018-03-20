@@ -11,7 +11,7 @@ import GameplayKit
 
 class CellEntity: GKEntity {
     
-    public let info: FieldNodeDescribing
+    public var info: FieldNodeDescribing
     
     init(with info: FieldNodeDescribing) {
         self.info = info
