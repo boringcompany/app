@@ -25,20 +25,17 @@ class FieldSelectedState: TurnState {
             assertionFailure("Cannot get into \(FieldSelectedState.self) without any pirate selected")
             return
         }
-        
-        guard let field = self.game.selectedField else {
-            assertionFailure("Cannot get into \(FieldSelectedState.self) without any field selected")
-            return
-        }
-        
+
         for pirate in self.game.pirates {
             
             pirate.setSelectable(false)
         }
         
-        self.movePirate(pirate, to: field) {
+        self.openSelectedCellIfNeeded { cell in
             
-            if field.info.canStay {
+            self.movePirate(pirate, to: cell, completion: {})
+            
+            if cell.info.canStay {
                 self.stateMachine?.enter(EndTurnState.self)
             } else {
                 self.stateMachine?.enter(PirateSelectedState.self)
@@ -47,9 +44,39 @@ class FieldSelectedState: TurnState {
     }
     
     
+    private func openSelectedCellIfNeeded(completion: @escaping (CellEntity) -> Void) {
+        
+        guard let cellIndex = self.game.selectedCellIndex else {
+            assertionFailure("Cannot get into \(FieldSelectedState.self) without any field selected")
+            return
+        }
+        
+        let cell = self.game.cells[cellIndex]
+        
+        guard let position = cell.component(ofType: BoardPositionComponent.self)?.boardPosition else {
+            assertionFailure("Selected cell \(cell) doesn't have board position")
+            return
+        }
+        
+        if cell.info is SuitNode {
+            
+            let openedCellInfo = self.game.level.openCell(x: Int(position.x), y: Int(position.y))
+            self.game.cells[cellIndex].info = openedCellInfo
+            
+            let texture = SKTexture(imageNamed: openedCellInfo.textureName)
+            let flipComponent = cell.component(ofType: FlipSpriteComponent.self)
+            flipComponent?.flip(to: texture) {
+                completion(cell)
+            }
+            
+        } else {
+            completion(cell)
+        }
+    }
+
     
     private func movePirate(_ pirate: PirateEntity,
-                            to cell: FieldNodeEntity,
+                            to cell: CellEntity,
                             completion: @escaping () -> Void) {
         
         guard
@@ -68,14 +95,13 @@ class FieldSelectedState: TurnState {
         
         let point: CGPoint
         if let relativePosition = cell.info.relativePosition(boardPosition: piratePosition) {
-            point = self.game.gameScene.point(at: cellPosition.int2Position, relativePosition: relativePosition)
+            point = self.game.gameScene.point(at: cellPosition.int2Position,
+                                              relativePosition: relativePosition)
         } else {
             point = self.game.gameScene.point(at: cellPosition.int2Position)
         }
         let moveAction = SKAction.move(to: point, duration: 0.3)
-        cell.component(ofType: FlipSpriteComponent.self)?.flip(to: cell.texture)
         
-        pirateNode.run(moveAction)
         pirateNode.run(moveAction, completion: completion)
     }
     

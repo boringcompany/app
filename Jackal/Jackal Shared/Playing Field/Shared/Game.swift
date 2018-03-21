@@ -28,11 +28,11 @@ class Game {
     
     var stateMachine: GKStateMachine?
     
-    var fieldCells: [FieldNodeEntity] = []
+    var cells: [CellEntity] = []
     var pirates: [PirateEntity] = []
     
     var selectedPirate: PirateEntity?
-    var selectedField: FieldNodeEntity?
+    var selectedCellIndex: Int?
     
     // MARK: Public Properties
     lazy var gameScene: GameScene = {
@@ -57,6 +57,9 @@ class Game {
         let width = CGFloat(gameScene.cellWidth)
         let cellSize = CGSize(width: width, height: width)
         
+        // FIXME: this line is here while pirates are not on the ship
+        self.level.openCell(x: size.width / 2, y: size.height / 2)
+        
         for x in 0..<size.width {
             for y in 0..<size.height {
                 
@@ -73,7 +76,7 @@ class Game {
                 board.addChild(node)
                 
                 // entity
-                let cell = FieldNodeEntity(with: fieldNodeInfo)
+                let cell = CellEntity(with: fieldNodeInfo)
                 cell.addComponent(SpriteComponent(node: node))
                 cell.addComponent(FlipSpriteComponent())
                 
@@ -88,7 +91,7 @@ class Game {
                 boardPositionComponent.boardPosition = BoardPosition(int2: boardPosition)
                 cell.addComponent(boardPositionComponent)
                 
-                fieldCells.append(cell)
+                cells.append(cell)
             }
         }
         

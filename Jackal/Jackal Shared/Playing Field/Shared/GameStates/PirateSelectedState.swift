@@ -46,7 +46,7 @@ class PirateSelectedState: TurnState {
             return BoardPosition(int2: position.int2Position)
         }
         
-        for cell in self.game.fieldCells {
+        for cell in self.game.cells {
             
             guard let cellPosition =
                 cell.component(ofType: BoardPositionComponent.self)?.boardPosition else { continue }
@@ -77,9 +77,9 @@ extension PirateSelectedState: SelectionComponentDelegate {
             self.game.selectedPirate = pirate
             self.stateMachine?.enter(PirateSelectedState.self)
             
-        case let cell as FieldNodeEntity:
+        case let cell as CellEntity:
             
-            self.game.selectedField = cell
+            self.game.selectedCellIndex = self.game.cells.index(of: cell)
             self.stateMachine?.enter(FieldSelectedState.self)
             
         default:

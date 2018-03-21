@@ -22,7 +22,7 @@ class EndTurnState: TurnState {
     override func didEnter(from previousState: GKState?) {
         
         self.game.selectedPirate = nil
-        self.game.selectedField = nil
+        self.game.selectedCellIndex = nil
         
         self.stateMachine?.enter(StartTurnState.self)
     }
