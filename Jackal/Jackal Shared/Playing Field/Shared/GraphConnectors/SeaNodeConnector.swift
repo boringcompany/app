@@ -7,39 +7,56 @@
 //
 
 
-struct SeaNodeConnector: NodeConnectorDescribing {
+class SeaNodeConnector: NodeConnectorDescribing {
     
     // MARK: NodeConnectorDescribing protocol
-    func createNodes(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, x: Int8, y: Int8) {
+    func createNodes(for fieldNode: FieldNodeDescribing, x: Int8, y: Int8, level: Level) {
+        
         let position = BoardPosition(x, y)
         let node = BoardGraphNode(boardPosition: position)
-        graph.add([node])
+        level.graph.add([node])
     }
     
-    func addNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, map: [[FieldNodeDescribing]], x: Int8, y: Int8) {
+    func addNodesConnections(from fieldNode: FieldNodeDescribing, x: Int8, y: Int8, level: Level) {
+        
         let position = BoardPosition(x, y)
-        guard let centre = graph.node(at: position) else { return }
+        guard let centre = level.graph.node(at: position) else { return }
         
         if case .oneOf(let moves) = fieldNode.moveType {
             let connectedPositions = moves.map { BoardPosition(x + $0.x, y + $0.y) }
-            let connectedNodes = connectedPositions.flatMap({ (position) -> BoardGraphNode? in
-                guard let graphNode = graph.node(at: position) else { return nil }
-                let adjacentFieldNode = map[Int(position.x)][Int(position.y)]
-                return adjacentFieldNode is SeaNode ? graphNode : nil
+            let connectedNodes = connectedPositions.flatMap({ (toPosition) -> BoardGraphNode? in
+                guard let adjacentFieldNode = level.fieldNodeInfoAt(position: toPosition) else { return nil }
+                var graphNode: BoardGraphNode? = nil
+                let isValid = canCreateConnection(fromFieldNode: fieldNode, toFieldNode: adjacentFieldNode)
+                    && adjacentFieldNode.nodeConnector.canCreateConnection(fromFieldNode: fieldNode, toFieldNode: adjacentFieldNode)
+                if isValid {
+                    graphNode = adjacentFieldNode.nodeConnector.nodeForConnection(fromPosition: position,
+                                                                                  moveType: fieldNode.moveType,
+                                                                                  toFieldNode: adjacentFieldNode,
+                                                                                  toPosition: toPosition,
+                                                                                  level: level)
+                }
+                return graphNode
             })
             centre.addConnections(to: connectedNodes, bidirectional: false)
         }
     }
     
-    func removeNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, map: [[FieldNodeDescribing]], x: Int8, y: Int8) {
-        let position = BoardPosition(x, y)
-        guard let centre = graph.node(at: position) else { return }
-        guard let inputConnections = graph.inputConnectionsToNode(at: position) else { return }
-        for (position, node) in inputConnections {
-            let inputFieldNode = map[Int(position.x)][Int(position.y)]
-            if !(inputFieldNode is SeaNode || inputFieldNode is ArrowNode) {
-                node.removeConnections(to: [centre], bidirectional: false)
-            }
-        }
+    func canCreateConnection(fromFieldNode: FieldNodeDescribing, toFieldNode: FieldNodeDescribing) -> Bool {
+        
+        let isValid = toFieldNode is SeaNode
+            && (fromFieldNode is SeaNode
+                || fromFieldNode is ArrowNode
+                || fromFieldNode is IceNode)
+        return isValid
+    }
+    
+    func nodeForConnection(fromPosition: BoardPosition,
+                           moveType: MoveType,
+                           toFieldNode: FieldNodeDescribing,
+                           toPosition: BoardPosition,
+                           level: Level) -> BoardGraphNode? {
+        
+        return level.graph.node(at: toPosition)
     }
 }
