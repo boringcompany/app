@@ -67,6 +67,9 @@ extension Level.Configuration {
         fields.append(FieldNodeAmount(node: TurntableNode(type: .fiveSteps),
                                       amount: 1))
         
+        fields.append(FieldNodeAmount(node: IceNode(),
+                                      amount: 6))
+        
         //TODO: remove stubs when all kinds of nodes will b ready
         let amount = fields.map {$0.amount}.reduce(0) { $0 + $1 }
         let borderNodesCount = UInt((size.width + size.height) * 2)
