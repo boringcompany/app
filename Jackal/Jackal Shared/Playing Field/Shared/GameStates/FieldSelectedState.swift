@@ -88,7 +88,7 @@ class FieldSelectedState: TurnState {
         
         let availablePositions = self.game.level.availableDestinations(for: piratePosition)
         let availablePositionsInCell = availablePositions.filter { $0.int2Position == cellPosition.int2Position }
-        assert(availablePositionsInCell.count == 1, "There is more than 1 available positions in a cell")
+        assert(availablePositionsInCell.count == 1, "There is more than 1 or no available positions in a cell")
         
         piratePosition = availablePositionsInCell[0]
         piratePositionComponent.boardPosition = piratePosition
