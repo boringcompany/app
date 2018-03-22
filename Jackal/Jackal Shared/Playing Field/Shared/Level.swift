@@ -88,6 +88,17 @@ class Level {
     }
     
     
+    func switchNodeAt(_ p1: BoardPosition, with p2: BoardPosition) {
+        
+        let node1 = self.visibleNodes[Int(p1.x)][Int(p1.y)]
+        let node2 = self.visibleNodes[Int(p2.x)][Int(p2.y)]
+        self.visibleNodes[Int(p2.x)][Int(p2.y)] = node1
+        self.visibleNodes[Int(p1.x)][Int(p1.y)] = node2
+        
+        buildGraph()
+    }
+    
+    
     //For now, I have no idea how to do it more clearly and safe, u r welcome :-)
     static func nodes(for configuration: Configuration) -> [[FieldNodeDescribing]] {
         var nodes: [[FieldNodeDescribing]] = Array(repeating: Array(repeating: OutboundNode(),
