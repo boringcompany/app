@@ -145,6 +145,21 @@ class Level {
             }
         }
         
+        // Create ships
+        let shipTypes: [ShipNode.ShipType] = [.blackShip, .greenShip, .purpleShip, .redShip]
+        let shipRotations = [Rotation.none, Rotation.left90, Rotation.left180, Rotation.left270]
+        let shipPositions = [BoardPosition(x: Int8(width/2), y: Int8(0)),
+                             BoardPosition(x: Int8(width-1),   y: Int8(height/2)),
+                             BoardPosition(x: Int8(width/2), y: Int8(height-1)),
+                             BoardPosition(x: Int8(0),       y: Int8(height/2))]
+        
+        for i in 0...3 {
+            
+            let ship = ShipNode(type: shipTypes[i], rotation: shipRotations[i])
+            let position = shipPositions[i]
+            nodes[Int(position.x)][Int(position.y)] = ship
+        }
+        
         return nodes
     }
     

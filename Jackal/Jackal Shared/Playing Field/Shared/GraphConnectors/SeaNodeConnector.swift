@@ -44,10 +44,11 @@ class SeaNodeConnector: NodeConnectorDescribing {
     
     func canCreateConnection(fromFieldNode: FieldNodeDescribing, toFieldNode: FieldNodeDescribing) -> Bool {
         
-        let isValid = toFieldNode is SeaNode
+        let isValid = (toFieldNode is SeaNode || toFieldNode is ShipNode)
             && (fromFieldNode is SeaNode
                 || fromFieldNode is ArrowNode
-                || fromFieldNode is IceNode)
+                || fromFieldNode is IceNode
+                || fromFieldNode is ShipNode)
         return isValid
     }
     

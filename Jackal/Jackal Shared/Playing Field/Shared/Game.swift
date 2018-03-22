@@ -44,6 +44,7 @@ class Game {
         let configuration = Level.Configuration.standard
         size = configuration.size
         level = Level(configuration: configuration)
+        level.buildGraph()
     }
     
     // MARK: Private
@@ -56,9 +57,6 @@ class Game {
         
         let width = CGFloat(gameScene.cellWidth)
         let cellSize = CGSize(width: width, height: width)
-        
-        // FIXME: this line is here while pirates are not on the ship
-        self.level.openCell(x: size.width / 2, y: size.height / 2)
         
         for x in 0..<size.width {
             for y in 0..<size.height {
@@ -73,6 +71,7 @@ class Game {
                 let boardPosition = int2(x, y)
                 node.position = gameScene.point(at: boardPosition)
                 node.zPosition = Constants.zPosition.fieldCell.rawValue
+                node.zRotation = fieldNodeInfo.rotation.cgRotation
                 board.addChild(node)
                 
                 // entity
@@ -118,7 +117,7 @@ class Game {
 
         let pirateSize = CGSize(width: width / 3, height: width / 3)
         let pirateNode = PirateNode(size: pirateSize)
-        let pirateGridPosition = int2(size.width / 2, size.height / 2)
+        let pirateGridPosition = int2(size.width / 2, 0)
         pirateNode.position = gameScene.point(at: pirateGridPosition)
         pirateNode.zPosition = Constants.zPosition.pirate.rawValue
         board.addChild(pirateNode)
