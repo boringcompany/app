@@ -8,12 +8,10 @@
 
 class IceNodeConnector: NodeConnectorDescribing {
     
-    private var subNodesCounter: Int8 = 0
+    private var connections: [BoardPosition] = []
     
     // MARK: NodeConnectorDescribing protocol
     func createNodes(for fieldNode: FieldNodeDescribing, x: Int8, y: Int8, level: Level) {
-        
-        subNodesCounter = 0
     }
     
     func addNodesConnections(from fieldNode: FieldNodeDescribing, x: Int8, y: Int8, level: Level) {
@@ -30,10 +28,18 @@ class IceNodeConnector: NodeConnectorDescribing {
                            toPosition: BoardPosition,
                            level: Level) -> BoardGraphNode? {
         
-        let icePosition = BoardPosition(x: toPosition.x, y: toPosition.y, z: self.subNodesCounter)
+        let currentIndex = self.connections.index(of: fromPosition)
+        let z: Int
+        if currentIndex == nil {
+            z = self.connections.count
+            self.connections.append(fromPosition)
+        } else {
+            z = currentIndex!
+        }
+        
+        let icePosition = BoardPosition(x: toPosition.x, y: toPosition.y, z: Int8(z))
         let node = BoardGraphNode(boardPosition: icePosition)
         level.graph.add([node])
-        self.subNodesCounter += 1
         
         let connectedPositions: [BoardPosition]
         

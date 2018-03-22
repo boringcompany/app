@@ -86,11 +86,13 @@ class FieldSelectedState: TurnState {
             var piratePosition = piratePositionComponent.boardPosition
             else { return }
         
-        if piratePosition.int2Position == cellPosition.int2Position {
-            piratePosition.z += 1
-        } else {
-            piratePosition = cellPosition
+        let availablePositions = self.game.level.availableDestinations(for: piratePosition)
+        let availablePositionsInCell = availablePositions.filter { (position) -> Bool in
+            return position.int2Position == cellPosition.int2Position
         }
+        assert(availablePositionsInCell.count == 1, "There is more than 1 available positions in a cell")
+        
+        piratePosition = availablePositionsInCell[0]
         piratePositionComponent.boardPosition = piratePosition
         
         let point: CGPoint
