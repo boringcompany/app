@@ -22,8 +22,9 @@ class DefaultNodeConnector: NodeConnectorDescribing {
         guard let centre = level.graph.node(at: position) else { return }
         
         let connectedPositions: [BoardPosition]
+        let moveType = fieldNode.rotatedMoveType()
         
-        switch fieldNode.moveType {
+        switch moveType {
         case .any:
             connectedPositions = [] //TODO: Fix
             
@@ -41,7 +42,7 @@ class DefaultNodeConnector: NodeConnectorDescribing {
                                                                               toFieldNode: adjacentFieldNode)
             if isValid {
                 graphNode = adjacentFieldNode.nodeConnector.nodeForConnection(fromPosition: position,
-                                                                              moveType: fieldNode.moveType,
+                                                                              moveType: moveType,
                                                                               toFieldNode: adjacentFieldNode,
                                                                               toPosition: toPosition,
                                                                               level: level)

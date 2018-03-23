@@ -26,9 +26,9 @@ struct ShipNode: FieldNodeDescribing {
     
     // MARK: Lifecycle
     init(type: ShipType, rotation: Rotation) {
-        let moves: [Move] = [Move(x:  0, y: +1, rotation: rotation),
-                             Move(x: -1, y:  0, rotation: rotation),
-                             Move(x: +1, y:  0, rotation: rotation)]
+        let moves = [Move(x:  0, y: +1),
+                     Move(x: -1, y:  0),
+                     Move(x: +1, y:  0)]
         self.moveType = .oneOf(moves)
         self.rotation = rotation
         self.textureName = type.rawValue

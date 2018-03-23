@@ -15,26 +15,37 @@ struct Move {
     let x: Unit
     let y: Unit
     
-    init(x: Unit, y: Unit, rotation: Rotation = .none) {
+    init(x: Unit, y: Unit) {
+        
+        self.x = x
+        self.y = y
+    }
+    
+    func moveWithRotation(_ rotation: Rotation) -> Move {
+        
+        let x: Unit
+        let y: Unit
         
         switch rotation {
             
         case .none:
-            self.x = x
-            self.y = y
+            x = self.x
+            y = self.y
             
         case .left90:
-            self.x = y * -1
-            self.y = x
+            x = self.y * -1
+            y = self.x
             
         case .left180:
-            self.x = x * -1
-            self.y = y * -1
+            x = self.x * -1
+            y = self.y * -1
             
         case .left270:
-            self.x = y
-            self.y = x * -1
+            x = self.y
+            y = self.x * -1
         }
+        
+        return Move(x: x, y: y)
     }
 }
 

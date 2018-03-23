@@ -21,8 +21,9 @@ class SeaNodeConnector: NodeConnectorDescribing {
         
         let position = BoardPosition(x, y)
         guard let centre = level.graph.node(at: position) else { return }
+        let moveType = fieldNode.rotatedMoveType()
         
-        if case .oneOf(let moves) = fieldNode.moveType {
+        if case .oneOf(let moves) = moveType {
             let connectedPositions = moves.map { BoardPosition(x + $0.x, y + $0.y) }
             let connectedNodes = connectedPositions.flatMap({ (toPosition) -> BoardGraphNode? in
                 guard let adjacentFieldNode = level.fieldNodeInfoAt(position: toPosition) else { return nil }
@@ -31,7 +32,7 @@ class SeaNodeConnector: NodeConnectorDescribing {
                     && adjacentFieldNode.nodeConnector.canCreateConnection(fromFieldNode: fieldNode, toFieldNode: adjacentFieldNode)
                 if isValid {
                     graphNode = adjacentFieldNode.nodeConnector.nodeForConnection(fromPosition: position,
-                                                                                  moveType: fieldNode.moveType,
+                                                                                  moveType: moveType,
                                                                                   toFieldNode: adjacentFieldNode,
                                                                                   toPosition: toPosition,
                                                                                   level: level)

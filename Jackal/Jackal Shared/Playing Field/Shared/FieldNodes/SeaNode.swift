@@ -19,14 +19,14 @@ struct SeaNode: FieldNodeDescribing {
     
     // MARK: Lifecycle
     init() {
-        let moves: [Move] = [Move(x: -1, y: -1),
-                             Move(x:  0, y: -1),
-                             Move(x: +1, y: -1),
-                             Move(x: -1, y:  0),
-                             Move(x: +1, y:  0),
-                             Move(x: -1, y: +1),
-                             Move(x:  0, y: +1),
-                             Move(x: +1, y: +1)]
+        let moves = [Move(x: -1, y: -1),
+                     Move(x:  0, y: -1),
+                     Move(x: +1, y: -1),
+                     Move(x: -1, y:  0),
+                     Move(x: +1, y:  0),
+                     Move(x: -1, y: +1),
+                     Move(x:  0, y: +1),
+                     Move(x: +1, y: +1)]
         moveType = .oneOf(moves)
         nodeConnector = SeaNodeConnector()
     }

@@ -43,4 +43,15 @@ extension FieldNodeDescribing {
     func relativePosition(boardPosition: BoardPosition) -> Position? {
         return nil
     }
+    
+    func rotatedMoveType() -> MoveType {
+        switch self.moveType {
+            
+        case .oneOf(let moves):
+            return .oneOf(moves.map { $0.moveWithRotation(self.rotation) })
+            
+        default:
+            return self.moveType
+        }
+    }
 }
