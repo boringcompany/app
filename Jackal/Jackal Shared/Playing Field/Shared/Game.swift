@@ -63,7 +63,7 @@ class Game {
         for x in 0..<size.width {
             for y in 0..<size.height {
                 
-                let fieldNodeInfo = level.fieldNodeInfoAt(x: x, y: y)
+                guard let fieldNodeInfo = level.fieldNodeInfoAt(x: x, y: y) else { continue }
                 if (fieldNodeInfo is OutboundNode) { continue }
                 
                 let textureName = fieldNodeInfo.textureName

@@ -10,9 +10,15 @@ import SpriteKit
 
 protocol NodeConnectorDescribing {
     
-    func createNodes(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, x: Int8, y: Int8)
+    func createNodes(for fieldNode: FieldNodeDescribing, x: Int8, y: Int8, level: Level)
     
-    func addNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, map: [[FieldNodeDescribing]], x: Int8, y: Int8)
+    func addNodesConnections(from fieldNode: FieldNodeDescribing, x: Int8, y: Int8, level: Level)
     
-    func removeNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, map: [[FieldNodeDescribing]], x: Int8, y: Int8)
+    func canCreateConnection(fromFieldNode: FieldNodeDescribing, toFieldNode: FieldNodeDescribing) -> Bool
+    
+    func nodeForConnection(fromPosition: BoardPosition,
+                           moveType: MoveType,
+                           toFieldNode: FieldNodeDescribing,
+                           toPosition: BoardPosition,
+                           level: Level) -> BoardGraphNode?
 }

@@ -44,7 +44,7 @@ class Level {
         
         self.initialNodes = Level.nodes(for: configuration)
         self.visibleNodes = Level.buildSuits(using: configuration)
-        self.graph = Level.buildGraph(forNodes: self.visibleNodes)
+        self.graph = BoardGraph()
     }
     
     
@@ -62,8 +62,17 @@ class Level {
     }
     
     
-    func fieldNodeInfoAt(x: Int, y: Int) -> FieldNodeDescribing {
+    func fieldNodeInfoAt(x: Int, y: Int) -> FieldNodeDescribing? {
+        if x < 0
+            || y < 0
+            || x >= self.visibleNodes.count
+            || y >= self.visibleNodes[x].count { return nil }
         return visibleNodes[x][y]
+    }
+    
+    
+    func fieldNodeInfoAt(position: BoardPosition) -> FieldNodeDescribing? {
+        return fieldNodeInfoAt(x: Int(position.x), y: Int(position.y))
     }
     
     
@@ -73,7 +82,7 @@ class Level {
         let node = self.initialNodes[x][y]
         self.visibleNodes[x][y] = node
         
-        self.graph = Level.buildGraph(forNodes: self.visibleNodes)
+        buildGraph()
         
         return node
     }
@@ -140,40 +149,26 @@ class Level {
     }
     
     
-    static func buildGraph(forNodes nodes: [[FieldNodeDescribing]]) -> BoardGraph<BoardGraphNode> {
+    func buildGraph() {
         
-        let graph: BoardGraph<BoardGraphNode> = BoardGraph()
+        self.graph = BoardGraph()
         
-        for (x, line) in nodes.enumerated() {
+        for (x, line) in self.visibleNodes.enumerated() {
             for (y, node) in line.enumerated() {
                 
-                node.nodeConnector.createNodes(fieldNode: node, graph: graph, x: Int8(x), y: Int8(y))
+                node.nodeConnector.createNodes(for: node, x: Int8(x), y: Int8(y), level: self)
             }
         }
         
-        for (x, line) in nodes.enumerated() {
+        for (x, line) in self.visibleNodes.enumerated() {
             for (y, node) in line.enumerated() {
                 
-                node.nodeConnector.addNodesConnections(fieldNode: node,
-                                                       graph: graph,
-                                                       map: nodes,
+                node.nodeConnector.addNodesConnections(from: node,
                                                        x: Int8(x),
-                                                       y: Int8(y))
+                                                       y: Int8(y),
+                                                       level: self)
             }
         }
-        
-        for (x, line) in nodes.enumerated() {
-            for (y, node) in line.enumerated() {
-                
-                node.nodeConnector.removeNodesConnections(fieldNode: node,
-                                                          graph: graph,
-                                                          map: nodes,
-                                                          x: Int8(x),
-                                                          y: Int8(y))
-            }
-        }
-        
-        return graph
     }
     
     

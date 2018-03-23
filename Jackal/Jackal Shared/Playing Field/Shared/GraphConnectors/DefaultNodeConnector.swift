@@ -6,18 +6,20 @@
 //  Copyright © 2018 Boring Company. All rights reserved.
 //
 
-struct DefaultNodeConnector: NodeConnectorDescribing {
+class DefaultNodeConnector: NodeConnectorDescribing {
     
     // MARK: NodeConnectorDescribing protocol
-    func createNodes(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, x: Int8, y: Int8) {
+    func createNodes(for fieldNode: FieldNodeDescribing, x: Int8, y: Int8, level: Level) {
+        
         let position = BoardPosition(x, y)
         let node = BoardGraphNode(boardPosition: position)
-        graph.add([node])
+        level.graph.add([node])
     }
     
-    func addNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, map: [[FieldNodeDescribing]], x: Int8, y: Int8) {
+    func addNodesConnections(from fieldNode: FieldNodeDescribing, x: Int8, y: Int8, level: Level) {
+        
         let position = BoardPosition(x, y)
-        guard let centre = graph.node(at: position) else { return }
+        guard let centre = level.graph.node(at: position) else { return }
         
         let connectedPositions: [BoardPosition]
         
@@ -32,10 +34,34 @@ struct DefaultNodeConnector: NodeConnectorDescribing {
             connectedPositions = []
         }
         
-        let connectedNodes = connectedPositions.flatMap(graph.node(at:))
+        let connectedNodes = connectedPositions.flatMap({ (toPosition) -> BoardGraphNode? in
+            guard let adjacentFieldNode = level.fieldNodeInfoAt(position: toPosition) else { return nil }
+            var graphNode: BoardGraphNode? = nil
+            let isValid = adjacentFieldNode.nodeConnector.canCreateConnection(fromFieldNode: fieldNode,
+                                                                              toFieldNode: adjacentFieldNode)
+            if isValid {
+                graphNode = adjacentFieldNode.nodeConnector.nodeForConnection(fromPosition: position,
+                                                                              moveType: fieldNode.moveType,
+                                                                              toFieldNode: adjacentFieldNode,
+                                                                              toPosition: toPosition,
+                                                                              level: level)
+            }
+            return graphNode
+        })
         centre.addConnections(to: connectedNodes, bidirectional: false)
     }
     
-    func removeNodesConnections(fieldNode: FieldNodeDescribing, graph: BoardGraph<BoardGraphNode>, map: [[FieldNodeDescribing]], x: Int8, y: Int8) {
+    func canCreateConnection(fromFieldNode: FieldNodeDescribing, toFieldNode: FieldNodeDescribing) -> Bool {
+        
+        return true
+    }
+    
+    func nodeForConnection(fromPosition: BoardPosition,
+                           moveType: MoveType,
+                           toFieldNode: FieldNodeDescribing,
+                           toPosition: BoardPosition,
+                           level: Level) -> BoardGraphNode? {
+        
+        return level.graph.node(at: toPosition)
     }
 }
