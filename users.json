@@ -1,0 +1,18 @@
+[
+  {
+    "id": "bdfb7d14-15c0-44f3-be03-5df2a6af8b89",
+    "email": "andryzonov@gmail.com",
+    "password_hash": "$2a$10$gBzOOY5hlwKneXOgRZLZm.0cZkH/Q12Umk3ZnbqyhVuUJXyjEwwjO",
+    "provider_credentials": [
+      {
+        "id": "35e87155-cab9-4378-9725-15d7a253c101",
+        "email": "andryzonov@gmail.com",
+        "full_name": "Clone User credentials",
+        "provider_name": "GitHub",
+        "type": "github",
+        "remote_host": "github.com",
+        "encrypted_api_token": "8XjQpGaNkXee0gbd2i6aiJxAaRJrfQPTs6CcmUEfFgPwkYJm13pbXOF+UrkH\nAg/7++7wMMcCtjwAQXbALo+6og==\n"
+      }
+    ]
+  }
+]
