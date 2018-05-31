@@ -19,7 +19,7 @@ class BoardGraph<NodeType>: GKGraph where NodeType: BoardGraphNode {
         
         super.add(nodes)
         
-        nodes.flatMap { $0 as? NodeType }
+        nodes.compactMap { $0 as? NodeType }
             .forEach { nodesByPosition[$0.boardPosition] = $0 }
     }
     
@@ -28,7 +28,7 @@ class BoardGraph<NodeType>: GKGraph where NodeType: BoardGraphNode {
         
         super.remove(nodes)
         
-        nodes.flatMap { ($0 as? NodeType)?.boardPosition }
+        nodes.compactMap { ($0 as? NodeType)?.boardPosition }
             .forEach { nodesByPosition.removeValue(forKey:$0) }
     }
     

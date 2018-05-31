@@ -34,7 +34,7 @@ class DefaultNodeConnector: NodeConnectorDescribing {
             connectedPositions = []
         }
         
-        let connectedNodes = connectedPositions.flatMap({ (toPosition) -> BoardGraphNode? in
+        let connectedNodes = connectedPositions.compactMap({ (toPosition) -> BoardGraphNode? in
             guard let adjacentFieldNode = level.fieldNodeInfoAt(position: toPosition) else { return nil }
             var graphNode: BoardGraphNode? = nil
             let isValid = adjacentFieldNode.nodeConnector.canCreateConnection(fromFieldNode: fieldNode,

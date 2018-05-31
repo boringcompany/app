@@ -56,7 +56,7 @@ class IceNodeConnector: NodeConnectorDescribing {
             connectedPositions = []
         }
         
-        let connectedNodes = connectedPositions.flatMap({ (nextPosition) -> BoardGraphNode? in
+        let connectedNodes = connectedPositions.compactMap({ (nextPosition) -> BoardGraphNode? in
             guard let adjacentFieldNode = level.fieldNodeInfoAt(position: nextPosition) else { return nil }
             let graphNode: BoardGraphNode? = adjacentFieldNode.nodeConnector.nodeForConnection(fromPosition: toPosition,
                                                                                                moveType: moveType,

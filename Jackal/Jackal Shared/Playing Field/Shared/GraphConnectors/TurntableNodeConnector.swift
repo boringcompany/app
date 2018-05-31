@@ -45,7 +45,7 @@ class TurntableNodeConnector: NodeConnectorDescribing {
         
         if case .oneOf(let moves) = fieldNode.moveType {
             let connectedPositions = moves.map { BoardPosition(x + $0.x, y + $0.y) }
-            let connectedNodes = connectedPositions.flatMap({ (toPosition) -> BoardGraphNode? in
+            let connectedNodes = connectedPositions.compactMap({ (toPosition) -> BoardGraphNode? in
                 guard let adjacentFieldNode = level.fieldNodeInfoAt(position: toPosition) else { return nil }
                 var graphNode: BoardGraphNode? = nil
                 let isValid = adjacentFieldNode.nodeConnector.canCreateConnection(fromFieldNode: fieldNode,

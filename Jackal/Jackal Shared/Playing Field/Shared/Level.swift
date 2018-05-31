@@ -54,7 +54,7 @@ class Level {
             return []
         }
         
-        let positions = node.connectedNodes.flatMap { connectedNode in
+        let positions = node.connectedNodes.compactMap { connectedNode in
             return (connectedNode as? BoardGraphNode)?.boardPosition
         }
         
