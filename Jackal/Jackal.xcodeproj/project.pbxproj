@@ -168,6 +168,10 @@
 		FB9C53DA2046D83600CE366D /* HorseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C53D82046D83600CE366D /* HorseNode.swift */; };
 		FB9C53DB2046D83600CE366D /* HorseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C53D82046D83600CE366D /* HorseNode.swift */; };
 		FB9C53DC2046D83A00CE366D /* HorseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C53D82046D83600CE366D /* HorseNode.swift */; };
+		FBC0B61220C049D7000DBFFA /* PlaneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0B61120C049D7000DBFFA /* PlaneNode.swift */; };
+		FBC0B61320C049D7000DBFFA /* PlaneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0B61120C049D7000DBFFA /* PlaneNode.swift */; };
+		FBC0B61420C049D7000DBFFA /* PlaneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0B61120C049D7000DBFFA /* PlaneNode.swift */; };
+		FBC0B61520C049D7000DBFFA /* PlaneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0B61120C049D7000DBFFA /* PlaneNode.swift */; };
 		FBC43404200739AC00134AB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC43403200739AC00134AB7 /* AppDelegate.swift */; };
 		FBC43406200739AC00134AB7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC43405200739AC00134AB7 /* GameViewController.swift */; };
 		FBC43409200739AC00134AB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC43407200739AC00134AB7 /* Main.storyboard */; };
@@ -263,6 +267,7 @@
 		FB77E6972016172400B9A75B /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		FB77E69C20161D8500B9A75B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FB9C53D82046D83600CE366D /* HorseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HorseNode.swift; path = "Jackal Shared/Playing Field/Shared/FieldNodes/HorseNode.swift"; sourceTree = SOURCE_ROOT; };
+		FBC0B61120C049D7000DBFFA /* PlaneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneNode.swift; sourceTree = "<group>"; };
 		FBC433F9200739AC00134AB7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		FBC433FA200739AC00134AB7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		FBC433FB200739AC00134AB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -393,6 +398,7 @@
 				BD5E78C7205022E400DBAC18 /* SeaNode.swift */,
 				577C1ED1204876630024DB31 /* SuitNode.swift */,
 				BD5E78942046DA1C00DBAC18 /* TurntableNode.swift */,
+				FBC0B61120C049D7000DBFFA /* PlaneNode.swift */,
 			);
 			path = FieldNodes;
 			sourceTree = "<group>";
@@ -748,6 +754,7 @@
 				FB07995F2046A1C000F75B82 /* EmptyNode.swift in Sources */,
 				FB0799632046A1C500F75B82 /* Rotation.swift in Sources */,
 				FB07995E2046A1C000F75B82 /* FieldNodeDescribing.swift in Sources */,
+				FBC0B61520C049D7000DBFFA /* PlaneNode.swift in Sources */,
 				BD71D3062061609E0014D28A /* IceNode.swift in Sources */,
 				FB07995D2046A17D00F75B82 /* AssetsTest.swift in Sources */,
 				BD5E78BC2047F85A00DBAC18 /* TurntableNodeConnector.swift in Sources */,
@@ -782,6 +789,7 @@
 				8820C2DD2060D9F000F13014 /* EndTurnState.swift in Sources */,
 				88FC9620201F558B00A979B9 /* BoardGraphNode.swift in Sources */,
 				FB20C938203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */,
+				FBC0B61220C049D7000DBFFA /* PlaneNode.swift in Sources */,
 				BDAC86D6203F0818006D39DA /* ShaderManager.swift in Sources */,
 				BD29C6F8205AA881002A13DC /* GameBorder.swift in Sources */,
 				BD29C6F32059AAA2002A13DC /* OutboundNode.swift in Sources */,
@@ -838,6 +846,7 @@
 				8820C2DE2060D9F000F13014 /* EndTurnState.swift in Sources */,
 				88FC9621201F558B00A979B9 /* BoardGraphNode.swift in Sources */,
 				FB20C939203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */,
+				FBC0B61320C049D7000DBFFA /* PlaneNode.swift in Sources */,
 				BDAC86D7203F0818006D39DA /* ShaderManager.swift in Sources */,
 				BD29C6F9205AB0DC002A13DC /* GameBorder.swift in Sources */,
 				BD29C6F42059AB16002A13DC /* OutboundNode.swift in Sources */,
@@ -894,6 +903,7 @@
 				8820C2DF2060D9F000F13014 /* EndTurnState.swift in Sources */,
 				88FC9622201F558B00A979B9 /* BoardGraphNode.swift in Sources */,
 				FB20C93A203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */,
+				FBC0B61420C049D7000DBFFA /* PlaneNode.swift in Sources */,
 				BDAC86D8203F0818006D39DA /* ShaderManager.swift in Sources */,
 				BD29C6FB205AB0DD002A13DC /* GameBorder.swift in Sources */,
 				BD29C6F52059AB17002A13DC /* OutboundNode.swift in Sources */,

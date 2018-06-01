@@ -9,4 +9,5 @@
 enum ActionType {
     case permanent
     case atTheOpenning
+    case once
 }
