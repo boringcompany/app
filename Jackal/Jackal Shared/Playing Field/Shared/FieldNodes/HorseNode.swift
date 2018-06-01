@@ -18,13 +18,14 @@ struct HorseNode: FieldNodeDescribing {
     
     // MARK: Lifecycle
     init() {
-        moveType = .oneOf([Move(x: 1, y: 2),
-                           Move(x: -1, y: 2),
-                           Move(x: -2, y: 1),
-                           Move(x: -2, y: -1),
-                           Move(x: -1, y: -2),
-                           Move(x: 1, y: -2),
-                           Move(x: 2, y: 1),
-                           Move(x: 2, y: -1)])
+        let moves = [Move(x:  1, y:  2),
+                     Move(x: -1, y:  2),
+                     Move(x: -2, y:  1),
+                     Move(x: -2, y: -1),
+                     Move(x: -1, y: -2),
+                     Move(x:  1, y: -2),
+                     Move(x:  2, y:  1),
+                     Move(x:  2, y: -1)]
+        moveType = .oneOf(moves)
     }
 }

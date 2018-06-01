@@ -39,11 +39,41 @@ class Game {
         return GameScene.newGameScene(with: self)
     }()
     
+    func cellAt(position: BoardPosition) -> CellEntity? {
+        return cells.first { $0.component(ofType: BoardPositionComponent.self)?.boardPosition == position }
+    }
+    
+    func switchNodeAt(_ p1: BoardPosition, with p2: BoardPosition) {
+        
+        guard let firstEntity = cellAt(position: p1),
+            let secondEntity = cellAt(position: p2),
+            let firstPositionComponent = firstEntity.component(ofType: BoardPositionComponent.self),
+            let secondPositionComponent = secondEntity.component(ofType: BoardPositionComponent.self),
+            let firstSpriteComponent = firstEntity.component(ofType: SpriteComponent.self),
+            let secondSpriteComponent = secondEntity.component(ofType: SpriteComponent.self)
+            else { return }
+        
+        let firstPoint = self.gameScene.point(at: p1.int2Position)
+        let secondPoint = self.gameScene.point(at: p2.int2Position)
+        
+        let firstMoveAction = SKAction.move(to: secondPoint, duration: 0.3)
+        let secondMoveAction = SKAction.move(to: firstPoint, duration: 0.3)
+        
+        firstSpriteComponent.node.run(firstMoveAction)
+        secondSpriteComponent.node.run(secondMoveAction)
+        
+        firstPositionComponent.boardPosition = p2
+        secondPositionComponent.boardPosition = p1
+        
+        self.level.switchNodeAt(p1, with: p2)
+    }
+    
     // MARK: Lifecycle
     init() {
         let configuration = Level.Configuration.standard
         size = configuration.size
         level = Level(configuration: configuration)
+        level.buildGraph()
     }
     
     // MARK: Private
@@ -56,9 +86,6 @@ class Game {
         
         let width = CGFloat(gameScene.cellWidth)
         let cellSize = CGSize(width: width, height: width)
-        
-        // FIXME: this line is here while pirates are not on the ship
-        self.level.openCell(x: size.width / 2, y: size.height / 2)
         
         for x in 0..<size.width {
             for y in 0..<size.height {
@@ -73,6 +100,7 @@ class Game {
                 let boardPosition = int2(x, y)
                 node.position = gameScene.point(at: boardPosition)
                 node.zPosition = Constants.zPosition.fieldCell.rawValue
+                node.zRotation = fieldNodeInfo.rotation.cgRotation
                 board.addChild(node)
                 
                 // entity
@@ -118,7 +146,7 @@ class Game {
 
         let pirateSize = CGSize(width: width / 3, height: width / 3)
         let pirateNode = PirateNode(size: pirateSize)
-        let pirateGridPosition = int2(size.width / 2, size.height / 2)
+        let pirateGridPosition = int2(size.width / 2, 0)
         pirateNode.position = gameScene.point(at: pirateGridPosition)
         pirateNode.zPosition = Constants.zPosition.pirate.rawValue
         board.addChild(pirateNode)

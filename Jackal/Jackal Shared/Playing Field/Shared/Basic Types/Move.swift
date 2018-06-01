@@ -14,6 +14,39 @@ struct Move {
     
     let x: Unit
     let y: Unit
+    
+    init(x: Unit, y: Unit) {
+        
+        self.x = x
+        self.y = y
+    }
+    
+    func moveWithRotation(_ rotation: Rotation) -> Move {
+        
+        let x: Unit
+        let y: Unit
+        
+        switch rotation {
+            
+        case .none:
+            x = self.x
+            y = self.y
+            
+        case .left90:
+            x = self.y * -1
+            y = self.x
+            
+        case .left180:
+            x = self.x * -1
+            y = self.y * -1
+            
+        case .left270:
+            x = self.y
+            y = self.x * -1
+        }
+        
+        return Move(x: x, y: y)
+    }
 }
 
 // MARK: - Hashable
