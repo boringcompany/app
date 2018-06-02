@@ -21,11 +21,18 @@ class DefaultNodeConnector: NodeConnectorDescribing {
         let position = BoardPosition(x, y)
         guard let centre = level.graph.node(at: position) else { return }
         
-        let connectedPositions: [BoardPosition]
+        var connectedPositions: [BoardPosition]
         
         switch fieldNode.moveType {
         case .any:
-            connectedPositions = [] //TODO: Fix
+            connectedPositions = []
+            let size = level.configuration.size
+            for x in 0..<size.width {
+                for y in 0..<size.height {
+                    connectedPositions.append(BoardPosition(BoardPosition.Unit(x),
+                                                            BoardPosition.Unit(y)))
+                }
+            }
             
         case .oneOf(let moves):
             connectedPositions = moves.map { BoardPosition(x + $0.x, y + $0.y) }
