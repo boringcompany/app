@@ -19,7 +19,7 @@ class IceNodeConnector: NodeConnectorDescribing {
     
     func canCreateConnection(fromFieldNode: FieldNodeDescribing, toFieldNode: FieldNodeDescribing) -> Bool {
         
-        return true
+        return !(fromFieldNode is PlaneNode)
     }
     
     func nodeForConnection(fromPosition: BoardPosition,
@@ -44,9 +44,6 @@ class IceNodeConnector: NodeConnectorDescribing {
         let connectedPositions: [BoardPosition]
         
         switch moveType {
-        case .any:
-            connectedPositions = [] //TODO: Fix
-            
         case .oneOf(let moves):
             let move = Move(x: toPosition.x - fromPosition.x, y: toPosition.y - fromPosition.y)
             let iceMoves: [Move] = max(move.x, move.y) > 1 ? moves : [move]

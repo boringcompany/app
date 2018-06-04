@@ -1,12 +1,12 @@
 //
-//  StandardNodeConnector.swift
+//  PlaneNodeConnector.swift
 //  Jackal
 //
-//  Created by Alexander Savonin on 01/03/2018.
+//  Created by Andrey Zonov on 04/06/2018.
 //  Copyright © 2018 Boring Company. All rights reserved.
 //
 
-class DefaultNodeConnector: NodeConnectorDescribing {
+class PlaneNodeConnector: NodeConnectorDescribing {
     
     // MARK: NodeConnectorDescribing protocol
     func addNodesConnections(from fieldNode: FieldNodeDescribing, x: Int8, y: Int8, level: Level) {
@@ -14,14 +14,13 @@ class DefaultNodeConnector: NodeConnectorDescribing {
         let position = BoardPosition(x, y)
         guard let centre = level.graph.node(at: position) else { return }
         
-        var connectedPositions: [BoardPosition]
-        
-        switch fieldNode.moveType {            
-        case .oneOf(let moves):
-            connectedPositions = moves.map { BoardPosition(x + $0.x, y + $0.y) }
-            
-        case .none:
-            connectedPositions = []
+        var connectedPositions: [BoardPosition] = []
+        let size = level.configuration.size
+        for x in 0..<size.width {
+            for y in 0..<size.height {
+                connectedPositions.append(BoardPosition(BoardPosition.Unit(x),
+                                                        BoardPosition.Unit(y)))
+            }
         }
         
         let connectedNodes = connectedPositions.compactMap({ (toPosition) -> BoardGraphNode? in

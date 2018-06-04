@@ -9,7 +9,7 @@
 struct IceNode: FieldNodeDescribing {
 
     // MARK: Public Properties
-    var moveType: MoveType = .any
+    var moveType: MoveType = .oneOf([])
     var rotation: Rotation = .none
     var canContainObject = true
     var canStay = false

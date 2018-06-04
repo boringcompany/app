@@ -15,12 +15,14 @@ struct PlaneNode: FieldNodeDescribing {
     var rotation: Rotation = .none
     var canContainObject = true
     var canStay = true
+    var nodeConnector: NodeConnectorDescribing
     var actionType: ActionType = .once
     var textureName: String
     
     // MARK: Lifecycle
     init() {
-        moveType = .any
+        moveType = .oneOf([])
         textureName = "plane"
+        nodeConnector = PlaneNodeConnector()
     }
 }

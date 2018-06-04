@@ -152,6 +152,10 @@
 		FB20C94E203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */; };
 		FB20C94F203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */; };
 		FB20C950203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */; };
+		FB53EEEC20C5295900C2F95A /* PlaneNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEEB20C5295900C2F95A /* PlaneNodeConnector.swift */; };
+		FB53EEED20C5295900C2F95A /* PlaneNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEEB20C5295900C2F95A /* PlaneNodeConnector.swift */; };
+		FB53EEEE20C5295900C2F95A /* PlaneNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEEB20C5295900C2F95A /* PlaneNodeConnector.swift */; };
+		FB53EEEF20C5295900C2F95A /* PlaneNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEEB20C5295900C2F95A /* PlaneNodeConnector.swift */; };
 		FB77E690201615CC00B9A75B /* CellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* CellEntity.swift */; };
 		FB77E691201615CC00B9A75B /* CellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* CellEntity.swift */; };
 		FB77E692201615CC00B9A75B /* CellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* CellEntity.swift */; };
@@ -262,6 +266,7 @@
 		FB20C940203F28AB008491E6 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		FB20C945203F2A16008491E6 /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
 		FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Level+StandartConfiguration.swift"; sourceTree = "<group>"; };
+		FB53EEEB20C5295900C2F95A /* PlaneNodeConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneNodeConnector.swift; sourceTree = "<group>"; };
 		FB77E68F201615CC00B9A75B /* CellEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellEntity.swift; sourceTree = "<group>"; };
 		FB77E6932016162F00B9A75B /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		FB77E6972016172400B9A75B /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
@@ -365,6 +370,7 @@
 				BD5E78AE2047F74700DBAC18 /* NodeConnectorDescribing.swift */,
 				BD5E78CC205023F200DBAC18 /* SeaNodeConnector.swift */,
 				BD5E78B82047F85A00DBAC18 /* TurntableNodeConnector.swift */,
+				FB53EEEB20C5295900C2F95A /* PlaneNodeConnector.swift */,
 			);
 			path = GraphConnectors;
 			sourceTree = "<group>";
@@ -763,6 +769,7 @@
 				BD29C6F62059AB18002A13DC /* OutboundNode.swift in Sources */,
 				BD5E78B22047F74700DBAC18 /* NodeConnectorDescribing.swift in Sources */,
 				BD29C6F120599957002A13DC /* SeaNodeConnector.swift in Sources */,
+				FB53EEEF20C5295900C2F95A /* PlaneNodeConnector.swift in Sources */,
 				BD71D30C206160FF0014D28A /* IceNodeConnector.swift in Sources */,
 				FB0799612046A1C500F75B82 /* Move.swift in Sources */,
 				FB0799642046A1C500F75B82 /* ActionType.swift in Sources */,
@@ -803,6 +810,7 @@
 				BD5E78C8205022E400DBAC18 /* SeaNode.swift in Sources */,
 				577C1ED620487E810024DB31 /* FlipComponent.swift in Sources */,
 				88D2818F203ABD980046E67E /* PirateSelectedState.swift in Sources */,
+				FB53EEEC20C5295900C2F95A /* PlaneNodeConnector.swift in Sources */,
 				88FC9613201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */,
 				FB20C941203F28AB008491E6 /* Move.swift in Sources */,
 				8820C2D5205FF8CC00F13014 /* FieldSelectedState.swift in Sources */,
@@ -860,6 +868,7 @@
 				BD5E78C9205023E000DBAC18 /* SeaNode.swift in Sources */,
 				577C1ED720487E810024DB31 /* FlipComponent.swift in Sources */,
 				88D28190203ABD980046E67E /* PirateSelectedState.swift in Sources */,
+				FB53EEED20C5295900C2F95A /* PlaneNodeConnector.swift in Sources */,
 				88FC9614201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */,
 				FB20C942203F28AB008491E6 /* Move.swift in Sources */,
 				8820C2D6205FF8CC00F13014 /* FieldSelectedState.swift in Sources */,
@@ -917,6 +926,7 @@
 				BD5E78CA205023E000DBAC18 /* SeaNode.swift in Sources */,
 				577C1ED820487E810024DB31 /* FlipComponent.swift in Sources */,
 				88D28191203ABD980046E67E /* PirateSelectedState.swift in Sources */,
+				FB53EEEE20C5295900C2F95A /* PlaneNodeConnector.swift in Sources */,
 				88FC9615201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */,
 				FB20C943203F28AB008491E6 /* Move.swift in Sources */,
 				8820C2D7205FF8CC00F13014 /* FieldSelectedState.swift in Sources */,
