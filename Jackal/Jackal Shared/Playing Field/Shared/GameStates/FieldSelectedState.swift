@@ -32,8 +32,8 @@ class FieldSelectedState: TurnState {
         }
         
         self.openSelectedCellIfNeeded { cell in
-            
             self.movePirate(pirate, to: cell, completion: {})
+            self.performCellAction(cell.info.actionType)
             
             if cell.info.canStay {
                 self.stateMachine?.enter(EndTurnState.self)
@@ -112,6 +112,17 @@ class FieldSelectedState: TurnState {
         pirateNode.run(pirateMoveAction, completion: completion)
     }
     
+    private func performCellAction(_ action: ActionType) {
+        switch action {
+        case .showCoins(let amountOfCoins):
+            break
+            
+        default:
+            break
+        }
+        
+        return
+    }
     
     private func deselectPirate() {
         
