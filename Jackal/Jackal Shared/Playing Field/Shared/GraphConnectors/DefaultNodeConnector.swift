@@ -14,9 +14,10 @@ class DefaultNodeConnector: NodeConnectorDescribing {
         let position = BoardPosition(x, y)
         guard let centre = level.graph.node(at: position) else { return }
         
-        var connectedPositions: [BoardPosition]
+        let connectedPositions: [BoardPosition]
+        let moveType = fieldNode.rotatedMoveType()
         
-        switch fieldNode.moveType {            
+        switch moveType {            
         case .oneOf(let moves):
             connectedPositions = moves.map { BoardPosition(x + $0.x, y + $0.y) }
             
@@ -31,7 +32,7 @@ class DefaultNodeConnector: NodeConnectorDescribing {
                                                                               toFieldNode: adjacentFieldNode)
             if isValid {
                 graphNode = adjacentFieldNode.nodeConnector.nodeForConnection(fromPosition: position,
-                                                                              moveType: fieldNode.moveType,
+                                                                              moveType: moveType,
                                                                               toFieldNode: adjacentFieldNode,
                                                                               toPosition: toPosition,
                                                                               level: level)

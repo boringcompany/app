@@ -86,23 +86,30 @@ class FieldSelectedState: TurnState {
             var piratePosition = piratePositionComponent.boardPosition
             else { return }
         
-        let availablePositions = self.game.level.availableDestinations(for: piratePosition)
+        let currentPosition = piratePosition
+        let currentNodeInfo = self.game.level.fieldNodeInfoAt(position: currentPosition)
+        
+        let availablePositions = self.game.level.availableDestinations(for: currentPosition)
         let availablePositionsInCell = availablePositions.filter { $0.int2Position == cellPosition.int2Position }
         assert(availablePositionsInCell.count == 1, "There is more than 1 or no available positions in a cell")
         
         piratePosition = availablePositionsInCell[0]
         piratePositionComponent.boardPosition = piratePosition
         
-        let point: CGPoint
-        if let relativePosition = cell.info.relativePosition(boardPosition: piratePosition) {
-            point = self.game.gameScene.point(at: cellPosition.int2Position,
-                                              relativePosition: relativePosition)
-        } else {
-            point = self.game.gameScene.point(at: cellPosition.int2Position)
+        if currentNodeInfo is ShipNode && cell.info is SeaNode {
+            self.game.switchNodeAt(currentPosition, with: cellPosition)
         }
-        let moveAction = SKAction.move(to: point, duration: 0.3)
         
-        pirateNode.run(moveAction, completion: completion)
+        let piratePoint: CGPoint
+        if let relativePosition = cell.info.relativePosition(boardPosition: piratePosition) {
+            piratePoint = self.game.gameScene.point(at: cellPosition.int2Position,
+                                                    relativePosition: relativePosition)
+        } else {
+            piratePoint = self.game.gameScene.point(at: cellPosition.int2Position)
+        }
+        let pirateMoveAction = SKAction.move(to: piratePoint, duration: 0.3)
+        
+        pirateNode.run(pirateMoveAction, completion: completion)
     }
     
     

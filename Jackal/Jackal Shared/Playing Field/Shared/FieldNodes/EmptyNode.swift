@@ -26,14 +26,14 @@ struct EmptyNode: FieldNodeDescribing {
     
     // MARK: Lifecycle
     init(type: Type = .hole) {
-        let moves: [Move] = [Move(x: -1, y: -1),
-                             Move(x:  0, y: -1),
-                             Move(x: +1, y: -1),
-                             Move(x: -1, y:  0),
-                             Move(x: +1, y:  0),
-                             Move(x: -1, y: +1),
-                             Move(x:  0, y: +1),
-                             Move(x: +1, y: +1)]
+        let moves = [Move(x: -1, y: -1),
+                     Move(x:  0, y: -1),
+                     Move(x: +1, y: -1),
+                     Move(x: -1, y:  0),
+                     Move(x: +1, y:  0),
+                     Move(x: -1, y: +1),
+                     Move(x:  0, y: +1),
+                     Move(x: +1, y: +1)]
         moveType = .oneOf(moves)
         textureName = type.rawValue
     }

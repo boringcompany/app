@@ -88,6 +88,17 @@ class Level {
     }
     
     
+    func switchNodeAt(_ p1: BoardPosition, with p2: BoardPosition) {
+        
+        let node1 = self.visibleNodes[Int(p1.x)][Int(p1.y)]
+        let node2 = self.visibleNodes[Int(p2.x)][Int(p2.y)]
+        self.visibleNodes[Int(p2.x)][Int(p2.y)] = node1
+        self.visibleNodes[Int(p1.x)][Int(p1.y)] = node2
+        
+        buildGraph()
+    }
+    
+    
     //For now, I have no idea how to do it more clearly and safe, u r welcome :-)
     static func nodes(for configuration: Configuration) -> [[FieldNodeDescribing]] {
         var nodes: [[FieldNodeDescribing]] = Array(repeating: Array(repeating: OutboundNode(),
@@ -143,6 +154,21 @@ class Level {
                 }
                 nodes[x][y] = SuitNode()
             }
+        }
+        
+        // Create ships
+        let shipTypes: [ShipNode.ShipType] = [.blackShip, .greenShip, .purpleShip, .redShip]
+        let shipRotations = [Rotation.none, Rotation.left90, Rotation.left180, Rotation.left270]
+        let shipPositions = [BoardPosition(x: Int8(width/2), y: Int8(0)),
+                             BoardPosition(x: Int8(width-1),   y: Int8(height/2)),
+                             BoardPosition(x: Int8(width/2), y: Int8(height-1)),
+                             BoardPosition(x: Int8(0),       y: Int8(height/2))]
+        
+        for i in 0...3 {
+            
+            let ship = ShipNode(type: shipTypes[i], rotation: shipRotations[i])
+            let position = shipPositions[i]
+            nodes[Int(position.x)][Int(position.y)] = ship
         }
         
         return nodes

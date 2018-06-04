@@ -14,4 +14,10 @@ struct OutboundNode: FieldNodeDescribing {
     var canContainObject = false
     var canStay = false
     var actionType: ActionType = .permanent
+    var nodeConnector: NodeConnectorDescribing
+    
+    // MARK: Lifecycle
+    init() {
+        nodeConnector = OutboundNodeConnector()
+    }
 }
