@@ -43,7 +43,7 @@ class Level {
         self.configuration = configuration
         
         self.initialNodes = Level.nodes(for: configuration)
-        self.visibleNodes = self.initialNodes//Level.buildSuits(using: configuration)
+        self.visibleNodes = Level.buildSuits(using: configuration)
         self.graph = BoardGraph()
     }
     
