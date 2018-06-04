@@ -24,7 +24,7 @@ struct GoldNode: FieldNodeDescribing {
     var rotation: Rotation = .none
     var canContainObject = true
     var canStay = true
-    var actionType: ActionType = .permanent
+    var actionType: ActionType = .atTheOpenning
     var textureName: String
     
     // MARK: Lifecycle
