@@ -160,6 +160,10 @@
 		FB20C94E203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */; };
 		FB20C94F203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */; };
 		FB20C950203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */; };
+		FB53EEF620C5A27C00C2F95A /* GoldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEF520C5A27C00C2F95A /* GoldNode.swift */; };
+		FB53EEF720C5A27C00C2F95A /* GoldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEF520C5A27C00C2F95A /* GoldNode.swift */; };
+		FB53EEF820C5A27C00C2F95A /* GoldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEF520C5A27C00C2F95A /* GoldNode.swift */; };
+		FB53EEF920C5A27C00C2F95A /* GoldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEF520C5A27C00C2F95A /* GoldNode.swift */; };
 		FB77E690201615CC00B9A75B /* CellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* CellEntity.swift */; };
 		FB77E691201615CC00B9A75B /* CellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* CellEntity.swift */; };
 		FB77E692201615CC00B9A75B /* CellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E68F201615CC00B9A75B /* CellEntity.swift */; };
@@ -268,6 +272,7 @@
 		FB20C940203F28AB008491E6 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		FB20C945203F2A16008491E6 /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
 		FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Level+StandartConfiguration.swift"; sourceTree = "<group>"; };
+		FB53EEF520C5A27C00C2F95A /* GoldNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoldNode.swift; sourceTree = "<group>"; };
 		FB77E68F201615CC00B9A75B /* CellEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellEntity.swift; sourceTree = "<group>"; };
 		FB77E6932016162F00B9A75B /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		FB77E6972016172400B9A75B /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
@@ -395,6 +400,7 @@
 		FB20C936203F1DDE008491E6 /* FieldNodes */ = {
 			isa = PBXGroup;
 			children = (
+				FB53EEF520C5A27C00C2F95A /* GoldNode.swift */,
 				570AA19520447DCF00B4EB0B /* ArrowNode.swift */,
 				FB20C93B203F1ED8008491E6 /* EmptyNode.swift */,
 				FB20C937203F1E08008491E6 /* FieldNodeDescribing.swift */,
@@ -766,6 +772,7 @@
 				BD5E78CB205023E000DBAC18 /* SeaNode.swift in Sources */,
 				FB0799602046A1C000F75B82 /* ArrowNode.swift in Sources */,
 				BD71D3162063B3600014D28A /* ShipNode.swift in Sources */,
+				FB53EEF920C5A27C00C2F95A /* GoldNode.swift in Sources */,
 				BD29C6F62059AB18002A13DC /* OutboundNode.swift in Sources */,
 				BD5E78B22047F74700DBAC18 /* NodeConnectorDescribing.swift in Sources */,
 				BD71D31B2063B5970014D28A /* OutboundNodeConnector.swift in Sources */,
@@ -791,6 +798,7 @@
 				88D2817E203ABA8E0046E67E /* SelectionComponent.swift in Sources */,
 				579CF3D9201D0A7000DCC9CF /* InputHandler.swift in Sources */,
 				FBC4344A200739AC00134AB7 /* GameScene.swift in Sources */,
+				FB53EEF620C5A27C00C2F95A /* GoldNode.swift in Sources */,
 				FB20C946203F2A16008491E6 /* Rotation.swift in Sources */,
 				FB77E69D20161D8500B9A75B /* Game.swift in Sources */,
 				BD71D3132063B35D0014D28A /* ShipNode.swift in Sources */,
@@ -849,6 +857,7 @@
 				88D2817F203ABA8E0046E67E /* SelectionComponent.swift in Sources */,
 				579CF3DA201D0A7000DCC9CF /* InputHandler.swift in Sources */,
 				FBC4344C200739AC00134AB7 /* GameScene.swift in Sources */,
+				FB53EEF720C5A27C00C2F95A /* GoldNode.swift in Sources */,
 				FB20C947203F2A16008491E6 /* Rotation.swift in Sources */,
 				FB77E69E20161D8500B9A75B /* Game.swift in Sources */,
 				BD71D3142063B3600014D28A /* ShipNode.swift in Sources */,
@@ -907,6 +916,7 @@
 				88D28180203ABA8E0046E67E /* SelectionComponent.swift in Sources */,
 				579CF3DB201D0A7000DCC9CF /* InputHandler.swift in Sources */,
 				FBC4344D200739AC00134AB7 /* GameScene.swift in Sources */,
+				FB53EEF820C5A27C00C2F95A /* GoldNode.swift in Sources */,
 				FB20C948203F2A16008491E6 /* Rotation.swift in Sources */,
 				FB77E69F20161D8500B9A75B /* Game.swift in Sources */,
 				BD71D3152063B3600014D28A /* ShipNode.swift in Sources */,
