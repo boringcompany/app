@@ -11,18 +11,13 @@ import Foundation
 struct PlaneNode: FieldNodeDescribing {
     
     // MARK: Public Properties
-    var moveType: MoveType
+    var moveType: MoveType = .oneOf([])
     var rotation: Rotation = .none
     var canContainObject = true
     var canStay = true
-    var nodeConnector: NodeConnectorDescribing
+    var nodeConnector: NodeConnectorDescribing = PlaneNodeConnector()
     var actionType: ActionType = .once
-    var textureName: String
     
     // MARK: Lifecycle
-    init() {
-        moveType = .oneOf([])
-        textureName = "plane"
-        nodeConnector = PlaneNodeConnector()
-    }
+    init() {}
 }
