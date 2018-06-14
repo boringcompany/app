@@ -1,12 +1,12 @@
 //
-//  IceNodeConnector.swift
+//  CrocodileNodeConnector.swift
 //  Jackal iOS
 //
-//  Created by Alexander Savonin on 20/03/2018.
+//  Created by Alexander Savonin on 01/06/2018.
 //  Copyright © 2018 Boring Company. All rights reserved.
 //
 
-class IceNodeConnector: NodeConnectorDescribing {
+class CrocodileNodeConnector: NodeConnectorDescribing {
     
     private var connections: [BoardPosition] = []
     
@@ -19,7 +19,7 @@ class IceNodeConnector: NodeConnectorDescribing {
     
     func canCreateConnection(fromFieldNode: FieldNodeDescribing, toFieldNode: FieldNodeDescribing) -> Bool {
         
-        return !(fromFieldNode is PlaneNode)
+        return true
     }
     
     func nodeForConnection(fromPosition: BoardPosition,
@@ -37,25 +37,11 @@ class IceNodeConnector: NodeConnectorDescribing {
             z = currentIndex!
         }
         
-        let icePosition = BoardPosition(x: toPosition.x, y: toPosition.y, z: Int8(z))
-        let node = BoardGraphNode(boardPosition: icePosition)
+        let crocodilePosition = BoardPosition(x: toPosition.x, y: toPosition.y, z: Int8(z))
+        let node = BoardGraphNode(boardPosition: crocodilePosition)
         level.graph.add([node])
         
-        let move = Move(x: toPosition.x - fromPosition.x, y: toPosition.y - fromPosition.y)
-        let iceMoves: [Move]
-        
-        switch moveType {
-        case .oneOf(let moves):
-            iceMoves = max(move.x, move.y) > 1 ? moves : [move]
-            
-        case .revert:
-            iceMoves = [move]
-            
-        case .none:
-            iceMoves = []
-        }
-        
-        let connectedPositions = iceMoves.map { BoardPosition(toPosition.x + $0.x, toPosition.y + $0.y) }
+        let connectedPositions = [BoardPosition(int2: fromPosition.int2Position)]
         
         let connectedNodes = connectedPositions.compactMap({ (nextPosition) -> BoardGraphNode? in
             guard let adjacentFieldNode = level.fieldNodeInfoAt(position: nextPosition) else { return nil }

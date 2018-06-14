@@ -134,6 +134,14 @@
 		BDAC86D6203F0818006D39DA /* ShaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC86D5203F0818006D39DA /* ShaderManager.swift */; };
 		BDAC86D7203F0818006D39DA /* ShaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC86D5203F0818006D39DA /* ShaderManager.swift */; };
 		BDAC86D8203F0818006D39DA /* ShaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC86D5203F0818006D39DA /* ShaderManager.swift */; };
+		BDBE516220C1902900324194 /* CrocodileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBE516120C1902800324194 /* CrocodileNode.swift */; };
+		BDBE516320C1902D00324194 /* CrocodileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBE516120C1902800324194 /* CrocodileNode.swift */; };
+		BDBE516420C1902D00324194 /* CrocodileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBE516120C1902800324194 /* CrocodileNode.swift */; };
+		BDBE516520C1902D00324194 /* CrocodileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBE516120C1902800324194 /* CrocodileNode.swift */; };
+		BDBE516720C1A1F800324194 /* CrocodileNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBE516620C1A1F800324194 /* CrocodileNodeConnector.swift */; };
+		BDBE516820C1A24400324194 /* CrocodileNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBE516620C1A1F800324194 /* CrocodileNodeConnector.swift */; };
+		BDBE516920C1A24400324194 /* CrocodileNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBE516620C1A1F800324194 /* CrocodileNodeConnector.swift */; };
+		BDBE516A20C1A24600324194 /* CrocodileNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBE516620C1A1F800324194 /* CrocodileNodeConnector.swift */; };
 		FB079932204690B200F75B82 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB079931204690B200F75B82 /* ActionType.swift */; };
 		FB079933204690B200F75B82 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB079931204690B200F75B82 /* ActionType.swift */; };
 		FB079934204690B200F75B82 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB079931204690B200F75B82 /* ActionType.swift */; };
@@ -160,6 +168,10 @@
 		FB20C94E203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */; };
 		FB20C94F203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */; };
 		FB20C950203F2E20008491E6 /* Level+StandartConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */; };
+		FB53EEF620C5A27C00C2F95A /* GoldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEF520C5A27C00C2F95A /* GoldNode.swift */; };
+		FB53EEF720C5A27C00C2F95A /* GoldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEF520C5A27C00C2F95A /* GoldNode.swift */; };
+		FB53EEF820C5A27C00C2F95A /* GoldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEF520C5A27C00C2F95A /* GoldNode.swift */; };
+		FB53EEF920C5A27C00C2F95A /* GoldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEF520C5A27C00C2F95A /* GoldNode.swift */; };
 		FB53EEEC20C5295900C2F95A /* PlaneNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEEB20C5295900C2F95A /* PlaneNodeConnector.swift */; };
 		FB53EEED20C5295900C2F95A /* PlaneNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEEB20C5295900C2F95A /* PlaneNodeConnector.swift */; };
 		FB53EEEE20C5295900C2F95A /* PlaneNodeConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53EEEB20C5295900C2F95A /* PlaneNodeConnector.swift */; };
@@ -176,6 +188,10 @@
 		FB77E69D20161D8500B9A75B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E69C20161D8500B9A75B /* Game.swift */; };
 		FB77E69E20161D8500B9A75B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E69C20161D8500B9A75B /* Game.swift */; };
 		FB77E69F20161D8500B9A75B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77E69C20161D8500B9A75B /* Game.swift */; };
+		FB8A33A020D2B5160048FF4E /* GoldSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A339F20D2B5160048FF4E /* GoldSpriteNode.swift */; };
+		FB8A33A120D2B5160048FF4E /* GoldSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A339F20D2B5160048FF4E /* GoldSpriteNode.swift */; };
+		FB8A33A220D2B5160048FF4E /* GoldSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A339F20D2B5160048FF4E /* GoldSpriteNode.swift */; };
+		FB8A33A320D2B5160048FF4E /* GoldSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A339F20D2B5160048FF4E /* GoldSpriteNode.swift */; };
 		FB9C53D92046D83600CE366D /* HorseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C53D82046D83600CE366D /* HorseNode.swift */; };
 		FB9C53DA2046D83600CE366D /* HorseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C53D82046D83600CE366D /* HorseNode.swift */; };
 		FB9C53DB2046D83600CE366D /* HorseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C53D82046D83600CE366D /* HorseNode.swift */; };
@@ -267,6 +283,8 @@
 		BD71D3172063B5970014D28A /* OutboundNodeConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutboundNodeConnector.swift; sourceTree = "<group>"; };
 		BDAC86D1203F05BD006D39DA /* HighlightedCellShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = HighlightedCellShader.fsh; sourceTree = "<group>"; };
 		BDAC86D5203F0818006D39DA /* ShaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderManager.swift; sourceTree = "<group>"; };
+		BDBE516120C1902800324194 /* CrocodileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrocodileNode.swift; sourceTree = "<group>"; };
+		BDBE516620C1A1F800324194 /* CrocodileNodeConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrocodileNodeConnector.swift; sourceTree = "<group>"; };
 		FB079931204690B200F75B82 /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
 		FB0799522046A16C00F75B82 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB0799562046A16C00F75B82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -276,11 +294,13 @@
 		FB20C940203F28AB008491E6 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		FB20C945203F2A16008491E6 /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
 		FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Level+StandartConfiguration.swift"; sourceTree = "<group>"; };
+		FB53EEF520C5A27C00C2F95A /* GoldNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoldNode.swift; sourceTree = "<group>"; };
 		FB53EEEB20C5295900C2F95A /* PlaneNodeConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneNodeConnector.swift; sourceTree = "<group>"; };
 		FB77E68F201615CC00B9A75B /* CellEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellEntity.swift; sourceTree = "<group>"; };
 		FB77E6932016162F00B9A75B /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		FB77E6972016172400B9A75B /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		FB77E69C20161D8500B9A75B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		FB8A339F20D2B5160048FF4E /* GoldSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldSpriteNode.swift; sourceTree = "<group>"; };
 		FB9C53D82046D83600CE366D /* HorseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HorseNode.swift; path = "Jackal Shared/Playing Field/Shared/FieldNodes/HorseNode.swift"; sourceTree = SOURCE_ROOT; };
 		FBC0B61120C049D7000DBFFA /* PlaneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneNode.swift; sourceTree = "<group>"; };
 		FBC433F9200739AC00134AB7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -376,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				BD5E78BD2047FBA800DBAC18 /* DefaultNodeConnector.swift */,
+				BDBE516620C1A1F800324194 /* CrocodileNodeConnector.swift */,
 				BD71D308206160D80014D28A /* IceNodeConnector.swift */,
 				BD5E78AE2047F74700DBAC18 /* NodeConnectorDescribing.swift */,
 				BD71D3172063B5970014D28A /* OutboundNodeConnector.swift */,
@@ -406,7 +427,9 @@
 		FB20C936203F1DDE008491E6 /* FieldNodes */ = {
 			isa = PBXGroup;
 			children = (
+				FB53EEF520C5A27C00C2F95A /* GoldNode.swift */,
 				570AA19520447DCF00B4EB0B /* ArrowNode.swift */,
+				BDBE516120C1902800324194 /* CrocodileNode.swift */,
 				FB20C93B203F1ED8008491E6 /* EmptyNode.swift */,
 				FB20C937203F1E08008491E6 /* FieldNodeDescribing.swift */,
 				FB9C53D82046D83600CE366D /* HorseNode.swift */,
@@ -557,6 +580,7 @@
 				FBC433FA200739AC00134AB7 /* GameScene.swift */,
 				579CF3D4201D038A00DCC9CF /* SpriteKit+Inputs.swift */,
 				88746FEA201E43D10011D07A /* PirateNode.swift */,
+				FB8A339F20D2B5160048FF4E /* GoldSpriteNode.swift */,
 				88D281752038BE6B0046E67E /* CellNode.swift */,
 				BDAC86D5203F0818006D39DA /* ShaderManager.swift */,
 			);
@@ -769,7 +793,9 @@
 				BD5E789D2046EC2200DBAC18 /* Position.swift in Sources */,
 				BD5E78C12047FBA800DBAC18 /* DefaultNodeConnector.swift in Sources */,
 				BD5E78982046DA1C00DBAC18 /* TurntableNode.swift in Sources */,
+				BDBE516A20C1A24600324194 /* CrocodileNodeConnector.swift in Sources */,
 				FB07995F2046A1C000F75B82 /* EmptyNode.swift in Sources */,
+				BDBE516320C1902D00324194 /* CrocodileNode.swift in Sources */,
 				FB0799632046A1C500F75B82 /* Rotation.swift in Sources */,
 				FB07995E2046A1C000F75B82 /* FieldNodeDescribing.swift in Sources */,
 				FBC0B61520C049D7000DBFFA /* PlaneNode.swift in Sources */,
@@ -779,6 +805,8 @@
 				BD5E78CB205023E000DBAC18 /* SeaNode.swift in Sources */,
 				FB0799602046A1C000F75B82 /* ArrowNode.swift in Sources */,
 				BD71D3162063B3600014D28A /* ShipNode.swift in Sources */,
+				FB8A33A320D2B5160048FF4E /* GoldSpriteNode.swift in Sources */,
+				FB53EEF920C5A27C00C2F95A /* GoldNode.swift in Sources */,
 				BD29C6F62059AB18002A13DC /* OutboundNode.swift in Sources */,
 				BD5E78B22047F74700DBAC18 /* NodeConnectorDescribing.swift in Sources */,
 				BD71D31B2063B5970014D28A /* OutboundNodeConnector.swift in Sources */,
@@ -805,9 +833,11 @@
 				88D2817E203ABA8E0046E67E /* SelectionComponent.swift in Sources */,
 				579CF3D9201D0A7000DCC9CF /* InputHandler.swift in Sources */,
 				FBC4344A200739AC00134AB7 /* GameScene.swift in Sources */,
+				FB53EEF620C5A27C00C2F95A /* GoldNode.swift in Sources */,
 				FB20C946203F2A16008491E6 /* Rotation.swift in Sources */,
 				FB77E69D20161D8500B9A75B /* Game.swift in Sources */,
 				BD71D3132063B35D0014D28A /* ShipNode.swift in Sources */,
+				BDBE516220C1902900324194 /* CrocodileNode.swift in Sources */,
 				8820C2DD2060D9F000F13014 /* EndTurnState.swift in Sources */,
 				88FC9620201F558B00A979B9 /* BoardGraphNode.swift in Sources */,
 				FB20C938203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */,
@@ -817,6 +847,7 @@
 				BD29C6F32059AAA2002A13DC /* OutboundNode.swift in Sources */,
 				88D28183203ABCE40046E67E /* GameState.swift in Sources */,
 				BD71D309206160D80014D28A /* IceNodeConnector.swift in Sources */,
+				FB8A33A020D2B5160048FF4E /* GoldSpriteNode.swift in Sources */,
 				88D28187203ABD330046E67E /* TurnState.swift in Sources */,
 				FB20C93C203F1ED8008491E6 /* EmptyNode.swift in Sources */,
 				BD71D3182063B5970014D28A /* OutboundNodeConnector.swift in Sources */,
@@ -826,6 +857,7 @@
 				BD5E78C8205022E400DBAC18 /* SeaNode.swift in Sources */,
 				577C1ED620487E810024DB31 /* FlipComponent.swift in Sources */,
 				88D2818F203ABD980046E67E /* PirateSelectedState.swift in Sources */,
+				BDBE516720C1A1F800324194 /* CrocodileNodeConnector.swift in Sources */,
 				FB53EEEC20C5295900C2F95A /* PlaneNodeConnector.swift in Sources */,
 				88FC9613201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */,
 				FB20C941203F28AB008491E6 /* Move.swift in Sources */,
@@ -865,9 +897,11 @@
 				88D2817F203ABA8E0046E67E /* SelectionComponent.swift in Sources */,
 				579CF3DA201D0A7000DCC9CF /* InputHandler.swift in Sources */,
 				FBC4344C200739AC00134AB7 /* GameScene.swift in Sources */,
+				FB53EEF720C5A27C00C2F95A /* GoldNode.swift in Sources */,
 				FB20C947203F2A16008491E6 /* Rotation.swift in Sources */,
 				FB77E69E20161D8500B9A75B /* Game.swift in Sources */,
 				BD71D3142063B3600014D28A /* ShipNode.swift in Sources */,
+				BDBE516520C1902D00324194 /* CrocodileNode.swift in Sources */,
 				8820C2DE2060D9F000F13014 /* EndTurnState.swift in Sources */,
 				88FC9621201F558B00A979B9 /* BoardGraphNode.swift in Sources */,
 				FB20C939203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */,
@@ -877,6 +911,7 @@
 				BD29C6F42059AB16002A13DC /* OutboundNode.swift in Sources */,
 				88D28184203ABCE40046E67E /* GameState.swift in Sources */,
 				BD71D30A206160FE0014D28A /* IceNodeConnector.swift in Sources */,
+				FB8A33A120D2B5160048FF4E /* GoldSpriteNode.swift in Sources */,
 				88D28188203ABD330046E67E /* TurnState.swift in Sources */,
 				FB20C93D203F1ED8008491E6 /* EmptyNode.swift in Sources */,
 				BD71D3192063B5970014D28A /* OutboundNodeConnector.swift in Sources */,
@@ -886,6 +921,7 @@
 				BD5E78C9205023E000DBAC18 /* SeaNode.swift in Sources */,
 				577C1ED720487E810024DB31 /* FlipComponent.swift in Sources */,
 				88D28190203ABD980046E67E /* PirateSelectedState.swift in Sources */,
+				BDBE516820C1A24400324194 /* CrocodileNodeConnector.swift in Sources */,
 				FB53EEED20C5295900C2F95A /* PlaneNodeConnector.swift in Sources */,
 				88FC9614201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */,
 				FB20C942203F28AB008491E6 /* Move.swift in Sources */,
@@ -925,9 +961,11 @@
 				88D28180203ABA8E0046E67E /* SelectionComponent.swift in Sources */,
 				579CF3DB201D0A7000DCC9CF /* InputHandler.swift in Sources */,
 				FBC4344D200739AC00134AB7 /* GameScene.swift in Sources */,
+				FB53EEF820C5A27C00C2F95A /* GoldNode.swift in Sources */,
 				FB20C948203F2A16008491E6 /* Rotation.swift in Sources */,
 				FB77E69F20161D8500B9A75B /* Game.swift in Sources */,
 				BD71D3152063B3600014D28A /* ShipNode.swift in Sources */,
+				BDBE516420C1902D00324194 /* CrocodileNode.swift in Sources */,
 				8820C2DF2060D9F000F13014 /* EndTurnState.swift in Sources */,
 				88FC9622201F558B00A979B9 /* BoardGraphNode.swift in Sources */,
 				FB20C93A203F1E08008491E6 /* FieldNodeDescribing.swift in Sources */,
@@ -937,6 +975,7 @@
 				BD29C6F52059AB17002A13DC /* OutboundNode.swift in Sources */,
 				88D28185203ABCE40046E67E /* GameState.swift in Sources */,
 				BD71D30B206160FE0014D28A /* IceNodeConnector.swift in Sources */,
+				FB8A33A220D2B5160048FF4E /* GoldSpriteNode.swift in Sources */,
 				88D28189203ABD330046E67E /* TurnState.swift in Sources */,
 				FB20C93E203F1ED8008491E6 /* EmptyNode.swift in Sources */,
 				BD71D31A2063B5970014D28A /* OutboundNodeConnector.swift in Sources */,
@@ -946,6 +985,7 @@
 				BD5E78CA205023E000DBAC18 /* SeaNode.swift in Sources */,
 				577C1ED820487E810024DB31 /* FlipComponent.swift in Sources */,
 				88D28191203ABD980046E67E /* PirateSelectedState.swift in Sources */,
+				BDBE516920C1A24400324194 /* CrocodileNodeConnector.swift in Sources */,
 				FB53EEEE20C5295900C2F95A /* PlaneNodeConnector.swift in Sources */,
 				88FC9615201F4FE900A979B9 /* BoardPositionComponent.swift in Sources */,
 				FB20C943203F28AB008491E6 /* Move.swift in Sources */,

@@ -33,14 +33,17 @@ class FieldSelectedState: TurnState {
         
         self.openSelectedCellIfNeeded { cell in
             
-            self.movePirate(pirate, to: cell, completion: {})
-            
-            if cell.info.canStay {
-                self.stateMachine?.enter(EndTurnState.self)
-            } else {
-                self.stateMachine?.enter(PirateSelectedState.self)
-            }
+            self.movePirate(pirate, to: cell)
         }
+        
+        guard let cellIndex = self.game.selectedCellIndex else {
+            assertionFailure("Cannot get into \(FieldSelectedState.self) without any field selected")
+            return
+        }
+        
+        let cell = self.game.cells[cellIndex]
+        
+        self.performCellAction(cell.info.actionType)
     }
     
     
@@ -76,8 +79,7 @@ class FieldSelectedState: TurnState {
 
     
     private func movePirate(_ pirate: PirateEntity,
-                            to cell: CellEntity,
-                            completion: @escaping () -> Void) {
+                            to cell: CellEntity) {
         
         guard
             let cellPosition = cell.component(ofType: BoardPositionComponent.self)?.boardPosition,
@@ -109,11 +111,74 @@ class FieldSelectedState: TurnState {
         }
         let pirateMoveAction = SKAction.move(to: piratePoint, duration: 0.3)
         
-        pirateNode.run(pirateMoveAction, completion: completion)
+        pirateNode.run(pirateMoveAction, completion: {
+            self.refreshPirateState(pirate,
+                                    cell: cell,
+                                    previousPosition: currentPosition)
+        })
     }
     
     
+    private func refreshPirateState(_ pirate: PirateEntity,
+                                    cell: CellEntity,
+                                    previousPosition: BoardPosition) {
+        if cell.info.canStay {
+            self.stateMachine?.enter(EndTurnState.self)
+        } else {
+            if case .revert = cell.info.moveType {
+                let previousNodeInfo = self.game.level.fieldNodeInfoAt(position: previousPosition)
+                if let arrowNodeInfo = previousNodeInfo as? ArrowNode,
+                    case .oneOf(let moves) = arrowNodeInfo.moveType,
+                    moves.count == 1 {
+                    // TODO: Kill pirate
+                    self.stateMachine?.enter(EndTurnState.self)
+                    return
+                }
+                if let previousCell = self.game.cellAt(position: BoardPosition(int2: previousPosition.int2Position)) {
+                    self.movePirate(pirate, to: previousCell)
+                } else {
+                    self.stateMachine?.enter(EndTurnState.self)
+                }
+            } else {
+                self.stateMachine?.enter(PirateSelectedState.self)
+            }
+        }
+    }
+    
+    private func performCellAction(_ action: ActionType) {
+        switch action {
+        case .showCoins(let amountOfCoins):
+            addCoins(amount: amountOfCoins)
+            
+        default:
+            break
+        }
+        
+        return
+    }
+    
     private func deselectPirate() {
         
+    }
+    
+    private func addCoins(amount: UInt) {
+        guard let cellIndex = self.game.selectedCellIndex else {
+            assertionFailure("Cannot get into \(FieldSelectedState.self) without any field selected")
+            return
+        }
+        
+        let cell = self.game.cells[cellIndex]
+        
+        guard let position = cell.component(ofType: BoardPositionComponent.self)?.boardPosition else {
+            assertionFailure("Selected cell \(cell) doesn't have board position")
+            return
+        }
+        
+        guard let info = cell.info as? GoldNode else {
+            assertionFailure("Attempting to add coins not to the GoldNode")
+            return
+        }
+        
+        game.addCoinsAmount(amount, at: position)
     }
 }

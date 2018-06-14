@@ -19,6 +19,7 @@ class Game {
             
             case fieldCell = 0
             case pirate = 100
+            case gold = 101
         }
     }
     
@@ -66,6 +67,21 @@ class Game {
         secondPositionComponent.boardPosition = p1
         
         self.level.switchNodeAt(p1, with: p2)
+    }
+    
+    func addCoinsAmount(_ amount: UInt, at position: BoardPosition) {
+        guard let cell = cellAt(position: position),
+            let cellSpriteComponent = cell.component(ofType: SpriteComponent.self)
+            else { return }
+        
+        let width = cellSpriteComponent.node.size.width
+        let goldSize = CGSize(width: width / 4, height: width / 4)
+        for _ in 0..<amount {
+            let goldNode = GoldSpriteNode(size: goldSize)
+            goldNode.position = .zero
+            goldNode.zPosition = Constants.zPosition.gold.rawValue
+            cellSpriteComponent.node.addChild(goldNode)
+        }
     }
     
     // MARK: Lifecycle

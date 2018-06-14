@@ -9,5 +9,6 @@
 enum ActionType {
     case permanent
     case atTheOpenning
+    case showCoins(UInt)
     case once
 }
