@@ -73,6 +73,21 @@ extension Level.Configuration {
         fields.append(FieldNodeAmount(node: CrocodileNode(),
                                       amount: 4))
         
+        fields.append(FieldNodeAmount(node: GoldNode(type: .oneCoin),
+                                      amount: 5))
+        
+        fields.append(FieldNodeAmount(node: GoldNode(type: .twoСoins),
+                                      amount: 5))
+        
+        fields.append(FieldNodeAmount(node: GoldNode(type: .threeСoins),
+                                      amount: 3))
+        
+        fields.append(FieldNodeAmount(node: GoldNode(type: .fourСoins),
+                                      amount: 2))
+        
+        fields.append(FieldNodeAmount(node: GoldNode(type: .fiveСoins),
+                                      amount: 1))
+        
         //TODO: remove stubs when all kinds of nodes will b ready
         let amount = fields.map {$0.amount}.reduce(0) { $0 + $1 }
         let borderNodesCount = UInt((size.width + size.height) * 2)
