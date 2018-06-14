@@ -24,7 +24,7 @@ struct GoldNode: FieldNodeDescribing {
     var rotation: Rotation = .none
     var canContainObject = true
     var canStay = true
-    var actionType: ActionType = .atTheOpenning
+    var actionType: ActionType
     var textureName: String
     
     // MARK: Lifecycle
@@ -39,5 +39,15 @@ struct GoldNode: FieldNodeDescribing {
                      Move(x: +1, y: +1)]
         moveType = .oneOf(moves)
         textureName = type.rawValue
+        
+        let types: [Type] = [.oneCoin, .twoСoins, .threeСoins, .fourСoins, .fiveСoins]
+        
+        guard let index = types.index(of: type)?.advanced(by: 1) else {
+            assertionFailure("unsupported \(type)")
+            actionType = .atTheOpenning
+            return
+        }
+        
+        actionType = .showCoins(UInt(index))
     }
 }

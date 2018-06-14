@@ -115,7 +115,7 @@ class FieldSelectedState: TurnState {
     private func performCellAction(_ action: ActionType) {
         switch action {
         case .showCoins(let amountOfCoins):
-            break
+            addCoins(amount: amountOfCoins)
             
         default:
             break
@@ -126,5 +126,26 @@ class FieldSelectedState: TurnState {
     
     private func deselectPirate() {
         
+    }
+    
+    private func addCoins(amount: UInt) {
+        guard let cellIndex = self.game.selectedCellIndex else {
+            assertionFailure("Cannot get into \(FieldSelectedState.self) without any field selected")
+            return
+        }
+        
+        let cell = self.game.cells[cellIndex]
+        
+        guard let position = cell.component(ofType: BoardPositionComponent.self)?.boardPosition else {
+            assertionFailure("Selected cell \(cell) doesn't have board position")
+            return
+        }
+        
+        guard let info = cell.info as? GoldNode else {
+            assertionFailure("Attempting to add coins not to the GoldNode")
+            return
+        }
+        
+        game.addCoinsAmount(amount, at: position)
     }
 }
