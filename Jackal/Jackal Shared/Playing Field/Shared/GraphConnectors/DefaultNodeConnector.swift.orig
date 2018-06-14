@@ -14,14 +14,23 @@ class DefaultNodeConnector: NodeConnectorDescribing {
         let position = BoardPosition(x, y)
         guard let centre = level.graph.node(at: position) else { return }
         
+<<<<<<< HEAD
+        var connectedPositions: [BoardPosition]
+        
+        switch fieldNode.moveType {            
+=======
         let connectedPositions: [BoardPosition]
         let moveType = fieldNode.rotatedMoveType()
         
-        switch moveType {            
+        switch moveType {
+        case .any:
+            connectedPositions = [] //TODO: Fix
+            
+>>>>>>> master
         case .oneOf(let moves):
             connectedPositions = moves.map { BoardPosition(x + $0.x, y + $0.y) }
             
-        case .revert, .none:
+        case .none:
             connectedPositions = []
         }
         

@@ -32,10 +32,10 @@ class Level {
     // MARK: Private Properties
     private let initialNodes: [[FieldNodeDescribing]]
     private var visibleNodes: [[FieldNodeDescribing]]
-    private let configuration: Configuration
     
     // MARK: Public Properties
     private(set) var graph: BoardGraph<BoardGraphNode>
+    let configuration: Configuration
     
     
     // MARK: Lifecycle

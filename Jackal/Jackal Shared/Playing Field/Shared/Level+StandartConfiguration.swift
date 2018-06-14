@@ -70,6 +70,9 @@ extension Level.Configuration {
         fields.append(FieldNodeAmount(node: IceNode(),
                                       amount: 6))
         
+        fields.append(FieldNodeAmount(node: PlaneNode(),
+                                      amount: 1))
+        
         fields.append(FieldNodeAmount(node: CrocodileNode(),
                                       amount: 4))
         

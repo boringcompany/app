@@ -10,13 +10,6 @@
 class SeaNodeConnector: NodeConnectorDescribing {
     
     // MARK: NodeConnectorDescribing protocol
-    func createNodes(for fieldNode: FieldNodeDescribing, x: Int8, y: Int8, level: Level) {
-        
-        let position = BoardPosition(x, y)
-        let node = BoardGraphNode(boardPosition: position)
-        level.graph.add([node])
-    }
-    
     func addNodesConnections(from fieldNode: FieldNodeDescribing, x: Int8, y: Int8, level: Level) {
         
         let position = BoardPosition(x, y)
@@ -51,14 +44,5 @@ class SeaNodeConnector: NodeConnectorDescribing {
                 || fromFieldNode is IceNode
                 || fromFieldNode is ShipNode)
         return isValid
-    }
-    
-    func nodeForConnection(fromPosition: BoardPosition,
-                           moveType: MoveType,
-                           toFieldNode: FieldNodeDescribing,
-                           toPosition: BoardPosition,
-                           level: Level) -> BoardGraphNode? {
-        
-        return level.graph.node(at: toPosition)
     }
 }

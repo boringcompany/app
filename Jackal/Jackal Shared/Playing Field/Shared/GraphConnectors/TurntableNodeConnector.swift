@@ -63,18 +63,4 @@ class TurntableNodeConnector: NodeConnectorDescribing {
             centre.addConnections(to: connectedNodes, bidirectional: false)
         }
     }
-    
-    func canCreateConnection(fromFieldNode: FieldNodeDescribing, toFieldNode: FieldNodeDescribing) -> Bool {
-        
-        return true
-    }
-    
-    func nodeForConnection(fromPosition: BoardPosition,
-                           moveType: MoveType,
-                           toFieldNode: FieldNodeDescribing,
-                           toPosition: BoardPosition,
-                           level: Level) -> BoardGraphNode? {
-        
-        return level.graph.node(at: toPosition)
-    }
 }

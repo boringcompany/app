@@ -36,6 +36,13 @@ class FieldSelectedState: TurnState {
             self.movePirate(pirate, to: cell)
         }
         
+        guard let cellIndex = self.game.selectedCellIndex else {
+            assertionFailure("Cannot get into \(FieldSelectedState.self) without any field selected")
+            return
+        }
+        
+        let cell = self.game.cells[cellIndex]
+        
         self.performCellAction(cell.info.actionType)
     }
     
