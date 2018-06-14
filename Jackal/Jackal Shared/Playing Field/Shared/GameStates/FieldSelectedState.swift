@@ -33,13 +33,7 @@ class FieldSelectedState: TurnState {
         
         self.openSelectedCellIfNeeded { cell in
             
-            self.movePirate(pirate, to: cell, completion: {})
-            
-            if cell.info.canStay {
-                self.stateMachine?.enter(EndTurnState.self)
-            } else {
-                self.stateMachine?.enter(PirateSelectedState.self)
-            }
+            self.movePirate(pirate, to: cell)
         }
     }
     
@@ -76,8 +70,7 @@ class FieldSelectedState: TurnState {
 
     
     private func movePirate(_ pirate: PirateEntity,
-                            to cell: CellEntity,
-                            completion: @escaping () -> Void) {
+                            to cell: CellEntity) {
         
         guard
             let cellPosition = cell.component(ofType: BoardPositionComponent.self)?.boardPosition,
@@ -109,7 +102,38 @@ class FieldSelectedState: TurnState {
         }
         let pirateMoveAction = SKAction.move(to: piratePoint, duration: 0.3)
         
-        pirateNode.run(pirateMoveAction, completion: completion)
+        pirateNode.run(pirateMoveAction, completion: {
+            self.refreshPirateState(pirate,
+                                    cell: cell,
+                                    previousPosition: currentPosition)
+        })
+    }
+    
+    
+    private func refreshPirateState(_ pirate: PirateEntity,
+                                    cell: CellEntity,
+                                    previousPosition: BoardPosition) {
+        if cell.info.canStay {
+            self.stateMachine?.enter(EndTurnState.self)
+        } else {
+            if case .revert = cell.info.moveType {
+                let previousNodeInfo = self.game.level.fieldNodeInfoAt(position: previousPosition)
+                if let arrowNodeInfo = previousNodeInfo as? ArrowNode,
+                    case .oneOf(let moves) = arrowNodeInfo.moveType,
+                    moves.count == 1 {
+                    // TODO: Kill pirate
+                    self.stateMachine?.enter(EndTurnState.self)
+                    return
+                }
+                if let previousCell = self.game.cellAt(position: BoardPosition(int2: previousPosition.int2Position)) {
+                    self.movePirate(pirate, to: previousCell)
+                } else {
+                    self.stateMachine?.enter(EndTurnState.self)
+                }
+            } else {
+                self.stateMachine?.enter(PirateSelectedState.self)
+            }
+        }
     }
     
     

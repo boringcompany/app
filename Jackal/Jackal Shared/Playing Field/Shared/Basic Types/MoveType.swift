@@ -9,5 +9,6 @@
 enum MoveType {
     case any
     case oneOf([Move])
+    case revert
     case none
 }
