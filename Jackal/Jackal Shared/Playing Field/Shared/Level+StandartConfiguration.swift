@@ -70,6 +70,9 @@ extension Level.Configuration {
         fields.append(FieldNodeAmount(node: IceNode(),
                                       amount: 6))
         
+        fields.append(FieldNodeAmount(node: CrocodileNode(),
+                                      amount: 4))
+        
         fields.append(FieldNodeAmount(node: GoldNode(type: .oneCoin),
                                       amount: 5))
         

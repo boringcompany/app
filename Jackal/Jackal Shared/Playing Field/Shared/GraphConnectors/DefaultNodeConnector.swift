@@ -31,7 +31,7 @@ class DefaultNodeConnector: NodeConnectorDescribing {
         case .oneOf(let moves):
             connectedPositions = moves.map { BoardPosition(x + $0.x, y + $0.y) }
             
-        case .none:
+        case .revert, .none:
             connectedPositions = []
         }
         
