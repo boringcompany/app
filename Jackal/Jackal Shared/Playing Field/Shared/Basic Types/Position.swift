@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 struct Position {    
     let x: CGFloat
