@@ -174,7 +174,7 @@ class FieldSelectedState: TurnState {
             return
         }
         
-        guard let info = cell.info as? GoldNode else {
+        guard cell.info is GoldNode else {
             assertionFailure("Attempting to add coins not to the GoldNode")
             return
         }
