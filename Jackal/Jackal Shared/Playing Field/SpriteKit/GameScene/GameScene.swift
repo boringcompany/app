@@ -26,22 +26,24 @@ class GameScene: SKScene {
     private var output: GameSceneOutput?
     
     // MARK: Public Properties
-    let inputHandler: InputHandlerProtocol = InputHandler()
+    let inputHandler: InputHandlerProtocol
     
     var cellWidth: CGFloat {
         return Constants.cellWidth
     }
     
     // MARK: Lifecycle
-    class func newGameScene(with output: GameSceneOutput) -> GameScene {
-        guard let scene = SKScene(fileNamed: "GameScene") as? GameScene else { abort() }
-        
-        scene.output = output
-        scene.scaleMode = .aspectFill
-        
-        return scene
+    init(inputHandler: InputHandlerProtocol, with output: GameSceneOutput) {
+        self.inputHandler = inputHandler
+        self.output = output
+        super.init(size: CGSize(width: 1600, height: 1600))
+        scaleMode = .aspectFill
     }
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func didMove(to view: SKView) {
         self.setUpScene()
     }

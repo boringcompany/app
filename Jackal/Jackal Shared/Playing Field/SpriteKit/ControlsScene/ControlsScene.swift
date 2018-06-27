@@ -17,14 +17,20 @@ class ControlsScene: SKScene {
     // MARK: Private Properties
     private var output: ControlsSceneOutput?
     
+    // MARK: Public Properties
+    let inputHandler: InputHandlerProtocol
+    
     // MARK: Lifecycle
-    class func newGameScene(with output: ControlsSceneOutput) -> ControlsScene {
-        guard let scene = SKScene(fileNamed: "ControlsScene") as? ControlsScene else { abort() }
-        
-        scene.output = output
-        scene.scaleMode = .aspectFill
-        
-        return scene
+    init(inputHandler: InputHandlerProtocol, with output: ControlsSceneOutput) {
+        self.inputHandler = inputHandler
+        self.output = output
+        super.init(size: CGSize(width: 1600, height: 1600))
+        scaleMode = .aspectFill
+        backgroundColor = .clear
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func didMove(to view: SKView) {

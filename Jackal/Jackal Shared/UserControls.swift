@@ -6,12 +6,28 @@
 //  Copyright © 2018 Boring Company. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
 
 class UserControls {
     
     // MARK: Public Properties
-    lazy var controlsScene: GameScene = {
-        return GameScene.newGameScene(with: self)
+    let inputHandler: InputHandlerProtocol
+    
+    lazy var controlsScene: ControlsScene = {
+        return ControlsScene(inputHandler: inputHandler, with: self)
     }()
+    
+    // MARK: Lifecycle
+    init(inputHandler: InputHandlerProtocol) {
+        self.inputHandler = inputHandler
+    }
+}
+
+extension UserControls: ControlsSceneOutput {
+    
+    func sceneDidSetUp(scene: SKScene) {
+        let pirateNode = PirateNode(size: CGSize(width: 50, height: 50))
+        pirateNode.position = CGPoint(x: 0, y: 0)
+        scene.addChild(pirateNode)
+    }
 }

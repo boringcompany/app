@@ -11,21 +11,22 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: NSViewController {
-
+    
+    @IBOutlet private var gameView: SKView!
+    @IBOutlet private var controlsView: SKView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scene = Game().gameScene
+        let inputHandler = InputHandler()
+        let gameScene = Game(inputHandler: inputHandler).gameScene
         
-        // Present the scene
-        let skView = self.view as! SKView
-        skView.presentScene(scene)
+        gameView.presentScene(gameScene)
         
-        skView.ignoresSiblingOrder = true
+        let controlsScene = UserControls(inputHandler: inputHandler).controlsScene
         
-        skView.showsFPS = true
-        skView.showsNodeCount = true
+        controlsView.allowsTransparency = true
+        controlsView.presentScene(controlsScene)
     }
-
 }
 

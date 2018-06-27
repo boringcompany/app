@@ -33,6 +33,25 @@ extension GameScene {
             inputHandler.actionOut(event: touch.location(in: self).rawEvent)
         }
     }
+
+// Touch-based event handling
+extension ControlsScene {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard touches.count == 1, let touch = touches.first else { return }
+        inputHandler.actionIn(event: touch.location(in: self).rawEvent)
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard touches.count == 1, let touch = touches.first else { return }
+        inputHandler.actionMove(event: touch.location(in: self).rawEvent)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard touches.count == 1, let touch = touches.first else { return }
+        inputHandler.actionOut(event: touch.location(in: self).rawEvent)
+    }
+}
 #endif
 
 #if os(OSX)
@@ -51,6 +70,20 @@ extension GameScene {
             inputHandler.actionOut(event: event.location(in: self).rawEvent)
         }
     }
+
+extension ControlsScene {
+    override func mouseDown(with event: NSEvent) {
+        inputHandler.actionIn(event: event.location(in: self).rawEvent)
+    }
+    
+    override func mouseDragged(with event: NSEvent) {
+        inputHandler.actionMove(event: event.location(in: self).rawEvent)
+    }
+    
+    override func mouseUp(with event: NSEvent) {
+        inputHandler.actionOut(event: event.location(in: self).rawEvent)
+    }
+}
 #endif
 
 extension CGPoint {

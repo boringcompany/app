@@ -12,19 +12,22 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet private var gameView: SKView!
+    @IBOutlet private var controlsView: SKView!
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scene = Game().gameScene
-
-        // Present the scene
-        let skView = self.view as! SKView
-        skView.presentScene(scene)
+        let inputHandler = InputHandler()
+        let gameScene = Game(inputHandler: inputHandler).gameScene
         
-        skView.ignoresSiblingOrder = true
-        skView.showsFPS = true
-        skView.showsNodeCount = true
+        gameView.presentScene(gameScene)
+        
+        let controlsScene = UserControls(inputHandler: inputHandler).controlsScene
+        
+        controlsView.allowsTransparency = true
+        controlsView.presentScene(controlsScene)
     }
     
     override var shouldAutorotate: Bool {
