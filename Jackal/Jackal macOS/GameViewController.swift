@@ -32,7 +32,7 @@ class GameViewController: NSViewController {
     override func scrollWheel(with event: NSEvent) {
         guard let camera = gameView.scene?.camera else { return }
         
-        let scale = max(min(camera.yScale + (event.scrollingDeltaY / 100), 2), 0.2)
+        let scale = max(min(camera.yScale + (event.scrollingDeltaY / 100), 1.5), 0.4)
         camera.xScale = scale
         camera.yScale = scale
     }

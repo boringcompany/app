@@ -25,6 +25,8 @@ class GameViewController: UIViewController {
         let gameScene = Game(inputHandler: inputHandler).gameScene
         
         gameView.presentScene(gameScene)
+        gameScene.camera?.xScale = 1.8
+        gameScene.camera?.yScale = 1.8
         
         let controlsScene = UserControls(inputHandler: inputHandler).controlsScene
         
@@ -53,7 +55,7 @@ class GameViewController: UIViewController {
     @IBAction func scaleGameScene(_ gestureRecognizer: UIPinchGestureRecognizer) {
         guard let camera = gameView.scene?.camera else { return }
         
-        let scale = max(min(camera.yScale / gestureRecognizer.scale, 2), 0.2)
+        let scale = max(min(camera.yScale / gestureRecognizer.scale, 2), 0.4)
         camera.xScale = scale
         camera.yScale = scale
         gestureRecognizer.scale = 1.0

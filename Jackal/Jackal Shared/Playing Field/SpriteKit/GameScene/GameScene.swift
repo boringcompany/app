@@ -36,7 +36,7 @@ class GameScene: SKScene {
     init(inputHandler: InputHandlerProtocol, with output: GameSceneOutput) {
         self.inputHandler = inputHandler
         self.output = output
-        super.init(size: CGSize(width: 1600, height: 1600))
+        super.init(size: CGSize(width: 1170, height: 1170))
         scaleMode = .aspectFill
     }
     

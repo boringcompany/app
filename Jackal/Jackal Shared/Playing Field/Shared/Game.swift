@@ -147,7 +147,7 @@ class Game {
         scene.addChild(board)
         
         let cameraNode = SKCameraNode()
-        cameraNode.position = CGPoint(x: scene.size.width/2 - 100, y: scene.size.height/2 + 65)
+        cameraNode.position = CGPoint(x: scene.size.width/2, y: scene.size.height/2)
         cameraNode.xScale = 1.3
         cameraNode.yScale = 1.3
         scene.addChild(cameraNode)
