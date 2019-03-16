@@ -28,5 +28,13 @@ class GameViewController: NSViewController {
         controlsView.allowsTransparency = true
         controlsView.presentScene(controlsScene)
     }
+    
+    override func scrollWheel(with event: NSEvent) {
+        guard let camera = gameView.scene?.camera else { return }
+        
+        let scale = max(min(camera.yScale + (event.scrollingDeltaY / 100), 2), 0.2)
+        camera.xScale = scale
+        camera.yScale = scale
+    }
 }
 

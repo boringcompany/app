@@ -15,6 +15,8 @@ class GameViewController: UIViewController {
     @IBOutlet private var gameView: SKView!
     @IBOutlet private var controlsView: SKView!
     
+    private var pinchGestureRecognizer: UIPinchGestureRecognizer?
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,4 +47,16 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    // MARK: Gestures
+    
+    @IBAction func scaleGameScene(_ gestureRecognizer: UIPinchGestureRecognizer) {
+        guard let camera = gameView.scene?.camera else { return }
+        
+        let scale = max(min(camera.yScale / gestureRecognizer.scale, 2), 0.2)
+        camera.xScale = scale
+        camera.yScale = scale
+        gestureRecognizer.scale = 1.0
+    }
+    
 }
