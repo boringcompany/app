@@ -26,7 +26,7 @@ class Game {
     // MARK: Private Properties
     let level: Level
     private let size: Level.Configuration.Size
-    
+    private let inputHandler: InputHandlerProtocol
     var stateMachine: GKStateMachine?
     
     var cells: [CellEntity] = []
@@ -37,7 +37,7 @@ class Game {
     
     // MARK: Public Properties
     lazy var gameScene: GameScene = {
-        return GameScene.newGameScene(with: self)
+        return GameScene(inputHandler: inputHandler, with: self)
     }()
     
     func cellAt(position: BoardPosition) -> CellEntity? {
@@ -85,7 +85,8 @@ class Game {
     }
     
     // MARK: Lifecycle
-    init() {
+    init(inputHandler: InputHandlerProtocol) {
+        self.inputHandler = inputHandler
         let configuration = Level.Configuration.standard
         size = configuration.size
         level = Level(configuration: configuration)
@@ -146,7 +147,7 @@ class Game {
         scene.addChild(board)
         
         let cameraNode = SKCameraNode()
-        cameraNode.position = CGPoint(x: scene.size.width/2 - 100, y: scene.size.height/2 + 65)
+        cameraNode.position = CGPoint(x: scene.size.width/2, y: scene.size.height/2)
         cameraNode.xScale = 1.3
         cameraNode.yScale = 1.3
         scene.addChild(cameraNode)
