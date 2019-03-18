@@ -495,6 +495,7 @@
 				88FC9616201F501900A979B9 /* BoardPosition.swift */,
 				FB77E69C20161D8500B9A75B /* Game.swift */,
 				BD29C6F7205AA881002A13DC /* GameBorder.swift */,
+				5742F58620E2C56C009AE8B4 /* UserControls.swift */,
 				579CF3D8201D0A7000DCC9CF /* InputHandler.swift */,
 				FB77E6972016172400B9A75B /* Level.swift */,
 				FB20C94D203F2E20008491E6 /* Level+StandartConfiguration.swift */,
@@ -521,7 +522,6 @@
 			children = (
 				FBC4346520073FC200134AB7 /* Playing Field */,
 				FBC433FB200739AC00134AB7 /* Assets.xcassets */,
-				5742F58620E2C56C009AE8B4 /* UserControls.swift */,
 			);
 			path = "Jackal Shared";
 			sourceTree = "<group>";
