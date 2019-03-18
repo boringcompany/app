@@ -742,6 +742,7 @@
 					};
 					FBC43438200739AC00134AB7 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1332,7 +1333,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal;
 				PRODUCT_NAME = Jackal;
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1349,7 +1350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.boring.company.Jackal;
 				PRODUCT_NAME = Jackal;
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
