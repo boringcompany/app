@@ -24,6 +24,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="iWf-T7-So4" appends="YES" id="pR6-Ib-h2N"/>
+                                    <outletCollection property="gestureRecognizers" destination="oEs-lg-7Ma" appends="YES" id="59e-0g-WmE"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAe-yP-QCA" customClass="ForegroundView" customModule="Jackal" customModuleProvider="target">
@@ -47,6 +48,8 @@
                     <connections>
                         <outlet property="controlsView" destination="GAe-yP-QCA" id="DZc-77-MKb"/>
                         <outlet property="gameView" destination="wVN-Yj-2Ck" id="GQC-BO-Yzy"/>
+                        <outlet property="panGestureRecognizer" destination="oEs-lg-7Ma" id="TKJ-P7-cZH"/>
+                        <outlet property="pinchGestureRecognizer" destination="iWf-T7-So4" id="EYi-U7-K6V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -55,6 +58,11 @@
                         <action selector="scaleGameScene:" destination="BV1-FR-VrT" id="hD3-hb-XI4"/>
                     </connections>
                 </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="oEs-lg-7Ma">
+                    <connections>
+                        <action selector="moveGameScene:" destination="BV1-FR-VrT" id="CJr-Tk-7CO"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
         </scene>
     </scenes>

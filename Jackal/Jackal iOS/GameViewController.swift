@@ -15,7 +15,8 @@ class GameViewController: UIViewController {
     @IBOutlet private var gameView: SKView!
     @IBOutlet private var controlsView: SKView!
     
-    private var pinchGestureRecognizer: UIPinchGestureRecognizer?
+    @IBOutlet private var pinchGestureRecognizer: UIPinchGestureRecognizer?
+    @IBOutlet private var panGestureRecognizer: UIPanGestureRecognizer?
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -59,6 +60,22 @@ class GameViewController: UIViewController {
         camera.xScale = scale
         camera.yScale = scale
         gestureRecognizer.scale = 1.0
+    }
+    
+    @IBAction func moveGameScene(_ gestureRecognizer: UIPanGestureRecognizer) {
+        guard let scene = gameView.scene else { return }
+        guard let camera = scene.camera else { return }
+        
+        let translation = gestureRecognizer.translation(in: gameView)
+        
+        let offsetX: CGFloat = 100
+        let offsetY: CGFloat = 100
+        var pos = camera.position
+        pos.x = max(min(pos.x - translation.x, scene.size.width - offsetX), offsetX)
+        pos.y = max(min(pos.y + translation.y, scene.size.height - offsetY), offsetY)
+        camera.position = pos
+        
+        gestureRecognizer.setTranslation(CGPoint(x: 0, y: 0), in: gameView)
     }
     
 }

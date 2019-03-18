@@ -20,6 +20,7 @@ class GameViewController: NSViewController {
         
         let inputHandler = InputHandler()
         let gameScene = Game(inputHandler: inputHandler).gameScene
+        gameScene.nextResponder = self
         
         gameView.presentScene(gameScene)
         
@@ -35,6 +36,18 @@ class GameViewController: NSViewController {
         let scale = max(min(camera.yScale + (event.scrollingDeltaY / 100), 1.5), 0.4)
         camera.xScale = scale
         camera.yScale = scale
+    }
+    
+    override func mouseDragged(with event: NSEvent) {
+        guard let scene = gameView.scene else { return }
+        guard let camera = scene.camera else { return }
+        
+        let offsetX: CGFloat = 210
+        let offsetY: CGFloat = 150
+        var pos = camera.position
+        pos.x = max(min(pos.x - event.deltaX, scene.size.width - offsetX), offsetX)
+        pos.y = max(min(pos.y + event.deltaY, scene.size.height - offsetY), offsetY)
+        camera.position = pos
     }
 }
 

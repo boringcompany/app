@@ -60,14 +60,17 @@ extension ControlsScene {
         
         override func mouseDown(with event: NSEvent) {
             inputHandler.actionIn(event: event.location(in: self).rawEvent)
+            nextResponder?.mouseDown(with: event)
         }
         
         override func mouseDragged(with event: NSEvent) {
             inputHandler.actionMove(event: event.location(in: self).rawEvent)
+            nextResponder?.mouseDragged(with: event)
         }
         
         override func mouseUp(with event: NSEvent) {
             inputHandler.actionOut(event: event.location(in: self).rawEvent)
+            nextResponder?.mouseUp(with: event)
         }
     }
 
@@ -75,14 +78,17 @@ extension ControlsScene {
     
     override func mouseDown(with event: NSEvent) {
         inputHandler.actionIn(event: event.location(in: self).rawEvent)
+        nextResponder?.mouseDown(with: event)
     }
     
     override func mouseDragged(with event: NSEvent) {
         inputHandler.actionMove(event: event.location(in: self).rawEvent)
+        nextResponder?.mouseDragged(with: event)
     }
     
     override func mouseUp(with event: NSEvent) {
         inputHandler.actionOut(event: event.location(in: self).rawEvent)
+        nextResponder?.mouseUp(with: event)
     }
 }
 #endif
