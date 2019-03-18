@@ -12,6 +12,11 @@ import SpriteKit
 class ForegroundView: SKView {
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        return nil
+        guard let scene = scene,
+            !scene.nodes(at: scene.convertPoint(fromView: point)).isEmpty else {
+                return nil
+        }
+        
+        return self
     }
 }

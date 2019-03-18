@@ -72,6 +72,7 @@ extension ControlsScene {
     }
 
 extension ControlsScene {
+    
     override func mouseDown(with event: NSEvent) {
         inputHandler.actionIn(event: event.location(in: self).rawEvent)
     }
